@@ -1,0 +1,11 @@
+$ python3 -B code/trinomial.py
+d= 6:  130 < 1000*d*I_d < 135 (exact)
+d= 8:   25 < 1000*d*I_d <  27 (exact)
+d=10:  -24 < 1000*d*I_d < -22 (exact)
+d=12:  -51 < 1000*d*I_d < -50 (exact)
+d=14:  -69 < 1000*d*I_d < -67 (exact)
+d=16:  -81 < 1000*d*I_d < -79 (exact)
+d=18:  -89 < 1000*d*I_d < -88 (exact)
+Degree >= 20: all rational constants in the analytic bound verified.
+
+Exit status 0

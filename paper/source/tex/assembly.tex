@@ -1,0 +1,111 @@
+\section{From the valley profiles to one polynomial}\label{sec:assembly}
+\subsection{Separation of the radial scales}\label{subsec:inductive-valleys}
+De Maesschalck and Huzak preserve earlier simple zeros while adding
+powers at a larger radius \cite[\S3.1]{DMH}. Here each new radius must
+also preserve the ordering of the critical levels and three finite lists
+of signs. Fix $D=258$, $L\ge1$ and
+$j\in\{0,1,2,3\}$. For an odd initial integer $n_0$ put
+$n_i=n_0+3i$ for $0\le i\le L$, $m_0=129n_0$, $d_\nu=Dn_\nu$, $\ell_0=2j$, and $\ell_\nu=0$
+for $\nu>0$. The support after the last fold is
+\begin{equation}\label{eq:support-general}
+\begin{aligned}
+ S_{L,j}(n_0)={}&\{m_0,d_0-1,d_0\}\cup\{d_0-1+2i:1\le i\le j\}\\
+ &{}\cup\bigcup_{\nu=0}^{L-1}
+ \{d_\nu+\ell_\nu+D-1,d_\nu+2D,d_\nu+3D-1,d_\nu+3D\}\\
+ &{}\cup\{d_L+1,d_L+3,d_L+8\}.
+\end{aligned}
+\end{equation}
+Take $N_*$ to be the maximum of $5$, the seed threshold and the four
+local-profile thresholds in Lemmas~\ref{lem:compact-seed}
+and~\ref{lem:valley-local}, expressed in the variable $n_0$.
+The block using $d_i$ has parameter $n_i$, for $0\le i<L$. The parameters increase with $i$.
+Thus every odd $n_0\ge N_*$ works for every finite $L$ and every $j$.
+For fixed $(n_0,L,j)$ we choose the block radii successively for the
+finite tests, then dilate the assembled profile and balance its tails.
+Only after the physical shift and test heights are fixed do we choose
+the outer radius, solve the three matches and regularize the returns.
+For a fixed such $n_0$, the largest exponent in \eqref{eq:support-general}
+is $d_L+8=258n_0+774L+8$. Since $k=4L+6+j$, these supports have degree
+$\tfrac{387}{2}k+O_{n_0}(1)$ as $k$ increases, uniformly over the four
+values of $j$.
+
+\begin{lemma}[Multiscale assembly of $j$ prefix terms and $L$ positive valleys]\label{lem:inductive-valleys}
+Fix $D=258$, $L\ge 1$, and $j\in\{0,1,2,3\}$, and choose an odd integer $n_0$ sufficiently large that
+Lemma~\ref{lem:compact-seed} holds at $m_0=129n_0$ and Lemma~\ref{lem:valley-local} holds for
+$n_i=n_0+3i$ ($0\le i<L$). (In particular, for $L=1$ and $j=0$, $n_0=257$ suffices by
+Section~\ref{subsec:ten-power}.) Then there exist polynomials $E(r),Q(r)$ with collected supports
+\begin{align*}
+  \supp(E) &= \{d_0\} \cup \bigcup_{\nu=0}^{L-1}\{d_0+3D\nu+2D,\, d_0+3D\nu+3D\}, \\
+  \supp(Q) &= \{d_0-1\} \cup \{d_0-1+2i:1\le i\le j\} \cup \{d_0+2j+D-1,\, d_0+3D-1\} \\
+           &\quad \cup \bigcup_{\nu=1}^{L-1}\{d_0+3D\nu+D-1,\, d_0+3D\nu+3D-1\},
+\end{align*}
+such that $E$ has positive leading coefficient at $d_{\mathrm{top}}=d_L=d_0+3DL$, $Q$ has leading
+coefficient of sign $\omega=(-1)^j$ at $d_{\mathrm{top}}-1$, $E>0$ on $(0,\infty)$ satisfies the
+ordered positive-valley hypotheses \eqref{eq:valley-ordering} with $L$ crests and $L$ minima, and the
+variations $V_o(h)$, $V_i(h)$, and $J(H)$ of Lemma~\ref{lem:valley-rates} have respectively $6L+j$,
+$6L+j$, and $4L+j$ strict sign changes on ordered finite test lists. Before reflection, each list
+starts strictly positive at small $h$ or $H$ and ends with sign $\omega=(-1)^j$ at large $h$ or $H$.
+\end{lemma}
+
+\begin{proof}
+Begin with $E_0(r)=r^{d_0}$ and $Q_0(r)=r^{d_0-1}+\sum_{i=1}^j b^{(i)} r^{d_0-1+2i}$. While
+$E_0(r)=r^{d_0}$ ($f_0(r)=d_0 r^{e_0}$, $e_0=d_0-2$), an odd term $b_p r^p$ with $d_0-1\le p\le
+d_0+5<2d_0-2$ contributes
+\[
+  b_p \frac{p-e_0}{p+e_0} r^p \quad \text{to } \frac{U(r)}{f_0(r)}, \qquad b_p H^{(p+2)/d_0 - 2}
+  \int_0^\infty \frac{t^{p+1}}{(1+t^{d_0})^2}\dd t \quad \text{to } J(H),
+\]
+both with strictly positive multipliers of $b_p$. Choosing $b^{(1)},b^{(2)},\dots,b^{(j)}$
+successively small in magnitude with $\sgn b^{(i)}=(-1)^i$ preserves the earlier signs at both
+positive and negative heights and adds a larger test in $r$ and $H$ dominated by $b^{(i)}$, yielding $j$ sign changes
+(starting $+$ and ending $(-1)^j$) on each of $V_o,V_i,J$, with leading odd sign $\beta_0=b^{(j)}$
+($b^{(0)}=1$) equal to $(-1)^j$.
+
+Now induct over $\nu=1,\dots,L$. Suppose after step $\nu-1$ that $(E,Q)$ has leading terms $\alpha
+r^d$ ($\alpha>0$, $d=d_{\nu-1}=Dn_{\nu-1}$) and $\beta r^{d-1+l}$ ($\sgn\beta=(-1)^j$), where $l=2j$ for
+$\nu=1$ and $l=0$ for $\nu\ge 2$. Set $\gamma=l/D$, $\eta=(2/3)^{n_{\nu-1}}$, $q=(3/4)^{\lfloor
+n_{\nu-1}/2\rfloor}$, $z_S=(r/S)^D$, and define at a large radial scale $S>1$:
+\[
+  E_S(r) = E(r) + \alpha r^d\bigl[C_\eta(z_S) - 1\bigr], \qquad Q_S(r) = Q(r) + \beta r^{d-1+l}\bigl[B_\gamma(z_S) - qz_S - 1\bigr].
+\]
+Because $C_\eta(z)-1=-(3-\eta)z^2+2z^3$ and $B_\gamma(z)-qz-1=-(9/8+q)z+\frac{1}{8}z^{3-\gamma}$ have
+zero constant terms and nonzero higher coefficients, all old coefficients remain untouched, the four
+added exponents $d+2D$, $d+3D$, $d+l+D-1$, and $d+3D-1$ exceed all previous exponents in their parity
+with nonzero physical coefficients $-(3-\eta)\alpha/S^{2D}$, $2\alpha/S^{3D}$, $-(9/8+q)\beta/S^D$,
+and $\beta/(8S^{3D-l})$, the new physical top even coefficient is $2\alpha/S^{3D}>0$ at $d+3D$, and
+the new physical top odd coefficient is $\beta/(8S^{3D-l})$ (preserving sign $(-1)^j$) at $d+3D-1$
+(with normalized model leading coefficients $2\alpha$ and $\frac{1}{8}\beta$ in $t=r/S$).
+
+As $S\to+\infty$, $(E_S,Q_S)\to(E,Q)$ in $C^2$ on compact intervals of $[0,\infty)$, while at $r=St$,
+$(\alpha^{-1}S^{-d}E_S(St),\beta^{-1}S^{-(d-1+l)}Q_S(St))$ converges in $C^2$ on compact subsets of
+$(0,\infty)$ to the isolated model pair $(E_{\mathrm{loc}}(t),Q_{\mathrm{loc}}(t))$ of
+Lemma~\ref{lem:valley-local}. On $r\ge 1$, subleading powers of $(E,Q)$ contribute $O(r^{-\kappa})$
+($\kappa\ge 2$):
+\[
+  \frac{E_S(r)}{\alpha r^d} = C_\eta(z_S) + O(r^{-\kappa}), \qquad \frac{E_S'(r)}{\alpha d r^{d-1}} =
+  C_\eta(z_S) + \frac{z_S}{n_{\nu-1}}C_\eta'(z_S) + O(r^{-\kappa}).
+\]
+Since $C_\eta(z)\ge c_*(n_{\nu-1})(1+z^3)>0$ on $z\ge 0$ and $C_\eta(z)+zC_\eta'(z)/n_{\nu-1}$ has nonzero
+constant and cubic coefficients and only the two simple positive roots $z_p,z_c$, no critical points
+can appear in the intermediate or far regimes $r\to\infty$ with $z_S\to 0$ or $z_S\to\infty$. Near $0$
+divide by $r^{d_0}$. Compact $C^1$ convergence therefore implies $E_S>0$ on $(0,\infty)$, all $\nu-1$
+old simple crest--valley pairs persist, and exactly one new crest $p_{\nu,S}\sim S z_p^{1/D}$ and
+valley $c_{\nu,S}\sim S z_c^{1/D}$ appear, with minimum value $E_S(c_{\nu,S})\sim \alpha S^d
+m_{\mathrm{loc}}\to+\infty$ exceeding all old critical values and old test heights.
+
+Consequently, all old positive-height tests lie below $E_S(c_{\nu,S})$ and their variations $V_o,V_i$
+converge to their old nonzero values. At new positive test heights $\alpha S^d h_{\mathrm{loc}}$,
+dividing $U_S(St)$, $f_S(a_{\nu,S})Q_S(c_{\nu,S})$, and $U_S(c_{\nu,S})$ by $\alpha|\beta| S^{2d-3+l}$
+sends the bounded old sum $C_{\nu-1}^*$ to $0$ and converges to $\sgn(\beta)$ times the isolated model
+variations of Lemma~\ref{lem:valley-local}, whose first sign $\sgn\beta=(-1)^j$ matches the final sign
+of the old list and adds $6$ new sign changes to both $V_o$ and $V_i$.
+
+For $J_S(H)$, on $r\ge K_1$ and $S\ge 1$ one has $E_S(r)\ge c_1 r^d(1+z_S^3)$ and $|Q_S(r)|\le C_1
+r^{d-1+l}(1+z_S^3)$, yielding the $S$-uniform integrable tail majorant $C_2 r^{l-d}\le C_2 r^{6-d_0}$
+at each fixed old depth $H>0$. At each of the five new depths $H=\alpha S^d H_{\mathrm{loc}}$,
+rescaling $r=St$ bounds the normalized denominator below by $H_{\mathrm{loc}}>0$ on $[0,1]$ and by
+$c_1 t^d(1+t^{3D})$ on $[1,\infty)$, so dominated convergence yields $\sgn\beta=(-1)^j$ times the five
+alternating signs $+,-,+,-,+$ of Lemma~\ref{lem:valley-local}, joining the old final sign $(-1)^j$
+without loss and adding $4$ new sign changes. Choosing $S$ large enough for all three finite lists
+simultaneously completes the induction.
+\end{proof}

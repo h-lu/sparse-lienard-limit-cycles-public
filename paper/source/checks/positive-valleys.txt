@@ -1,0 +1,15 @@
+$ python3 -B code/positive_valleys.py
+[PASS] Limiting W_D(z) signs and exponential bases for negative incoming heights verified.
+[PASS] All four odd-prefix classes j in {0, 1, 2, 3} pass exact rational checks.
+[PASS] Compact seed m_0=33153: H_b/d_0 in [0.81478846 +/- 1.55e-9], S_+/m_0^3 in [4.0283012 +/- 1.31e-8], S_-/m_0^3 in [16.978733 +/- 4.47e-7], curvature ratio in [132444.97 +/- 2.52e-3].
+[PASS] n=257: both 7-sign positive variation lists and direct perturbed cross-check verified.
+[PASS] n=257: rigorous Arb enclosures of n H D J(H) on (0, infinity):
+       w = 1/2: (7/10, 6/5) contains [[0.720878 +/- 3.90e-8], [1.18163 +/- 4.79e-7]]
+       w = 2/3: (-400000000, -300000000) contains [[-3.56305e+8 +/- 1.48e+2], [-3.55803e+8 +/- 3.02e+2]]
+       w = 7/8: (12/5, 3) contains [[2.43848 +/- 3.25e-7], [2.91839 +/- 2.74e-6]]
+       w = 3/2: (-29/100, -23/100) contains [[-0.283222 +/- 4.94e-7], [-0.237891 +/- 1.92e-7]]
+       w =   4: (1/25, 7/100) contains [[0.0474074 +/- 1.59e-8], [0.0625994 +/- 2.09e-8]]
+[PASS] Collected supports S_{L,j}, parity counts, ten-power support, and cycle ledgers verified.
+ALL POSITIVE-VALLEY CERTIFICATES PASSED.
+
+Exit status 0

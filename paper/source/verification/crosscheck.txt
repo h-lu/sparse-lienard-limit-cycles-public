@@ -1,0 +1,13 @@
+Degree 67088: 8 ordinary, 14 incoming, 2 fold brackets, 2 marks.
+L=1, j=0, n=257: 33153 66305 66306 66563 66822 67079 67080 67081 67083 67088
+Stride 4: [5, 9, 10, 13, 14, 17, 18, 19, 21, 26], 4 ordinary + 8 incoming + 4 fold = 16.
+Stride 2: [5, 9, 10, 11, 12, 13, 14, 15, 17, 22], 4 ordinary + 8 incoming + 4 fold = 16.
+d=10, det=0.02496784049381867
+d=14, det=0.01265401649473579
+d=18, det=0.007304742531001152
+d=67080, det=3.440895372068784e-13
+d=10, p=4: alpha=0.6, t=1.5, K=0.710453245856834
+J = 6986055166.55354
+J = -118482.6717112769
+J = 0.04427335578228035
+PASS arithmetic and high-precision comparisons (ordinary quadrature).

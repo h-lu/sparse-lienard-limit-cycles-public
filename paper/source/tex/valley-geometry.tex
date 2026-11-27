@@ -1,0 +1,31 @@
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}[x=1cm,y=.82cm,font=\small]
+  \draw[->] (0,0)--(9.45,0) node[right] {$r$};
+  \draw[->] (0,0)--(0,4.45) node[above] {$w$};
+  \foreach \yy/\xx/\lab in {1.4/2/\mu_1,2.45/7.45/h,3.6/4/M_1}
+    \draw[dotted] (0,\yy) node[left] {$\lab$} -- (\xx,\yy);
+  \foreach \xx/\yy/\lab in {2/1.4/a_1,2.85/2.45/t,4/3.6/p_1,6/1.4/c_1,7.45/2.45/v}
+    \draw[dotted] (\xx,0) node[below] {$\lab$} -- (\xx,\yy);
+  \def\firstarc{(0,0) .. controls (.85,0) and (1.6,.91) .. (2,1.4)}
+  \def\lastarc{(6,1.4) .. controls (6.65,1.4) and (7.1,2.06) .. (7.45,2.45)}
+  \draw[black!55,line width=.8pt] (2,1.4)
+    .. controls (2.35,1.83) and (2.52,2.05) .. (2.85,2.45)
+    .. controls (3.37,3.12) and (3.51,3.6) .. (4,3.6)
+    .. controls (4.86,3.6) and (5.14,1.4) .. (6,1.4);
+  \draw[black!55,line width=.8pt] (7.45,2.45)
+    .. controls (7.96,3.03) and (8.47,3.76) .. (8.85,4.18) node[right] {$w=E(r)$};
+  \draw[line width=1.4pt] \firstarc;
+  \draw[dashed,line width=1.0pt] (2,1.4)--(6,1.4);
+  \draw[dash dot,line width=1.35pt] \lastarc --(9,2.45);
+  \foreach \p in {(2,1.4),(2.85,2.45),(4,3.6),(6,1.4),(7.45,2.45)}
+    \fill \p circle (1.5pt);
+\end{tikzpicture}
+\caption{The ordinary and incoming actions at $\mu_1<h<M_1$.
+The ordinary turn tends to $t$. Among the turns beyond $t$, the least
+cost occurs at $c_1$. Its lower envelope follows the heavy curve to
+$a_1$ and stays at level $\mu_1$ to $c_1$ (dashed).
+The incoming envelope also follows the rise from $c_1$ to $v$, then
+stays at height $h$ (dash-dotted). Vertical distances are schematic.}
+\label{fig:valley}
+\end{figure}

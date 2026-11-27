@@ -1,0 +1,100 @@
+[
+  {
+    "name": "trinomial",
+    "argv": [
+      "code/trinomial.py"
+    ]
+  },
+  {
+    "name": "four-term",
+    "argv": [
+      "code/four.py"
+    ]
+  },
+  {
+    "name": "degree-ten-seed",
+    "argv": [
+      "code/balanced_seed.py",
+      "--degree",
+      "10"
+    ]
+  },
+  {
+    "name": "five-crest",
+    "argv": [
+      "code/crest.py",
+      "--new-odd",
+      "1"
+    ]
+  },
+  {
+    "name": "seven-crest",
+    "argv": [
+      "code/crest.py",
+      "--new-odd",
+      "3"
+    ]
+  },
+  {
+    "name": "six-fold",
+    "argv": [
+      "code/distant_fold.py"
+    ]
+  },
+  {
+    "name": "eight-profile",
+    "argv": [
+      "code/two_profiles.py",
+      "--terms",
+      "8"
+    ]
+  },
+  {
+    "name": "nine-bounded",
+    "argv": [
+      "code/bounded_outer.py"
+    ]
+  },
+  {
+    "name": "baseline-rational",
+    "argv": [
+      "code/baseline_checks.py"
+    ]
+  },
+  {
+    "name": "positive-valleys",
+    "argv": [
+      "code/positive_valleys.py"
+    ]
+  },
+  {
+    "name": "support-ledger",
+    "argv": [
+      "code/check_ledger.py"
+    ]
+  },
+  {
+    "name": "return-identities",
+    "argv": [
+      "code/return_identities.py"
+    ]
+  },
+  {
+    "name": "mechanism",
+    "argv": [
+      "verification/check_mechanism.py"
+    ]
+  },
+  {
+    "name": "refined-quadrature",
+    "argv": [
+      "verification/check_quadrature.py"
+    ]
+  },
+  {
+    "name": "printed-seed",
+    "argv": [
+      "code/seed_table.py"
+    ]
+  }
+]

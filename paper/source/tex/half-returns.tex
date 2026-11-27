@@ -1,0 +1,459 @@
+\section{Half-return maps, inward graphs, tail balance, and hyperbolicity}\label{sec:toolkit}
+
+
+The reflected half-returns satisfy the variational identities used
+for trinomials by Chen, Jin, Li and Zhou. Their running-minimum
+estimate controls contraction along an inward leg
+\cite[Proposition~2.2, (3.5)--(3.7) and (3.17)--(3.19)]{CJLZ}.
+We shall need these estimates both for finite turns and for inward
+graphs with a prescribed limiting ordinate at infinity.
+
+
+\subsection{Reflection, Filippov potential coordinates, and variational identities}\label{subsec:half-returns}
+Given $F$ as in \eqref{eq:collected}, define the two half-profiles $P_+(r)=F(r)$ and $P_-(r)=F(-r)$
+for $r\ge 0$. On the right half-plane $\{x\ge 0\}$ with $r=x$ and forward time $t$, and on the left
+half-plane $\{x\le 0\}$ under the reflection $r=-x\ge 0$ and time reversal $\tilde{t}=-t$, system
+\eqref{eq:lienard} takes the common form
+\begin{equation}\label{eq:half-system}
+  \dot{r} = y - P_\sigma(r), \qquad \dot{y} = -r \qquad (r\ge 0,\ \sigma\in\{+,-\}).
+\end{equation}
+
+Throughout $\{r>0\}$ one has $\dot{y}=-r<0$, so the ordinate $y$ decreases strictly along every
+trajectory segment in $\{r>0\}$. Filippov introduced the potential separately on the two half-axes
+\cite[pp.~171--172, (2)--(6)]{Filippov}. 
+The potential coordinate $u=r^2/2\ge 0$
+expresses each half-trajectory in $\{r>0\}$ as a single-valued smooth graph $u=u_\sigma(y)$ satisfying
+\begin{equation}\label{eq:filippov}
+  \frac{\dd u_\sigma}{\dd y} = \frac{r\dot{r}}{\dot{y}} = P_\sigma(\sqrt{2u_\sigma}) - y.
+\end{equation}
+
+At any interior critical point of $u_\sigma(y)$, where $y=P_\sigma(\sqrt{2u_\sigma})$, differentiating
+\eqref{eq:filippov} with respect to $y$ yields $u_{\sigma,yy}=-1<0$. Consequently, each half-arc in
+$\{r>0\}$ possesses at most one stationary radius, which is necessarily a strict global maximum
+$r=t_\sigma>0$ called its \emph{turn}.
+
+
+For $\beta>0$, launch the trajectory of \eqref{eq:half-system} from $(0,\beta)$ into $\{r>0\}$.
+Whenever it first returns transversely to $\{r=0\}$ at a finite negative ordinate, denote that
+ordinate by $b_\sigma(\beta)<0$, and define the half-return displacement
+\[
+  \oscD(\beta) = b_+(\beta) - b_-(\beta)
+\]
+on the common open domain of transverse returns. To analyze multiscale limits uniformly, given radial
+and ordinate scales $\Lambda,M>0$ we set $\eps=(\Lambda/M)^2$, $w=y/M$, $\tilde{u}=u/\Lambda^2=(r/\Lambda)^2/2$, and
+$\phi_\sigma(\tilde{u})=M^{-1}P_\sigma(\Lambda\sqrt{2\tilde{u}})$. For a half-arc turning at $\tilde{u}=T>0$
+(physical radius $\Lambda\sqrt{2T}$) that meets both vertical half-axes transversely at $(0,Mw_o(0))$
+($w_o(0)>0$) and $(0,Mw_i(0))$ ($w_i(0)<0$), its outward leg $w_o(\tilde{u})$ and inward leg
+$w_i(\tilde{u})$ on $[0,T]$ solve
+\begin{equation}\label{eq:scaled-legs}
+  \frac{\dd w}{\dd\tilde{u}} = \frac{\eps}{\phi_\sigma(\tilde{u})-w}, \qquad w_o(\tilde{u}) >
+  \phi_\sigma(\tilde{u}) > w_i(\tilde{u}) \quad (0<\tilde{u}<T), \qquad w_o(T)=w_i(T)=\phi_\sigma(T).
+\end{equation}
+Define the half-squared scaled axis intercepts $X_\sigma(T)=\frac{1}{2}w_o(0)^2$ and
+$Y_\sigma(T)=\frac{1}{2}w_i(0)^2$, together with the suffix running extrema on $[0,T]$:
+\begin{equation}\label{eq:running-extrema}
+  m_{\sigma,T}(\tilde{u}) = \max_{s\in[\tilde{u},T]} \phi_\sigma(s), \qquad l_{\sigma,T}(\tilde{u}) =
+  \min_{s\in[\tilde{u},T]} \phi_\sigma(s).
+\end{equation}
+
+\begin{lemma}[Single crossing, variational derivatives, and running-extremum bounds]\label{lem:variational}
+Let $F$ be a real polynomial with $F(0)=0$.
+\begin{enumerate}
+  \item[\textup{(i)}] Every periodic orbit of \eqref{eq:lienard} surrounds $(0,0)$ and intersects each
+  of the rays $\{x=0,y>0\}$ and $\{x=0,y<0\}$ transversely in a single point. Periodic orbits of
+  \eqref{eq:lienard} stand in bijection with zeros $\beta>0$ of $\oscD(\beta)=b_+(\beta)-b_-(\beta)$,
+  and at any matched orbit $\oscD(\beta_*)=0$ the first-return map $\Pi(\beta)=b_-^{-1}(b_+(\beta))$
+  has Floquet multiplier $\Pi'(\beta_*)=b_+'(\beta_*)/b_-'(\beta_*)$.
+  \item[\textup{(ii)}] On the domain of transverse returns, $b_\sigma(\beta)<0$ is real analytic and strictly decreasing in $\beta$, with
+  \begin{equation}\label{eq:b-deriv}
+    b_\sigma'(\beta) = \frac{\beta}{b_\sigma(\beta)} e^{-J_\sigma(\beta)}, \qquad J_\sigma(\beta) =
+    \int_{\mathrm{arc}} P_\sigma'(r(t))\dd t = \int_{b_\sigma(\beta)}^{\beta}
+    \frac{P_\sigma'(\sqrt{2u_\sigma(y)})}{\sqrt{2u_\sigma(y)}}\dd y.
+  \end{equation}
+  At a matched periodic orbit $\oscD(\beta_*)=0$, one has
+  $\Pi'(\beta_*)=\exp(J_-(\beta_*)-J_+(\beta_*))$ and $\sgn(\Pi'(\beta_*)-1)=-\sgn\oscD'(\beta_*)$.
+  Furthermore, if $P_{\sigma,\mu}(r)=P_{\sigma,0}(r)+\mu\,\partial_\mu P_{\sigma,0}(r)+o(\mu)$ varies
+  smoothly with a parameter $\mu$ at fixed $\beta$, then
+  \begin{equation}\label{eq:b-param}
+    \partial_\mu b_\sigma(\beta,\mu) = -\frac{1}{b_\sigma(\beta,\mu)}
+    \int_{b_\sigma(\beta,\mu)}^{\beta} \exp\!\left(-\int_{b_\sigma(\beta,\mu)}^{y}
+    \frac{P_{\sigma,\mu}'(\sqrt{2u_\sigma(v)})}{\sqrt{2u_\sigma(v)}}\dd v\right) \partial_\mu
+    P_{\sigma,\mu}(\sqrt{2u_\sigma(y)})\dd y.
+  \end{equation}
+  For two polynomial half-profiles $P_1,P_2$ vanishing at zero, fix a common
+  launch $\beta>0$ for which both half-arcs return transversely to
+  $\{r=0,y<0\}$. If $P_2\ge P_1$ on the union of their radial ranges,
+  with strict inequality on a nonempty open radial interval traversed
+  by both arcs, then $b_{P_2}(\beta)>b_{P_1}(\beta)$.
+  \item[\textup{(iii)}] For any turn $T>0$ with transverse axis hits in the scaled coordinates
+  \eqref{eq:scaled-legs}, $X_\sigma(T)$ and $Y_\sigma(T)$ increase strictly with $T$ and satisfy
+  \begin{equation}\label{eq:turn-derivs}
+    X_\sigma'(T) = \eps e^{J_{o,\sigma}(T)}, \quad Y_\sigma'(T) = \eps e^{-J_{i,\sigma}(T)}, \quad
+    -\eps J_{o,\sigma}(T) = \int_0^T \phi_\sigma'\dd w_o, \quad \eps J_{i,\sigma}(T) = \int_0^T
+    \phi_\sigma'\dd w_i,
+  \end{equation}
+  where $J_\sigma = J_{o,\sigma}+J_{i,\sigma}$. Moreover, for every $\tilde{u}\in[0,T]$,
+  \begin{equation}\label{eq:envelope-bounds}
+    0 \le w_o(\tilde{u}) - m_{\sigma,T}(\tilde{u}) \le \sqrt{2\eps(T-\tilde{u})}, \qquad 0 \le
+    l_{\sigma,T}(\tilde{u}) - w_i(\tilde{u}) \le \sqrt{2\eps(T-\tilde{u})}.
+  \end{equation}
+\end{enumerate}
+\end{lemma}
+
+
+\begin{proof}
+(i) Because $\dot{y}=-x$ vanishes only on $\{x=0\}$ and $(0,0)$ is the sole equilibrium of
+\eqref{eq:lienard} (as $y-F(0)=y=0$ on $\{x=0\}$), no periodic orbit can lie in $\{x\ge 0\}$ or
+$\{x\le 0\}$, and by index theory every periodic orbit $\Gamma$ is a simple closed Jordan curve
+enclosing $(0,0)$. Along $\{x=0,y>0\}$ one has $\dot{x}=y>0$, so $\Gamma$ crosses $\{x=0,y>0\}$
+transversely from left to right at every intersection. The signed intersection number with this ray is
+the winding number of
+the Jordan curve about the origin, of absolute value one. All crossings
+have the same sign, so there is exactly one. On the negative ray all
+crossings again have the same sign. Reversing time on $\{x\le 0\}$ gives $\oscD(\beta)=0$ as the exact
+closure condition and $\Pi=b_-^{-1}\circ b_+$.
+
+(ii) Near a transverse axis hit $y_0\ne 0$ ($\beta>0$ or $b_\sigma<0$), the planar trajectory
+satisfies $y(r)=y_0-r^2/(2y_0)+O(r^3)$, hence $u_\sigma(y)=-y_0(y-y_0)+O(|y-y_0|^{3/2})$ and
+$u_{\sigma,y}(y_0)=-y_0\ne 0$. Since $F(0)=0$, the coefficient
+$g_\sigma(y)=P_\sigma'(\sqrt{2u_\sigma(y)})/\sqrt{2u_\sigma(y)}$ is
+$O(u_\sigma(y)^{-1/2})=O(|y-y_0|^{-1/2})$, which is integrable at both endpoints $b_\sigma$ and
+$\beta$. Differentiating \eqref{eq:filippov} and $u_\sigma(\beta,\beta,\mu)=0$ with respect to
+$(\beta,\mu)$ gives the linear variational equation $\partial_y(\delta u_\sigma)=g_\sigma(y)\,\delta
+u_\sigma + \partial_\mu P_{\sigma,\mu}(\sqrt{2u_\sigma})\,\delta\mu$ with boundary value $\delta
+u_\sigma(\beta)=\beta\,\delta\beta$ (since $u_{\sigma,y}(\beta)\,\delta\beta+\delta u_\sigma(\beta)=0$
+and $u_{\sigma,y}(\beta)=-\beta$). Integrating from $\beta$ down to $b_\sigma$ yields
+\[
+  \delta u_\sigma(b_\sigma) = \beta e^{-J_\sigma(\beta)}\,\delta\beta - \left(\int_{b_\sigma}^\beta
+  e^{-\int_{b_\sigma}^y g_\sigma(v)\dd v}\,\partial_\mu P_{\sigma,\mu}(\sqrt{2u_\sigma(y)})\dd
+  y\right)\delta\mu,
+\]
+where $\int_{b_\sigma}^\beta g_\sigma(y)\dd y=\int_{\mathrm{arc}}P_\sigma'(r(t))\dd t=J_\sigma(\beta)$
+via $\dd y=-r\dd t=-\sqrt{2u_\sigma}\dd t$. Differentiating
+$u_\sigma(b_\sigma(\beta,\mu),\beta,\mu)=0$ gives $-b_\sigma\,\delta b_\sigma+\delta
+u_\sigma(b_\sigma)=0$, proving \eqref{eq:b-deriv} and \eqref{eq:b-param}. Because $b_-'(\beta_*)<0$,
+$\Pi'(\beta_*)-1=\oscD'(\beta_*)/b_-'(\beta_*)$ has sign $-\sgn\oscD'(\beta_*)$. For the finite comparison write
+$b_i=b_{P_i}(\beta)$, $r_i=\sqrt{2u_i}$ and compare the two graphs
+at common ordinates $\max(b_1,b_2)\le y\le\beta$. Their difference
+$d=u_2-u_1$ solves
+\[
+ d'=g(y)d+P_2(r_1)-P_1(r_1),\qquad d(\beta)=0,
+\]
+where $g$ is the divided difference of $u\mapsto P_2(\sqrt{2u})$.
+In the interior $|g|\le 2\sup|P_2'|/(r_1+r_2)$, with the supremum
+over the two radial ranges. The transverse expansions above make
+this bound integrable even at a shared hit. Integrating backwards
+gives $d\le0$. If $b_2\le b_1$, the common ordinate interval contains
+the whole first excursion. There the forcing is positive on an open
+set, hence $d(b_1)<0$, whereas $d(b_1)=u_2(b_1)\ge0$. Thus $b_2>b_1$.
+Two returning arcs of the same
+half-field enclose a compact strip with the axis. Intermediate launches
+return in that strip by uniqueness and monotonicity of $y$.
+
+(iii) In scaled variables \eqref{eq:scaled-legs}, view $\tilde{u}=\tilde{u}_o(w,T)$ on
+$[\phi_\sigma(T),w_o(0)]$ as solving $\eps\,\partial_w\tilde{u}_o=\phi_\sigma(\tilde{u}_o)-w$ with
+$\tilde{u}_o(\phi_\sigma(T),T)=T$. Since $\partial_w\tilde{u}_o(\phi_\sigma(T),T)=0$, differentiating
+at $w=\phi_\sigma(T)$ gives $(\partial_T\tilde{u}_o)(\phi_\sigma(T),T)=1$. Integrating
+$\eps\,\partial_w(\partial_T\tilde{u}_o)=\phi_\sigma'(\tilde{u}_o)\,\partial_T\tilde{u}_o$ from
+$\phi_\sigma(T)$ to $w_o(0)$ gives
+\[
+  (\partial_T\tilde{u}_o)\bigl(w_o(0),T\bigr) =
+  \exp\!\left(\frac{1}{\eps}\int_{\phi_\sigma(T)}^{w_o(0)}\phi_\sigma'\bigl(\tilde{u}_o(w)\bigr)\dd
+  w\right) = e^{J_{o,\sigma}(T)},
+\]
+where $-\eps J_{o,\sigma}(T)=\int_0^T\phi_\sigma'(\tilde{u})\dd w_o(\tilde{u})$. Differentiating
+$\tilde{u}_o(w_o(0,T),T)=0$ gives $-(w_o(0)/\eps)\partial_T
+w_o(0)+(\partial_T\tilde{u}_o)(w_o(0),T)=0$, so $X_\sigma'(T)=w_o(0)\partial_T w_o(0)=\eps
+e^{J_{o,\sigma}(T)}$. The analogous integration on $[w_i(0),\phi_\sigma(T)]$ gives $Y_\sigma'(T)=\eps
+e^{-J_{i,\sigma}(T)}$.
+
+Finally, fix $\tilde{u}_0\in[0,T]$ and put $M_0=m_{\sigma,T}(\tilde{u}_0)$. Since $\dd
+w_o/\dd\tilde{u}<0$ and $w_o(s)>\phi_\sigma(s)$ on $(0,T)$ with $w_o(T)=\phi_\sigma(T)\le M_0$, we
+have $w_o(\tilde{u}_0)\ge M_0$. If $w_o(\tilde{u}_0)>M_0$, let $s_*\in(\tilde{u}_0,T]$ be the first
+point where $w_o(s_*)=M_0$. On $[\tilde{u}_0,s_*)$, $w_o(s)>M_0\ge\phi_\sigma(s)$, whence
+\[
+  \frac{\dd}{\dd s}\bigl(w_o(s)-M_0\bigr)^2 = -2\eps\,\frac{w_o(s)-M_0}{w_o(s)-\phi_\sigma(s)} \ge -2\eps.
+\]
+Integrating across $[\tilde{u}_0,s_*]$ yields $(w_o(\tilde{u}_0)-M_0)^2\le 2\eps(s_*-\tilde{u}_0)\le
+2\eps(T-\tilde{u}_0)$. Applying the same argument to $-w_i$ and $-\phi_\sigma$ proves the second
+estimate in \eqref{eq:envelope-bounds}.
+\end{proof}
+
+
+\subsection{Coercive tail limits, tail balancing, and inward graphs from infinity}\label{subsec:tail-inward}
+
+For even degree $d>2$ and positive leading coefficient, both half-profiles
+grow at least as fast as a positive multiple of $r^d$. A returning
+half-arc then determines a finite limiting lower intercept $\ell_\sigma$
+as the launch height grows. When the primitive starts in degree at least
+two, one can also prescribe a finite ordinate at infinity and integrate
+inward. The resulting intercept $G_\sigma(h)$ varies strictly with this
+ordinate. Both assertions use the integrability of $r^{1-d}$ at infinity.
+
+
+\begin{lemma}[Tail limits, strict odd monotonicity, and inward graphs]\label{lem:tail-inward}
+Let $P$ be a real polynomial with $P(0)=0$ such that $P_\sigma(r)=P(\sigma r)$ satisfies
+$P_\sigma(r)\ge c_0 r^d$ for all $r\ge K_0$, where $d>2$ and $c_0,K_0>0$. Suppose that either
+$b_\sigma(\beta_0)<0$ exists transversely at some $\beta_0>0$, or $\min\supp(P)\ge 2$.
+\begin{enumerate}
+  \item[\textup{(i)}] Transverse returns $b_\sigma(\beta)<0$ exist for all $\beta\ge\beta_0$ (and for
+  all $\beta>0$ when $\min\supp(P)\ge 2$), and the limit
+  $\ell_\sigma(P)=\lim_{\beta\to+\infty}b_\sigma(\beta)$ is finite and strictly negative.
+  \item[\textup{(ii)}] If polynomials $P_n$ with $P_n(0)=0$ converge to $P$ in $C^1$ on compact
+  subsets of $\mathbb{R}$ and satisfy the uniform tail barrier $P_n(\sigma r)\ge c_0 r^d$ for all
+  $r\ge K_0$, then $b_{P_n(\sigma\cdot)}(\beta_n)\to\ell_\sigma(P)$ whenever $\beta_n\to+\infty$; in
+  particular, $\ell_\sigma(P_n)\to\ell_\sigma(P)$.
+  The same conclusion for the finite intercepts holds under a truncated
+  bound. Assume $P_n(\sigma r)\ge c_0r^d$ only for $K_0\le r\le R_n$,
+  with $R_n\to\infty$. Let an actual half-arc have upper hit $\beta_n\to\infty$,
+  turn $t_n\le R_n$ and transverse lower hit $b_n<0$. Then $b_n\to\ell_\sigma(P)$.
+  Here the terminal ordinate of the inward leg is $P_n(\sigma t_n)$.
+  The rotation argument in (i) supplies both hits from a prescribed
+  finite turn when $\min\supp(P_n)\ge2$.
+  \item[\textup{(iii)}] For every integer $1\le m<d$, the map $\lambda\mapsto\ell_\sigma(P+\lambda
+  x^m)$ is continuous and strictly increasing (when $\sigma=+$) or strictly decreasing (when
+  $\sigma=-$ and $m$ is odd) on any interval of $\lambda$ where transverse returns exist.
+  Consequently, for odd $1\le m<d$, the tail gap $\Delta(P+\lambda x^m)=\ell_+(P+\lambda
+  x^m)-\ell_-(P+\lambda x^m)$ increases strictly with $\lambda$.
+  \item[\textup{(iv)}] If $\min\supp(P)\ge 2$, then for every $h\in\mathbb{R}$ there exists a unique
+  solution $y_{\sigma,h}\in C^1([0,\infty))$ of the inward graph equation
+  \begin{equation}\label{eq:inward-ode}
+    y'(r) = \frac{r}{P_\sigma(r) - y(r)}, \qquad y(r) < P_\sigma(r) \quad (r\ge 0), \qquad \lim_{r\to+\infty} y(r) = h.
+  \end{equation}
+  Its axis intercept $G_\sigma(h)=y_{\sigma,h}(0)$ is smooth and strictly increasing on $\mathbb{R}$,
+  satisfies $G_\sigma(h)<\ell_\sigma(P)$ for all $h\in\mathbb{R}$,
+  $\lim_{h\to+\infty}G_\sigma(h)=\ell_\sigma(P)$, and $\lim_{h\to-\infty}(G_\sigma(h)-h)=0$. Moreover,
+  under the global barrier hypotheses of \textup{(ii)} with $\min\supp(P_n)\ge 2$, one has
+  $G_{\sigma,P_n}(h)\to G_{\sigma,P}(h)$ uniformly on compact $h$-intervals.
+\end{enumerate}
+\end{lemma}
+
+
+\begin{proof}
+(i) When $\min\supp(P)\ge 2$, the linearization of \eqref{eq:half-system} at $(0,0)$ has polar angular
+speed $-1+O(|(r,y)|)$, bounded away from zero near $(0,0)$, so no half-orbit can approach $(0,0)$ from
+$\{r>0\}$. Starting from any turn $(t,P_\sigma(t))$ ($t>0$), $r$ decreases away from $t$ in both time
+directions, cannot stall at a positive radius (since $\dot{y}=-r$), stays bounded in $y$ by the envelope estimate
+\eqref{eq:envelope-bounds} on each partial leg, and avoids $(0,0)$, hence hits both $\{r=0,y>0\}$ and $\{r=0,y<0\}$
+transversely. This argument from a finite turn needs no assumption at
+infinity and also applies to the terminal folds below. When $b_\sigma(\beta_0)<0$ is assumed, for every $\beta>\beta_0$ coercivity
+$P_\sigma(r)>\beta$ forces a finite turn, and the trajectory from $(0,\beta_0)$ separates $(0,0)$ from
+the inward leg from $(0,\beta)$, ensuring a transverse return $b_\sigma(\beta)<b_\sigma(\beta_0)<0$.
+
+On the inward leg $Y'(r)=r/(P_\sigma(r)-Y(r))$ ($Y<P_\sigma$), choose $A_1\ge K_0$ so large that the
+barrier $B(r)=\frac{1}{2}c_0 r^d$ satisfies $B'(r)=\frac{d}{2}c_0 r^{d-1} > \frac{2}{c_0}r^{1-d}$ for
+all $r\ge A_1$ (using $d>2$). Choose $\alpha_*<0$ so negative that the solution $Y_*(r)$ of
+$Y'=r/(P_\sigma(r)-Y)$ with $Y_*(0)=\alpha_*$ stays below $\min_{[0,A_1]}P_\sigma-1$ on $[0,A_1]$ and
+satisfies $Y_*(A_1)<B(A_1)$. On $[A_1,\infty)$, at any hypothetical first contact $Y_*(r)=B(r)$ one
+would have $Y_*'(r)=r/(P_\sigma(r)-\frac{1}{2}c_0 r^d)\le 2r^{1-d}/c_0 < B'(r)$, a contradiction.
+Hence $Y_*(r)<B(r)<P_\sigma(r)$ for $r\ge A_1$, and $Y_*<P_\sigma$ also on $[0,A_1]$, so $Y_*$ never
+turns. Scalar comparison of $Y'=r/(P_\sigma(r)-Y)$ shows $b_\sigma(\beta)>\alpha_*$ for all $\beta$,
+and monotonicity gives $\ell_\sigma(P)\in[\alpha_*,b_\sigma(\beta_0)]$.
+
+(ii) Fix $\alpha<\ell_\sigma(P)$ and put $\delta=\ell_\sigma(P)-\alpha>0$. As $\beta\to+\infty$, the
+turns $t(\beta)$ of returning orbits diverge by \eqref{eq:envelope-bounds}, and their inward legs
+$Y_\beta^-(r)$ satisfy $Y_\beta^-(0)=b_\sigma(\beta)>\ell_\sigma(P)=\alpha+\delta$. Since vertical
+gaps between solutions of $Y'=r/(P_\sigma(r)-Y)$ are nondecreasing in $r$ (as
+$\partial_Y[r/(P_\sigma-Y)]>0$), the solution $Y_\alpha$ from $Y_\alpha(0)=\alpha$ exists for all
+$r\ge 0$ and satisfies $P_\sigma(r)-Y_\alpha(r)>Y_\beta^-(r)-Y_\alpha(r)\ge \delta$, whence
+$Y_\alpha'(r)\le r/\delta$ and $Y_\alpha(r)\le \alpha+r^2/(2\delta)$. Choose $A_1\ge K_0$ as above
+with $\alpha+A_1^2/(2\delta)<\frac{1}{2}c_0 A_1^d$. By compact $C^1$ convergence on $[0,A_1]$, for all
+large $n$ the solution $Y_{\alpha,n}$ from $\alpha$ remains strictly below
+$P_n(\sigma r)$ on $[0,A_1]$ and satisfies $Y_{\alpha,n}(A_1)<B(A_1)$. The first-contact argument in (i) extends it
+strictly below $B$ up to $R_n$ in the truncated case. The turns
+$t_n$ tend to infinity: on a bounded radial interval the upper-envelope
+bound and compact convergence bound the upper hit. Thus
+\[
+ Y_{\alpha,n}(t_n)<B(t_n)<P_n(\sigma t_n)=Y_n^-(t_n).
+\]
+Ordering just before the turn and uniqueness back to the axis give
+$b_n>\alpha$. For the reverse bound fix a returning launch $B_0>\beta_0$
+of the limit profile. Its transverse arc persists on a compact set for
+$P_n$, with $b_{P_n(\sigma\cdot)}(B_0)\to b_\sigma(B_0)$.
+The arc from $\beta_n>B_0$ cannot cross this inner arc, so its lower
+hit lies below that from $B_0$. Taking the lower and upper limits, then
+$\alpha\uparrow\ell_\sigma(P)$ and $B_0\to\infty$, proves the claim.
+For the global barrier all sufficiently high launches turn and return,
+by (i) and persistence of the fixed inner arc. Choosing those launches
+arbitrarily far out also gives convergence of the limiting intercepts.
+In the truncated assertion the comparison at $t_n$ uses the turning
+ordinate itself. Prescribing a bounded ordinate $h$ at a distant cut
+instead leads to the incoming graph of (iv).
+
+(iii) Since $1\le m<d$, $(P+\lambda x^m)(\sigma r)\ge \frac{1}{2}c_0 r^d$ holds on $[K_1,\infty)$
+locally uniformly in $\lambda$, so continuity of $\lambda\mapsto\ell_\sigma(P+\lambda x^m)$ follows
+from~(ii). Take $\lambda_2>\lambda_1$ with $\sigma=+$, so $Q_2(r)=P(r)+\lambda_2 r^m > P(r)+\lambda_1
+r^m = Q_1(r)$ for all $r>0$. For every sufficiently large common
+launch both returns exist by (i). Lemma~\ref{lem:variational}(ii) gives $b_{Q_2}(\beta)>b_{Q_1}(\beta)$,
+hence $\ell_+(Q_2)\ge \ell_+(Q_1)$. Chen, Jin, Li and Zhou prove the
+strict order for their trinomial profiles by a uniform parameter
+variation \cite[Lemma~2.9, (2.41)--(2.45)]{CJLZ}. Here it follows
+by comparing the two limiting graphs on a fixed short interval. Suppose toward a contradiction that
+$\ell_+(Q_2)=\ell_+(Q_1)=\ell<0$. Choose $r_0>0$ so small that $\min_{[0,r_0]} Q_i \ge \ell/2 > \ell$
+for $i=1,2$. On $[0,r_0]$, the ODEs $Y'=r/(Q_i(r)-Y)$ are smooth and uniformly Lipschitz on $\{Y\le
+3\ell/4\}$. Since $b_{Q_i}(\beta)\downarrow\ell$, continuous dependence on $[0,r_0]$ implies
+$Y_{i,\beta}^-(r)\to Y_i(r)$ uniformly on $[0,r_0]$ as $\beta\to+\infty$, where $Y_i$ solves
+$Y_i'=r/(Q_i-Y_i)$ with $Y_i(0)=\ell$. Because $Q_2(r)>Q_1(r)$ on $(0,r_0]$ and $Y_1(0)=Y_2(0)=\ell$,
+differential comparison gives $Y_2(r_0)<Y_1(r_0)$. Yet at every large finite $\beta$, integrating
+\eqref{eq:filippov} downward from $u_{1,\beta}(\beta)=u_{2,\beta}(\beta)=0$ shows
+$u_{2,\beta}(y)<u_{1,\beta}(y)$ for all $y\in[b_{Q_2}(\beta),\beta)$; because the inward legs
+$Y_{i,\beta}^-(r)$ increase strictly with $r$, lying strictly inside the $Q_1$-arc means
+$Y_{2,\beta}^-(r_0)>Y_{1,\beta}^-(r_0)$. Passing to $\beta\to+\infty$ yields $Y_2(r_0)\ge Y_1(r_0)$, a
+contradiction.
+
+(iv) Fix $h\in\mathbb{R}$ and choose $K_h\ge K_0$ such that $P_\sigma(r)\ge c_0 r^d >
+\max(h,0)+2|h|+2$ for all $r\ge K_h$. For each $K\ge K_h$, let $y_K(r)$ solve
+$y'(r)=r/(P_\sigma(r)-y(r))$ backwards on $[0,K]$ from $y_K(K)=h$. Because $\min\supp(P)\ge 2$, the
+ordinary returning arc turning at $(K,P_\sigma(K))$ has an inward leg $Y_{(K)}^-(r)$ defined on
+$[0,K]$ with $Y_{(K)}^-(r)<P_\sigma(r)$ on $[0,K)$ and $Y_{(K)}^-(K)=P_\sigma(K)>h=y_K(K)$. By
+uniqueness for the scalar ODE on $[0,K]$, $y_K(r)<Y_{(K)}^-(r)<P_\sigma(r)$ throughout $[0,K]$ and
+$y_K'(r)>0$, so $y_K(r)\le h$ on $[0,K]$. For $K_2>K_1\ge K_h$,
+\[
+  0 \le h - y_{K_2}(K_1) = \int_{K_1}^{K_2} \frac{r\dd r}{P_\sigma(r)-y_{K_2}(r)} \le
+  \int_{K_1}^\infty \frac{r\dd r}{P_\sigma(r)-h} \xrightarrow{K_1\to\infty} 0.
+\]
+For any two solutions $y_a,y_b<P_\sigma$ on $[0,K_1]$, $\frac{\dd}{\dd
+r}|y_a(r)-y_b(r)|=\frac{r|y_a-y_b|}{(P_\sigma-y_a)(P_\sigma-y_b)}>0$, so backward integration from
+$K_1$ to $0$ strictly contracts $|y_a-y_b|$. Hence $\{y_K\}$ is uniformly Cauchy on $[0,K_1]$ for
+every $K_1\ge K_h$, converging to a solution $y_{\sigma,h}$ of \eqref{eq:inward-ode}. Uniqueness
+follows because any two solutions with limit $h$ have $|y_1(r)-y_2(r)|$ nondecreasing on $[0,\infty)$
+and tending to $0$ at $+\infty$.
+
+Comparing $y_{\sigma,h}$ on $[0,t(\beta)]$ with $Y_\beta^-$ for $P_\sigma(t(\beta))>h$ gives
+$G_\sigma(h)<b_\sigma(\beta)$, so $G_\sigma(h)\le \ell_\sigma(P)$; strict monotonicity of $h\mapsto
+G_\sigma(h)$ (two graphs of distinct limiting heights are strictly ordered at a sufficiently large
+finite cut, and uniqueness preserves strict order to the axis) then yields
+$G_\sigma(h)<G_\sigma(h+1)\le \ell_\sigma(P)$. Conversely, in part~(ii) we showed that for every
+$\alpha<\ell_\sigma(P)$, the inward solution $Y_\alpha$ from $Y_\alpha(0)=\alpha$ satisfies
+$Y_\alpha(r)\le\alpha+r^2/(2\delta)<\frac{1}{2}c_0 r^d$ for large $r$, whence
+$Y_\alpha'(r)=O(r^{1-d})$ integrates to a finite limit $h(\alpha)=\lim_{r\to\infty}Y_\alpha(r)$, so
+$G_\sigma(h(\alpha))=\alpha$ and $\lim_{h\to+\infty}G_\sigma(h)=\ell_\sigma(P)$. For $h<M_*-1$ where
+$M_*=\min_{r\ge 0}P_\sigma(r)$, $0\le h-G_\sigma(h)=\int_0^\infty\frac{r\dd
+r}{P_\sigma(r)-y_{\sigma,h}(r)}\le \int_0^\infty\frac{r\dd r}{P_\sigma(r)-h}\to 0$ as $h\to-\infty$ by
+dominated convergence. Differentiation at a finite cutoff followed by passage to the limit gives
+$G_\sigma'(h)=\exp[-\int_0^\infty r(P_\sigma-y_{\sigma,h})^{-2}\dd r]>0$.
+The differentiated tail converges uniformly for $h$ in a compact interval
+by the same polynomial lower bound; higher derivatives follow by successive
+differentiation of the graph equation. Finally, under uniform coercivity $P_n(\sigma r)\ge c_0 r^d$
+($r\ge K_0$), the tail loss $\int_{K_1}^\infty r/(c_0 r^d-h)\dd r$ is uniform on compact $h$-intervals
+and backward contraction transfers compact convergence on $[0,K_1]$ to $G_{\sigma,P_n}(h)\to
+G_{\sigma,P}(h)$.
+\end{proof}
+
+
+\subsection{Simultaneous hyperbolicity on a fixed support}\label{subsec:hyperbolicity}
+
+De Maesschalck and Dumortier observed that each odd coefficient of
+the classical primitive is a rotation parameter \cite[pp.~2163--2164]{DMD}.
+Indeed, for $X_\mu=(y-F(x)-\mu x^m,-x)$ with $m$ odd,
+$\det(X_\mu,\partial_\mu X_\mu)=-x^{m+1}$ has one sign off the axis.
+Cai, Chen, Jin and Lu use a linear rotation and a regular value to
+obtain simple fixed points simultaneously for a continuous piecewise
+linear primitive \cite[proof of Theorem~1.1 in \S2]{CCJL}. Lu uses
+the linear coefficient for polynomial returns
+\cite[Proposition~2.4(i)]{LuDegree}. In our fixed support we can use
+any odd exponent already present. Formula~\eqref{eq:b-param} gives
+strict parameter derivatives of opposite signs for the two half-returns.
+This allows all selected brackets to be regularized with a single change
+of coefficient.
+
+\begin{lemma}[Single-field regularization and openness]
+Let\label{lem:hyperbolicity} $F_0(x)=\sum_{i=1}^k a_i x^{m_i}$ ($a_i\ne 0$) contain an odd exponent $m_*=m_{i_0}\in\supp(F_0)$,
+and set $F_\mu(x)=F_0(x)+\mu x^{m_*}$. Suppose that at $\mu=0$:
+\begin{enumerate}
+  \item[\textup{(a)}] $I_1,\dots,I_N\subset(0,\infty)$ are pairwise disjoint compact intervals
+  throughout which both transverse half-returns $b_{\pm,0}(\beta)<0$ exist, and
+  $\oscD_0(\beta)=b_{+,0}(\beta)-b_{-,0}(\beta)$ has opposite strict signs at the two endpoints of
+  each $I_r$ ($1\le r\le N$);
+  \item[\textup{(b)}] $\beta_1^*,\dots,\beta_M^*\in(0,\infty)\setminus\bigcup_{r=1}^N I_r$ are
+  distinct hyperbolic periodic-orbit intercepts ($\oscD_0(\beta_s^*)=0$, $\oscD_0'(\beta_s^*)\ne 0$).
+\end{enumerate}
+Then there exists $\mu_0\in(0,|a_{i_0}|)$ such that for Lebesgue-almost-every $\mu\in(-\mu_0,\mu_0)$,
+the polynomial $F_\mu$ satisfies $\supp(F_\mu)=\supp(F_0)$ and system \eqref{eq:lienard} for $F=F_\mu$
+admits at least $N+M$ distinct hyperbolic limit cycles. Consequently, the set of coefficient vectors
+on $\supp(F_0)$ realizing at least $N+M$ distinct hyperbolic limit cycles has nonempty interior in
+$(\mathbb{R}\setminus\{0\})^k$.
+\end{lemma}
+
+
+\begin{proof}
+Choose disjoint compact intervals $J_1,\dots,J_M\subset(0,\infty)\setminus\bigcup_{r=1}^N I_r$ with
+$\beta_s^*\in\operatorname{int}(J_s)$ on which $\oscD_0'\ne 0$ and $\oscD_0$ has opposite strict signs
+at $\partial J_s$. By real-analytic dependence of transverse half-returns and the implicit function
+theorem on $J_1,\dots,J_M$, there exists $\mu_0\in(0,|a_{i_0}|)$ such that for all
+$\mu\in(-\mu_0,\mu_0)$: (i) $a_{i_0}+\mu\ne 0$, so $\supp(F_\mu)=\supp(F_0)$; (ii)
+$b_{\pm,\mu}(\beta)<0$ remain well-defined and real analytic on an open neighborhood $U$ of
+$\bigl(\bigcup_{r=1}^N I_r\bigr)\cup\bigl(\bigcup_{s=1}^M J_s\bigr)$; (iii)
+$\oscD_\mu(\beta)=b_{+,\mu}(\beta)-b_{-,\mu}(\beta)$ retains its strict opposite endpoint signs on
+every $I_r$; and (iv) each $J_s$ contains a unique zero $\beta_s^*(\mu)$ of $\oscD_\mu$ with
+$\oscD_\mu'(\beta_s^*(\mu))\ne 0$.
+
+Because $m_*$ is odd, $P_{\sigma,\mu}(r)=P_{\sigma,0}(r)+\sigma\mu r^{m_*}$ has $\partial_\mu
+P_{\sigma,\mu}(r)=\sigma r^{m_*}$. By \eqref{eq:b-param} in Lemma~\ref{lem:variational}(ii), since
+$-b_{\sigma,\mu}>0$ and $u_\sigma(y)>0$ on $(b_{\sigma,\mu},\beta)$, one has $\partial_\mu
+b_{+,\mu}(\beta)>0$ and $\partial_\mu b_{-,\mu}(\beta)<0$, whence
+\[
+  \partial_\mu \oscD_\mu(\beta) = \partial_\mu b_{+,\mu}(\beta) - \partial_\mu b_{-,\mu}(\beta) > 0
+  \qquad \text{for all } (\beta,\mu)\in\Omega := \Bigl(\bigcup_{r=1}^N
+  \operatorname{int}(I_r)\Bigr)\times(-\mu_0,\mu_0).
+\]
+By the implicit function theorem, $\mathcal{Z}=\{(\beta,\mu)\in\Omega : \oscD_\mu(\beta)=0\}$ is the
+graph $\mu=\mathcal{M}(\beta)$ of a real-analytic function $\mathcal{M}:W\to(-\mu_0,\mu_0)$ defined on
+an open subset $W\subset\bigcup_{r=1}^N\operatorname{int}(I_r)$. Differentiating
+$\oscD_{\mathcal{M}(\beta)}(\beta)=0$ gives
+$\partial_\beta\oscD_{\mathcal{M}(\beta)}(\beta)+\partial_\mu\oscD_{\mathcal{M}(\beta)}(\beta)\,\mathcal{M}'(\beta)=0$.
+At a zero $\beta\in\operatorname{int}(I_r)$, degeneracy
+($\partial_\beta\oscD_\mu(\beta)=0$, equivalently $\Pi_\mu'(\beta)=1$
+by Lemma~\ref{lem:variational}(ii)) is therefore equivalent to
+$\mathcal M'(\beta)=0$. Thus a parameter admits a degenerate zero in
+these intervals precisely when it is a critical value of $\mathcal M$. By Sard's
+theorem, the critical values of $\mathcal{M}$ have measure zero in $(-\mu_0,\mu_0)$. Choosing any
+regular value $\mu\in(-\mu_0,\mu_0)$, the intermediate value theorem supplies at least one zero of
+$\oscD_\mu$ in each $\operatorname{int}(I_r)$ ($1\le r\le N$), every such zero satisfies
+$\partial_\beta\oscD_\mu(\beta)\ne 0$ (hence $\Pi_\mu'(\beta)\ne 1$), and these $N$ hyperbolic limit
+cycles are disjoint from one another and from $\beta_1^*(\mu),\dots,\beta_M^*(\mu)$. At this fixed
+$\mu$, all $N+M$ hyperbolic fixed points of $\Pi_\mu$ persist smoothly and remain distinct and
+hyperbolic on an open neighborhood of the coefficient vector of $F_\mu$ in
+$(\mathbb{R}\setminus\{0\})^k$.
+At a marked zero the same formula \eqref{eq:b-param} gives
+$\partial_\mu\oscD_\mu>0$. Its launch moves with derivative
+$(\beta_s^*)'(\mu)=-\partial_\mu\oscD_\mu/\partial_\beta\oscD_\mu\ne0$.
+\end{proof}
+
+\begin{remark}[Local cyclicity on a fixed support]\label{rem:local-cyclicity}
+Fix an even primitive and allow the coefficients on a prescribed
+set of $b\ge1$ odd exponents $m'_1<\cdots<m'_b$ to vary near zero.
+We count only cycles shrinking to this reversible center. In the
+coordinates $(x,y-F(x))$ the damping in Fran\c{c}oise's convention
+is $p=-F'$. At zero trace, Theorem~1.1 and Lemmas~1.3--1.4 of the
+published paper \cite[pp.~257--259]{Francoise} identify its even
+damping coefficients as generators of the Bautin ideal and give
+their triangular order in the inverse return series.
+
+Write $c_i$ for the coefficient of $x^{m'_i}$ and $\rho$ for the
+radius on a local polar section. Suppress the even parameters, which
+may vary near their fixed values. Let $D_i$ be the inverse return
+displacement with $c_1=\cdots=c_{i-1}=0$, and put $D_{b+1}=0$
+by reversibility. For $m'_i\ge3$, the triangular identities make
+every coefficient below order $m'_i$ vanish in $D_i$ and give a
+nonzero constant times $c_i$ at that order. If $m'_1=1$, the linear
+term follows from the inverse focus multiplier, whose derivative in
+$c_1$ at zero is nonzero. In both cases the analytic Hadamard
+factorization in $c_i$ is
+\[
+ D_i-D_{i+1}
+ =c_i\int_0^1\partial_{c_i}D_i(\rho,t c_i,c_{i+1},\ldots,c_b)\,\dd t
+ =c_i\rho^{m'_i}u_i(\rho,c).
+\]
+The coefficient statements give analytic $u_i$ with $u_i(0,0)\ne0$.
+Summing yields $D_1=\sum_i c_i\rho^{m'_i}u_i$. For fixed parameters
+the leading coefficient of each initial Wronskian of these functions
+$\rho^{m'_i}u_i$ is the Vandermonde product of the corresponding
+exponents times the product of their $u_i(0,c)$. All these coefficients
+stay away from zero on a sufficiently small closed parameter
+neighborhood. The Wronskians therefore have fixed nonzero signs for
+small $\rho>0$, uniformly there. Successive applications of Rolle's
+theorem give at most $b-1$ small isolated cycles. This local
+fixed-support deduction concerns one center. The separated finite
+orbits counted by Theorem~\ref{thm:main} occur at different radii.
+\end{remark}

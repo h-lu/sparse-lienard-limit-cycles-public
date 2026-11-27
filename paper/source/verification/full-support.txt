@@ -1,0 +1,5 @@
+All six coefficients stay nonzero throughout the printed sextic box.
+Increasing heights, depth difference A+ - A-: + - + - + - +
+Least certified separation of the printed intervals: 2300260502 / 10^42.
+Brackets from the degree-raising rule at degrees 6 through 10: 6 7 7 8 8
+Article Proposition A.1: four admissible odd extensions; 10 terms, degree 13, count 10.

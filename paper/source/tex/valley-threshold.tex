@@ -1,0 +1,219 @@
+\section{The critical odd amplitude for profiles with quadratic factors}\label{sec:threshold}
+Put $z=r^p$. The even and odd profiles below have respective factors
+$(1-z)^2+\eta z$ and $(1-z)^2-qz$. For small $\eta>0$ the even
+profile has a positive minimum of height asymptotic to $\eta$, and $q$
+controls the amplitude of the perturbing odd monomial in $Q_q$.
+We ask for which $q$ the first variation $J(H)$ takes a negative
+value at some incoming height $-H$. Its strict signs transfer to finite
+trajectories on each fixed finite list for sufficiently large dilation.
+
+\begin{proposition}[Critical odd amplitude for the factors quadratic in $r^p$]\label{prop:threshold}
+Fix even integers $d\ge10$ and $p\ge2$. For $0<\eta<1$ and $q>0$ let
+\begin{equation}\label{eq:test-family}
+ E_\eta=r^d\bigl((1-r^p)^2+\eta r^p\bigr),\qquad
+ Q_q=r^{d-1}\bigl((1-r^p)^2-q r^p\bigr).
+\end{equation}
+Set $s_d=1-1/d$, $\alpha=3/2-s_d=1/2+1/d$ and $t_d=s_d/\alpha$.
+Write $J(H)=A_\eta(H)-qB_\eta(H)$, with
+\[
+ (A_\eta(H),B_\eta(H))=
+ \int_0^\infty \frac{\bigl(r^d(1-r^p)^2,\,r^{d+p}\bigr)}{(H+E_\eta(r))^2}\dd r,
+ \qquad q_c(\eta)=\inf_{H>0}\frac{A_\eta(H)}{B_\eta(H)} .
+\]
+There is a depth $H>0$ with $J(H)<0$ exactly when $q>q_c(\eta)$.
+As $\eta\downarrow0$,
+\begin{equation}\label{eq:threshold-asym}
+ q_c(\eta)\sim K_{d,p}\eta^\alpha,\quad
+ K_{d,p}=\frac{2p c_d}{\pi}\frac{(1+t_d)^{3/2}}{t_d^{s_d}},
+ \quad c_d=\int_0^\infty\frac{x^d\dd x}{(1+x^d)^2}.
+\end{equation}
+For sufficiently small $\eta$ a minimizing depth exists, and every
+minimizing depth divided by $\eta$ tends to $t_d$.
+If $\eta^\alpha=o(q)$ and $q=o(1)$, each of $V_o,V_i,J$ has an ordered
+list of three strict signs $+,-,+$.
+\end{proposition}
+
+\begin{proof}
+Abbreviate the two positive integrals by $A,B$. For each fixed
+$\eta>0$, $B/A$ is bounded: off a neighborhood of $1$ the ratio of
+the numerators is bounded, while on that neighborhood $E_\eta$ has a
+positive lower bound. Its contribution to $B$ is $O_\eta((1+H)^{-2})$,
+and integrating $A$ on a fixed subinterval of $(0,1)$ gives
+$A\ge c_\eta(1+H)^{-2}$. Thus $0<q_c(\eta)<\infty$.
+Since $B(H)>0$, the identity $J(H)=B(H)(A(H)/B(H)-q)$ gives
+$J(H)>0$ at every depth for $q<q_c(\eta)$. At $q=q_c(\eta)$ it gives
+$J(H)\ge0$, with equality exactly at a minimizing depth. For $q>q_c(\eta)$
+some depth has $J(H)<0$.
+
+Choose disjoint fixed small neighborhoods of $0$ and $1$. At zero,
+$r=H^{1/d}x$ and dominated convergence give
+$A_{\rm origin}\sim c_d H^{-s_d}$ as $H,\eta\to0$. A majorant after
+scaling is $C x^d/(1+c x^d)^2$. Near $1$ we have
+$E_\eta\asymp (r-1)^2+\eta$. There the numerator of $A$ is
+$O((r-1)^2)$, giving $A_{\rm valley}=O((H+\eta)^{-1/2})$.
+For $B$ put $r=1+\sqrt{H+\eta}\,x$. Uniformly for $H/\eta$ in compact
+subsets of $(0,\infty)$, division of $H+E_\eta$ by $H+\eta$
+gives $1+p^2 x^2+o(1)$ on bounded $x$. A majorant $C/(1+x^2)^2$
+gives $B_{\rm valley}\sim \pi( H+\eta)^{-3/2}/(2p)$.
+Off the valley $B$ is at most a constant times $A$, since
+$r^p/(1-r^p)^2$ is bounded there. Away from both neighborhoods the
+contribution to $A$ is uniformly bounded for small $H$ by positivity
+and the integrable tail $O(r^{-d-2p})$. Since $1/2<s_d<1$,
+\[
+ \frac{A(t\eta)}{B(t\eta)\eta^\alpha}\ \longrightarrow \frac{2p c_d}{\pi}\,t^{-s_d}(1+t)^{3/2}
+\]
+locally uniformly for $t>0$.
+
+To locate the infimum, for all small $H$ the origin gives
+$A\ge c H^{-s_d}$ and the valley gives $B\le C A+C(H+\eta)^{-3/2}$.
+For $H\ge h_0>0$ the same ratio $B/A$ is uniformly bounded: the
+valley contribution to $B$ is $O(H^{-2})$, and an interval inside
+$(0,1)$ bounded away from its endpoints gives $A\ge c(H+C)^{-2}$.
+Consequently $\eta^\alpha B/A\to0$ along any sequence on which
+$H/\eta\to0$ or $H/\eta\to\infty$. Continuity now confines minimizers
+to a compact subinterval of $0<H/\eta<\infty$ for small $\eta$.
+The limiting function has its unique minimum at $t_d$, proving
+\eqref{eq:threshold-asym}. Thus for small $\eta$ the critical amplitude
+is attained and $J$ vanishes at each minimizing depth when $q=q_c(\eta)$.
+For $\eta^\alpha=o(q)$ one has $J(\eta)<0$.
+At fixed $\eta,q$, as $H\downarrow0$ the origin gives
+$J(H)\sim c_d H^{-s_d}$ since the extra power $r^p$ has vanishing
+relative weight there. At $H=1$, dominated convergence as
+$(\eta,q)\to(0,0)$ gives a strictly positive limit.
+
+In $z=r^p$ the critical point equation for $E_\eta$ is
+$d-(d+p)(2-\eta)z+(d+2p)z^2=0$. At $\eta=0$ its two simple roots
+are $d/(d+2p)$ and $1$. The second persists as a minimum $c=1+O(\eta)$
+of height $m=\eta+O(\eta^2)$, and the first gives a strictly higher
+crest. The earlier inverse $E_\eta(a)=m$ satisfies $a\sim\eta^{1/d}$.
+Near it $U(a)/f(a)\sim a^{d-1}/(2d-3)$ by the lowest powers.
+Also $Q_q(c)=-q(1+O(\eta))+O(\eta^2)$. As $s_d>\alpha$,
+$U(a)/f(a)+Q_q(c)<0$. Formula~\eqref{eq:Vo-Vi-band} makes both
+positive-height tests negative just above $m$. Before that band the
+lowest exponents give positive $U$ at sufficiently small height.
+After it the highest exponents of $f,Q$ are $d+2p-2,d+2p-1$
+with positive coefficients, so $U\to+\infty$, dominating the fixed
+valley offset. This proves both remaining sign lists.
+\end{proof}
+
+\subsection{Ten-term realizations in degrees 22 and 26}
+\begin{corollary}[Ten-term realizations at low degree]\label{cor:short-lists}
+For each of the two supports listed below there is a nonempty open set
+$V\subset(\mathbb R\setminus\{0\})^{10}$ such that every coefficient
+vector in $V$ on that support gives at least sixteen simultaneous
+hyperbolic limit cycles.
+\[
+ \{5,9,10,11,12,13,14,15,17,22\},\qquad
+ \{5,9,10,13,14,17,18,19,21,26\}.
+\]
+\end{corollary}
+\begin{proof}
+Take the balanced seed on $\{5,9,10\}$ and set $d=10$, $q=\sqrt\eta$.
+Since $\eta^{3/5}=o(q)$, Proposition~\ref{prop:threshold} supplies three
+strict lists $(+,-,+)$ for both $p=2$ and $p=4$ when $\eta$ is
+sufficiently small. For $p=2$ the valley adds $11,12,13,14$ and the
+closure adds $15,17,22$. For $p=4$ the corresponding powers are
+$13,14,17,18$ and $19,21,26$, giving
+\begin{equation}\label{eq:portable-support}
+ \{5,9,10,13,14,17,18,19,21,26\}.
+\end{equation}
+In both cases the minimum is simple and positive, and the leading
+coefficients of the even and odd profiles are positive.
+Lemma~\ref{lem:valley-rates} realizes the lists after inner dilation and
+tail balance. Choose a common small physical shift. If $c>0$ is the
+leading coefficient of the prepared primitive and $d_{\mathrm{top}}$ its
+degree ($14$ or $18$), put $\gamma=c^{-1/(d_{\mathrm{top}}-1)}$. The
+change $(x,y)=\gamma(X,Y)$ gives the monic primitive
+$P_{A,\lambda}(\gamma X)/\gamma$.
+For fixed $A$ the factor $\gamma$ is common to the balancing interval.
+It divides every ordinate and the shift by the same number and retains
+the adjustable odd coefficient. Proposition~\ref{prop:fold-closure}
+now closes the lists.
+
+The seed and the valley give four ordinary brackets. In decreasing incoming
+height the lists $(+,-,+),(-,+),(+,-,+)$ precede the deep shifted minus
+sign. Including the positive end signs gives eight incoming brackets.
+The two fold brackets and two simple marks give four further cycles,
+so Corollary~\ref{cor:sign-cost} yields $4+8+4=16$ simultaneous
+hyperbolic limit cycles on each support. Hyperbolicity gives the asserted
+open sets.
+\end{proof}
+
+\begin{remark}[Fixed-parameter verification of the low-degree profiles]\label{rem:fixed-low-profiles}
+The proof of Corollary~\ref{cor:short-lists} uses the rational
+degree-ten seed enclosures of Lemma~\ref{lem:compact-seed}\textup{(iii)}
+and the small-$\eta$ threshold of Proposition~\ref{prop:threshold}.
+At $\eta=2^{-20}$ and $q=2^{-10}$, $512$-bit Arb evaluation
+\cite{Johansson2017} gives the same three local sign lists $(+,-,+)$
+for $p=2$ and $p=4$. These fixed-parameter inequalities can also be used
+as inputs to the dilation and matching proof.
+Let $c$ be the minimum radius and $a$ its
+upstream inverse at level $E(c)$. Bisection on the first rising branch
+encloses $a$. Evaluating the polynomial $U$ and the moving-endpoint terms
+in \eqref{eq:Vo-Vi-band} at the heights of $a/2,c+2^{-30},2$ gives
+$(+,-,+)$ for both $V_o$ and $V_i$. Outward-rounded $512$-bit Arb bounds
+for the negative-height integrals give:
+\[
+\begin{array}{c|ccc}
+ p & J(\eta^2)/10^9 & J(\eta)/10^5 & J(1)\\ \hline
+ 2 & (6.99,7.02)&(-2.65,-2.60)&(0.0537,0.0538)\\
+ 4 & (6.9,7.1)&(-1.4,-1)&(0.044,0.045)
+\end{array}
+\]
+For $p=2$ substitute $r=1/s$ on $[1,\infty)$. With
+$B=(1-s^2)^2-qs^2$, $C=(1-s^2)^2+\eta s^2$, the entire integral is
+\[
+ \int_0^1 B\left(\frac{s^{10}}{(H+s^{10}C)^2}
+                     +\frac{s^{12}}{(Hs^{14}+C)^2}\right)\dd s .
+\]
+On each of $2^{17}$ equal cells the two endpoints enclose both the
+increasing powers of $s$ and the decreasing factor $(1-s^2)^2$.
+For $p=4$, put $z=r^4$ and bound $E=r^{10}((1-z)^2+\eta z)$ and
+$rQ=r^{10}((1-z)^2-qz)$ on $2^{16}$ equal cells on $[0,2]$.
+Each lies on one side of $r=1$, so the endpoints again bound the square.
+Sum the cell ranges times their widths. For $r\ge2$, $r^4-1\ge r^4/2$
+gives $E\ge r^{18}/4$, and $|rQ|\le3r^{18}$ bounds the absolute
+omitted integral by $48/(17\cdot2^{17})$.
+In the stride-four profile the odd exponent $11$ is vacant, allowing
+the support perturbation examined next.
+\end{remark}
+
+\begin{remark}[Sensitivity of the negative-height comparison]\label{rem:valley-insufficient}
+The even minimum has height $\eta+O(\eta^2)$. For $q=\eta$ and sufficiently small
+$\eta$, \eqref{eq:threshold-asym} gives $J(H)>0$ for every $H>0$.
+
+To see the effect of changing the support, take $p=4$, $q=\sqrt\eta$
+and consider the enlarged odd profile $Q_q+2q r^{d+1}$. Dividing by $r^{d-1}$
+gives $(1-z)^2+q(2\sqrt z-z)$, $z=r^4$. It is strictly positive
+for $0<z\le4$. For $z>4$ use $(z-1)^2/z\ge9/4$ and $q<1$.
+Thus $J(H)>0$ at every depth for the enlarged profile. The added
+coefficient tends to zero with $\eta$, and the even minimum, top degree
+and two far matching directions are preserved.
+
+For $d=10$ the added term in \eqref{eq:prepared-poly} is $2bqA^{-2}x^{11}$.
+Compact convergence and the uniform tail bound following that equation
+preserve the negative sign of the incoming seed test at the fixed
+physical height $h_{\rm seed,1}$ after tail balance. Its scaled depth
+$|h_{\rm seed,1}|/A^{10}$ tends to zero. Thus transfer of the
+first-order signs at fixed depths gives no uniform sign for all actual
+incoming heights.
+
+In the undilated $d=10,p=4$ profile, the terminal even monomial changes
+$E_\eta(1)$ to $\eta-(18/26)R^{-8}$. Positivity at this radius requires
+$R^8\eta>18/26$. This necessary test holds for all sufficiently large
+$R$ at fixed $\eta$ and fails if $R^8\eta\to0$ even as $R\to\infty$.
+\end{remark}
+
+\begin{remark}[Closure on other supports]\label{rem:portability}
+Proposition~\ref{prop:fold-closure} starts with a balanced even-degree
+primitive, a positive coefficient at the next odd power and an adjustable
+lower odd coefficient. Once its bounded ordinary brackets and finite
+shifted incoming signs are known, the same three exterior powers
+close the list. The supplement applies the crest estimates to several
+different inner supports. In Corollary~\ref{cor:short-lists} the
+quadratic-factor profiles give three signs on each list. The repeated
+gain of sixteen in Theorem~\ref{thm:main} comes from the cubic factors
+\eqref{eq:isolated-pair} at stride $258$, which give seven, seven and
+five signs. These finite lists give lower bounds. Finiteness and upper
+bounds at a fixed $k\ge3$ remain open.
+\end{remark}

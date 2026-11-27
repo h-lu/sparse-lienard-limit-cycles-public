@@ -1,0 +1,58 @@
+Let $\widehat T_\pm(v)$ be the turns at the common scaled lower hit
+$-v$, for $v_0\le v\le V$, and evaluate $J_\pm(v)$ on these actual
+half-orbits. The radii $z(-v)$ lie on a compact regular descent.
+For turns on a slightly larger strip the terminal level is negative
+and bounded away from zero. The profiles converge uniformly to
+$E\ge0$ before the crest and decrease on the outer descent, so the
+terminal level is the minimum on the whole excursion. The lower envelope is constant.
+By \eqref{eq:envelope-bounds} the lower hit differs from the terminal
+level by $O(\sqrt\eps)$. Bracketing on this strip and $Y_\pm'>0$
+give both turns, with terminal levels $-v+O(\sqrt\eps)$ uniformly.
+
+The upper envelope is constant up to the perturbed crest and follows
+the descent thereafter. In \eqref{eq:turn-derivs} the action errors
+from replacing both legs by their envelopes are $O(\sqrt\eps)$,
+by integration by parts and the uniform bounds on the slopes and
+their variations. Replacing the terminal level by $-v$ in the descent
+integral also costs $O(\sqrt\eps)$, since its level derivative is
+$p_\pm'(r)/r$ there. Write $z_v=z(-v)$. At fixed level the endpoint
+is $z_v\mp\alpha Q(z_v)/E'(z_v)+o(\alpha)$ and the moving crest
+contributes zero to first order since $f(1)=0$. The first variation
+is therefore $2\int_1^{z_v} fQ'\dd r-f(z_v)Q(z_v)=\Tr(z_v)$.
+Regularity on the compact strip and $\sqrt\eps=o(\alpha)$ give, uniformly in $v$,
+\[
+ -\eps J_\pm(v)=C(v)\pm\alpha\Tr(z(-v))+o(\alpha),\qquad
+ C(v)=\int_1^{z(-v)} f(r)^2r\dd r,\qquad C'(v)=-f(z(-v))>0 .
+\]
+
+Write $\beta_\pm(v)=R^d\sqrt{2X_\pm(\widehat T_\pm(v))}$ for the
+physical upper hits and $K(v)=(\beta_+(v)^2-\beta_-(v)^2)/(2R^{2d})$.
+The upper match gives $K(V)=0$. Differentiating
+$Y_\pm(\widehat T_\pm(v))=v^2/2$ and using \eqref{eq:turn-derivs}
+gives $K'(v)=v(e^{J_+(v)}-e^{J_-(v)})$ and $\beta_\pm'(v)>0$.
+Let $\chi=\sgn\Tr(z(-v_0))$. Choose $v_0<v_1<v_2<V$ with
+$\chi\Tr(z(-v))\ge c>0$ on $[v_0,v_2]$. There the smaller exponential
+is at most $e^{-c\alpha/\eps}$ times the larger, with $\alpha/\eps\to\infty$.
+Thus $-K'$ has sign
+$\chi$ and $|K'|\ge(v_0/2)\max(e^{J_+},e^{J_-})$ for large $R$.
+Put $\Delta=C(v_2)-C(v_1)>0$. Once
+$|-\eps J_\pm-C|<\Delta/4$ on $[v_0,V]$, monotonicity of $C$ gives
+\[
+ \frac{\int_{v_2}^{V}|K'(v)|\dd v}{\int_{v_0}^{v_1}|K'(v)|\dd v}
+ \le \frac{4V(V-v_2)}{v_0(v_1-v_0)}\,e^{-\Delta/(2\eps)} .
+\]
+Hence $K(v_0)=-\int_{v_0}^{V}K'(v)\dd v$ has sign $\chi$.
+At $V$ the strict sign of $\Tr(z(-V))$ gives $K'(V)\ne0$ directly.
+
+Both branches return up to the common upper hit
+$\beta_*=\beta_+(V)=\beta_-(V)$, since every intervening finite turn
+meets the axes and $X_\pm$ increase from zero. From
+$b_\pm(\beta_\pm(v))=-R^d v$ we obtain
+\[
+ \oscD(\beta_+(v))=b_-(\beta_-(v))-b_-(\beta_+(v)).
+\]
+Since $b_-'<0$, this difference has the sign of $K(v)$.
+At $\beta_*$ its derivative with respect to $v$ is
+$\oscD'(\beta_*)\beta_+'(V)=-b_-'(\beta_*)[\beta_+'(V)-\beta_-'(V)]$.
+The bracket equals $R^{2d}K'(V)/\beta_*\ne0$. The marked orbit is
+therefore hyperbolic by Lemma~\ref{lem:variational}\textup{(i)--(ii)}.

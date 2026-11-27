@@ -1,0 +1,21 @@
+PASS Symbolic W identity and six exact rational rectangle minima; printed margin floors 107 105 106 116 113 575
+PASS Article 3.2 rising witness: exact normalized floors 20559 -1781 144093 -472 6994 -697 13
+PASS Squared valley bases at w=1/2, 2/3, 7/8 and 7/10: 81/128 9/8 6/7 15/14
+PASS At most 3s+9 powers and at least 11s+1 cycles in the Lu comparison. All three term-count residues give coefficient 11/3.
+PASS One radius in degree 12: the odd moment gives 85/77. The tail signs are - then +; ordinary brackets give 10 on eight powers and 11 on nine before exterior closure.
+PASS The original degree-14 example allows powers 1 through 14 except 4 and 6. 11 ordinary cycles, 10 incoming changes and 2 exterior additions give 23.
+PASS The original degree-15 row allows 13 powers, all except 4 and 6. 12 ordinary cycles, 10 incoming changes and 2 exterior additions give 24.
+PASS Equal upper hits: the shift gives the same descending correction in the lower-gap and derivative log ratios, with respective prefactors -2 and +2.
+PASS Printed degree-ten algebraic radius, peak, six outer radius cells and three action enclosures.
+PASS Table 1 and the three valley supports: 26 in degree 67088, 16 each in degrees 22 and 26.
+PASS Article comparison rows: averaging (19,9), published full support (10,8), odd extensions (13,10) and (23,10), preprint full support (10,14). Pairs are (degree, count).
+PASS Supplement 6.4: the nineteen-cycle nest and one odd extension give twenty on ten terms.
+PASS Exact-degree comparison at 22 and 26: Lu's rounded bounds are 53 and 67.
+PASS Article Table 1, unrestricted exact-degree column: 14 14 22 43 53 57 67 234784
+PASS Degree identity from (4.1) in all residue classes. At n0=257, L=1 the degree is 67088.
+PASS Printed critical-point/positive-variation boxes and all five depth enclosures agree with the archived inputs.
+PASS Ordered-return table: 24 strict brackets plus two marked orbits.
+PASS Full supports at degrees 3-9: published 1, 1, 2, 4, 5, 6, 7; Palomar sample chains at 6-9 give 6, 7, 7, 8. Both give 8 at degree 10.
+PASS Preprint exact-degree open-set comparison on full supports of degrees 6 through 10: 6, 7, 9, 10, 14.
+PASS Supplement Theorem 1.1 and Table 1: all seven supports, cycle counts and degree restrictions agree with the ledger.
+PASS All six printed short-profile boxes contain the corresponding Arb endpoints.

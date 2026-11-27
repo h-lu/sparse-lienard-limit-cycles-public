@@ -1,0 +1,5 @@
+$ python3 -B code/distant_fold.py
+The incoming integral has the required sign near the common seed minimum.
+The degree-eighteen terminal cancellation lies in (6.901267, 6.901268).
+
+Exit status 0

@@ -1,0 +1,6 @@
+$ python3 -B code/balanced_seed.py --degree 10
+seed h=20: action difference in (-89,-88)
+seed h=100: action difference in (1293,1295)
+seed h=200: action difference in (6884,6886)
+
+Exit status 0

@@ -1,0 +1,6 @@
+$ python3 -B code/bounded_outer.py
+At s=17 the seven signed cubic tests exceed 1/1000 in magnitude.
+Floors of 10^6 J_17(z)/(1+z^6): 20559 -1781 144093 -472 6994 -697 13
+Degree 18: both actions at three rising radii and the exterior action at zero and three positive depths pass exact rational enclosures.
+
+Exit status 0

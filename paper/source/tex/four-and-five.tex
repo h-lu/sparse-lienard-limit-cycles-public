@@ -1,0 +1,93 @@
+\subsection{Four powers in degree ten and five powers in degree twelve}\label{subsec:four-five}
+
+The same degree-ten trinomial supports two extensions. The first inserts
+a cycle near the origin. The second preserves three finite cycles and
+closes three more outside them. For both we first match the half-returns at a
+finite launch height, where the derivative of their difference can be computed.
+
+\begin{proof}[Proof of the four-term and degree-twelve assertions of Theorem~\ref{thm:lower}]
+Use $F_{C,a}(x)=C(x^{10}+b_0x^9-ax^5)$ from
+Article, Lemma~3.1, and write $S_\pm(h)$ for the two
+squared-slope integrals there. The heights $20,100,200$ exceed the
+inner crest. At $200C$, $b_\pm(200C)/C$ tend to the respective
+minimum values of $q_{\pm,a}$. These values cross strictly at $a_0$
+as $a$ varies. Bracketing $a_0$ on either side, then using continuity
+and strict odd-coefficient comparison, gives a unique nearby
+$\tilde a_C\to a_0$ with $\oscD(200C)=0$. This is a finite-height
+condition, distinct from equality of the two tail limits.
+
+Set $K_\sigma(h)=-\dd[b_\sigma(Ch)]/\dd h>0$ at this coefficient.
+On $20\le h\le200$, the running-minimum estimate for
+Article~(2.5) gives $-C^{-2}\log K_\sigma(h)\to S_\sigma(h)$
+uniformly. The two actions increase strictly, and the prefactors have
+logarithms $o(C^2)$ since $b_\sigma(Ch)/C$ tends to the common
+negative minimum. For $h<200$ we have
+\[
+ \oscD(Ch)=\int_h^{200}(K_+(s)-K_-(s))\dd s.
+\]
+The integral of each positive $K_\sigma$ has rate $S_\sigma(h)$,
+attained at the left endpoint. Thus the smaller rate determines the
+sign. At the mark itself one compares $-K_+(200)+K_-(200)$.
+The rational enclosures for $S_+-S_-$ at $20,100,200$ are
+$(-89,-88)$, $(1293,1295)$, and $(6884,6886)$, respectively
+(Section~\ref{sec:reproduce}). Hence $\oscD(20C)>0$, $\oscD(100C)<0$,
+and $\oscD'(200C)>0$. The negative lowest odd term gives
+$\oscD(\beta_0)<0$ at a small $\beta_0>0$.
+
+Fix $C$ and add $+\gamma x^3$ with $\gamma>0$ small. The three
+strict signs and the simple zero persist. On a still smaller orbit
+segment the cubic dominates, giving $\oscD(\beta_1)>0$ for some
+$0<\beta_1<\beta_0$. The three resulting sign brackets and the marked
+orbit give four cycles on $\{3,5,9,10\}$ after regularization by
+Article, Lemma~2.3.
+
+For the other extension, keep the cubic coefficient zero and first
+regularize the two old brackets and the mark using the coefficient of
+$x^5$. Scale both coordinates by the same positive constant to make
+the primitive monic. Within this three-cycle open set, the tail gap
+$\Delta=\ell_+-\ell_-$ can be made nonzero by varying that same
+coefficient. Reflect $x$ and reverse time if necessary to make $\Delta>0$.
+Fix a height $B_0$ above the three cycles with $\oscD_P(\beta)>\Delta/2$
+for $\beta\ge B_0$, and put
+\[
+ F_{R,\kappa}(x)=P(x)-\kappa R^{-1}x^{11}+R^{-2}x^{12}.
+\]
+We now match at $2R^{10}$. For $\kappa=2-\delta$, $0<\delta<1$,
+the bound $1-\kappa r+r^2\ge1-\kappa^2/4$ gives a uniform positive
+tail barrier on both halves. Article, Lemma~2.2 gives
+$\oscD(2R^{10})\to\Delta$. For $\kappa=2+\delta$, the right arc
+passes $R$. Otherwise its outward envelope would give
+$2\le\max_{0\le r\le1}r^{10}(1-r)^2+o(1)<1/100+o(1)$.
+On its inward leg the ordinate at $R$ is below
+$F_{R,\kappa}(R)=(-\delta+o(1))R^{10}$. Its lower-axis hit tends
+to $-\infty$, whereas the other hit tends to $\ell_-(P)$. The sign
+therefore reverses. All powers are at least five, so these half-arcs
+return for every $\kappa$ under consideration. Scalar comparison gives
+a unique matching $\kappa_R\to2$.
+
+With $r=x/R$, $w=y/R^{10}$, the limiting profiles are
+$p_\pm(r)=r^{10}(1\mp r)^2$. For $1/100\le h\le2$, let $t_\pm(h)$
+be the inverse on the last increasing branch and set
+\[
+ S_\pm^{\rm out}(h)=\int_{\rho_\pm}^{t_\pm(h)}
+             p_\pm'(r)^2\,\frac{\dd r}{r},\qquad \rho_+=1,\quad\rho_-=0 .
+\]
+The lower limits follow from the running minima. The two lower hits
+stay in a compact subinterval of $(-\infty,0)$, between their returns
+at $B_0$ and the common return at $2R^{10}$, which tends to $\ell_-(P)$.
+Since the slopes $p_\pm'/r$ of the rescaled profiles have uniformly
+bounded variation down to zero, the envelope estimate and
+Article~(2.5) give these actions as the uniform rates of
+$-\dd[b_\pm(R^{10}h)]/\dd h$ at speed $R^{18}$. At $h=1/100,1,2$,
+the three enclosures for $S_+^{\rm out}-S_-^{\rm out}$ are
+$(3/10000,4/10000)$, $(-3/2,-1)$, and $(-5,-4)$.
+Integrating back from the mark as above gives
+\[
+ \oscD(B_0)>0,\qquad \oscD(R^{10}/100)<0,\qquad \oscD(R^{10})>0,
+ \qquad \oscD(2R^{10})=0,\quad \oscD'(2R^{10})<0 .
+\]
+Compact convergence preserves the three original hyperbolic cycles.
+Two new brackets and the simple mark lie above $B_0$. Regularization
+in the $x^5$ coefficient gives six simultaneous hyperbolic cycles
+on $\{5,9,10,11,12\}$.
+\end{proof}

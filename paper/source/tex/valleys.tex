@@ -1,0 +1,554 @@
+\subsection{Zero counts for the unshifted comparisons}\label{subsec:obstruction-proof}
+Suppose first that an even primitive $E$ is strictly increasing with
+$f=E'/r>0$. The first variations on both positive-height lists then
+reduce to $U=\int_0^r(fQ'-f'Q)\dd t$. The incoming graph at height $-H$, with $H>0$,
+gives $J(H)=\int_0^\infty rQ(r)(E(r)+H)^{-2}\dd r$.
+Write $Z(g)$ for the number of positive zeros with multiplicity and $s(g)$
+for the sign changes of the nonzero coefficients in increasing exponent
+order. For an isolated block with three even and three odd powers and
+$\deg Q<\deg E$, the first two unshifted lists can each change sign at
+most six times. At negative heights $J(H)$ can change sign at most
+twice. The following example attains the six changes on a strictly rising profile.
+The bound on $J$ prevents the joint count $6+6+4$ for these
+unshifted comparisons on an isolated rising block. For a primitive of
+degree $n$ in their near-center family, De Maesschalck and Huzak bound
+the positive zeros of their first variation by $n-3$
+\cite[Proposition~3 and Remark~2]{DMH}. Here elimination on the
+ordered sparse powers bounds the rising variation, while the incoming
+integral admits a separate bound by sign changes of $Q$.
+
+\begin{proposition}[Zero counts on a strictly rising profile]\label{prop:monotone-obstruction}
+Let $E(r)=\sum_{i=1}^n a_i r^{2e_i}$ ($1\le e_1<\dots<e_n$) and $Q(r)=\sum_{j=1}^m b_j r^{2p_j+1}$
+($0\le p_1<\dots<p_m$) have nonzero real coefficients, and set $f(r)=E'(r)/r$.
+\begin{enumerate}
+  \item[\textup{(i)}] If $f(r)>0$ for all $r>0$, then $U(r)=\int_0^r(fQ'-f'Q)\dd t$ satisfies
+  \begin{equation}\label{eq:wronskian-cap}
+    Z(U) \le n + m - 2 + \min\bigl\{s(f)(s(f)-1),\, Z(Q)+s(Q)(s(Q)-1)\bigr\}.
+  \end{equation}
+  In particular, for an isolated quartet adjoining two even and two odd powers to a leading pair
+  ($n=m=3$, $f>0$ on $(0,\infty)$, hence $s(f)\in\{0,2\}$), one has $Z(U)\le 6$.
+  \item[\textup{(ii)}] If $f(r)>0$ for all $r>0$ and $\deg Q<\deg E$, then $J(H)=\int_0^\infty
+  rQ(r)(E(r)+H)^{-2}\dd r$ has at most $z_{\mathrm{sc}}(Q)\le s(Q)\le m-1$ zeros in $(0,\infty)$
+  counted with multiplicity (where $z_{\mathrm{sc}}(Q)$ counts sign-changing positive roots of $Q$),
+  and $J(H)-\theta$ has at most $z_{\mathrm{sc}}(Q)+1$ positive zeros counted with multiplicity for
+  every $\theta\in\mathbb{R}$. For $m=3$, $J$ has at most $2$ positive zeros.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Proof of Proposition~\ref{prop:monotone-obstruction}]
+(i) Set $x=\log r$, $\tilde f(x)=f(e^x)$ and $\tilde Q(x)=Q(e^x)$.
+These exponential sums have disjoint supports of $n$ even and $m$ odd
+integer exponents. We use the Descartes--Rolle bound for exponential sums
+(see \cite{Jameson}). For exponential sums $g(x),h(x)$
+with disjoint real exponent supports of sizes $n,m\ge 1$ and nonzero coefficients, write
+$[g,h]=gh'-g'h$ ($\prime=\dd/\dd x$) and let $Z_{\mathbb{R}}$ count real zeros with multiplicity. For
+any exponent $\mu$ occurring in $g$, put $g_1=g'-\mu g$ and $h_1=h'-\mu h$; when $n\ge 2$, $g_1$ and
+$h_1$ are nonzero with disjoint supports of sizes $n-1$ and $m$, and direct differentiation gives
+\begin{equation}\label{eq:euler-id}
+  \frac{\dd}{\dd x}\!\left(e^{-\mu x}\frac{[g,h]}{g_1}\right) = e^{-\mu x}\,\frac{g\,[g_1,h_1]}{g_1^2}.
+\end{equation}
+For analytic functions $A,B$ with finitely many real zeros (guaranteed here by Descartes' rule for
+exponential sums) and $[B,A]\not\equiv 0$, canceling common real zeros of total multiplicity $c$
+replaces $(A,B,[B,A])$ by $(\tilde{A},\tilde{B},[\tilde{B},\tilde{A}])$ with
+$Z_{\mathbb{R}}([\tilde{B},\tilde{A}])=Z_{\mathbb{R}}([B,A])-2c$, and applying Rolle's theorem with
+multiplicity to $\tilde{A}/\tilde{B}$ on the $Z_{\mathbb{R}}(\tilde{B})+1$ open intervals
+complementary to the zeros of $\tilde{B}$ yields $Z_{\mathbb{R}}(\tilde{A})\le
+Z_{\mathbb{R}}([\tilde{B},\tilde{A}])+Z_{\mathbb{R}}(\tilde{B})+1$, hence $Z_{\mathbb{R}}(A)\le
+Z_{\mathbb{R}}([B,A])+Z_{\mathbb{R}}(B)+1$. For $n\ge2$, the nonzero sums $g_1,h_1$ have disjoint exponent sets.
+Thus $h_1/g_1$ is nonconstant and $[g_1,h_1]\not\equiv0$; the identity
+above gives the required nonzero Wronskian for the next application.
+Applying this bound to $A=e^{-\mu x}[g,h]$ and $B=g_1$ in
+\eqref{eq:euler-id} gives
+\[
+  Z_{\mathbb{R}}([g,h]) \le 1 + Z_{\mathbb{R}}(g) + Z_{\mathbb{R}}(g_1) + Z_{\mathbb{R}}([g_1,h_1]).
+\]
+Whenever $s(g)>0$, choose $\mu$ to be the first exponent of the second consecutive constant-sign block
+of $g$. Multiplying each remaining coefficient of exponent $\lambda\ne\mu$ by $\lambda-\mu$ reverses
+all signs before $\mu$ and preserves all signs after $\mu$, merging the first block into the second
+and reducing the sign variation to $s(g_1)\le s(g)-1$ (when $s(g)=0$, take $\mu$ to be the lowest
+exponent so $s(g_1)=0$). After $j$ eliminations, Descartes' rule gives $Z_{\mathbb{R}}(g_j)\le
+s(g_j)\le \max(s(g)-j,0)$, while at step $n-1$ the single monomial $g_{n-1}$ satisfies
+$Z_{\mathbb{R}}([g_{n-1},h_{n-1}])\le m-1$. Summing over $j=0,\dots,n-2$, $Z_{\mathbb{R}}(g)$ enters
+once and intermediate counts enter twice, contributing at most
+$Z_{\mathbb{R}}(g)+2\sum_{j=1}^{s(g)-1}(s(g)-j)=Z_{\mathbb{R}}(g)+s(g)(s(g)-1)$ alongside
+$(n-1)+(m-1)=n+m-2$. Symmetry between $g$ and $h$, the identity $rU'(r)=[\tilde f,\tilde Q](\log r)$,
+$Z_{\mathbb{R}}(\tilde f)=Z(f)=0$, and Rolle's theorem from $U(0)=0$ yield \eqref{eq:wronskian-cap}. When
+$n=m=3$ and $f>0$ on $(0,\infty)$, the first and last coefficients of $f$ are positive, so
+$s(f)\in\{0,2\}$ is even and $Z(U)\le 3+3-2+2=6$.
+
+(ii) For $\gamma\in\{2,3\}$ and $0<H_1<\dots<H_\ell$, let $K_{H_i}(t)=(t+H_i)^{-\gamma}$ on $t\ge 0$.
+Factoring $(t+H_i)^{-\gamma-\ell+1}$ from column $i$ of the $t$-Wronskian
+$W(K_{H_1},\dots,K_{H_\ell})$ reduces it to a positive constant depending only on $(\ell,\gamma)$
+times $\prod_{1\le u<v\le\ell}(H_v-H_u)/\prod_{i=1}^\ell(t+H_i)^{\gamma+\ell-1}>0$; dividing by
+Vandermonde factors and passing to confluent limits preserves strict positivity for arbitrary repeated
+nodes (consecutive $H$-derivatives). Hence every nontrivial linear combination of
+$K_{H_1},\dots,K_{H_\ell}$ (and confluent $H$-derivatives) has at most $\ell-1$ zeros on $[0,\infty)$
+counted with multiplicity, by dividing by the first positive column and inducting via Rolle's theorem.
+Since $E:(0,\infty)\to(0,\infty)$ is a strictly increasing diffeomorphism when $f>0$, changing
+variables to $t=E(r)$ writes $J(H)=\int_0^\infty K_H(t)\,\frac{r(t)Q(r(t))}{E'(r(t))}\dd t$. If $J$
+had $z_{\mathrm{sc}}(Q)+1$ positive zeros counted with multiplicity, then the corresponding
+$z_{\mathrm{sc}}(Q)+1$ confluent kernel functions would all integrate to zero against
+$r(t)Q(r(t))/E'(r(t))\dd t$; yet a nontrivial linear combination vanishing at the $z_{\mathrm{sc}}(Q)$
+sign-change levels $t_i=E(r_i)$ of $Q$ has no other zeros on $[0,\infty)$ and is simple at each $t_i$,
+so its product with $Q(r(t))$ is nonzero of one sign almost everywhere, a contradiction. Applying the
+$\gamma=3$ bound to $-J'(H)/2=\int_0^\infty (t+H)^{-3}\frac{r(t)Q(r(t))}{E'(r(t))}\dd t$ bounds
+$Z(J')$ by $z_{\mathrm{sc}}(Q)$ and hence $Z(J-\theta)$ by $z_{\mathrm{sc}}(Q)+1$.
+\end{proof}
+
+\smallskip\noindent\emph{Sharpness of the six-zero bound.}
+Take $D=1024$, $h=2^{-30}$ and $z=r^D$. Set
+\[
+ E(r)=r^{10}+\frac{10(h-3)}{2058}r^{2058}+\frac{20}{3082}r^{3082},
+ \qquad Q(r)=r^9G(z),\quad
+ G(z)=1+(h-4/5)z+\frac{256}{3375}z^3 .
+\]
+The even exponents are $10,2058,3082$ and the odd ones are $9,1033,3081$.
+Here $f=E'/r=10r^8C(z)$ with
+$C(z)=1+(h-3)z^2+2z^3=(1-z)^2(1+2z)+hz^2>0$ for $z>0$.
+Writing $C_i,G_j$ for the coefficients of $z^i,z^j$ in $C,G$,
+termwise integration of $fQ'-f'Q$ gives $U(r)=10r^{17}S(z)$ with
+\[
+ S(z)=\sum_{i,j=0}^3 C_iG_j
+       \frac{1+D(j-i)}{17+D(i+j)}\,z^{i+j}.
+\]
+At a rational node $z=a/b$, the integer in the second row below is
+the floor of
+\[
+ \frac{10^6}{a^6+b^6}\sum_{i,j=0}^3
+ \frac{C_iG_j[1+D(j-i)]}{17+D(i+j)}\,a^{i+j}b^{6-i-j}.
+\]
+\[
+\begin{array}{c|rrrrrrr}
+z&1/16&1/6&1&15/8&4&32&4096\\
+\lfloor 10^6 S(z)/(1+z^6)\rfloor&20559&-1781&144093&-472&6994&-697&13
+\end{array}
+\]
+The signs therefore alternate in order of increasing $r=z^{1/D}$.
+Each of the six intervals contains a zero of $U$. Proposition~\ref{prop:monotone-obstruction}(i)
+bounds their total multiplicity by six, so these are all its positive
+zeros and each is simple.
+
+\subsection{First-variation formulas across positive valleys}\label{subsec:valley-rates}
+Proposition~\ref{prop:monotone-obstruction}(ii) uses the ordering of radii by height. We now allow
+$E(r)>0$ to fold over $L$ crests $p_1,\dots,p_L$ and dip into $L$ shallow \emph{positive} local minima
+$c_1,\dots,c_L$ before resuming its ascent. Let $m_0\ge 5$ be an odd integer satisfying
+Lemma~\ref{lem:compact-seed}, put $d_0=2m_0$, and take the monic balanced seed
+$P_{\mathrm{seed},\lambda}(x)=x^{d_0}+bx^{d_0-1}+\lambda x^{m_0}$ ($b>0$, $\lambda\in
+I_\lambda\subset(-\infty,0)$). Let $E(r)$ be an even polynomial with lowest term $r^{d_0}$ and highest
+term $\alpha_L r^{d_{\mathrm{top}}}$ ($\alpha_L>0$, $d_{\mathrm{top}}\ge d_0$ even), and let $Q(r)$ be
+an odd polynomial with lowest term $r^{d_0-1}$, all remaining powers strictly above $d_0$, and highest
+degree $d_{\mathrm{top}}-1$. Assume $E(r)>0$ for all $r>0$, and suppose the positive critical points
+of $E$ are simple alternating local maxima $p_1,\dots,p_L$ and local minima $c_1,\dots,c_L$
+($0<p_1<c_1<p_2<c_2<\dots<p_L<c_L$) whose critical values $M_i=E(p_i)$ and $\mu_i=E(c_i)$ satisfy
+\begin{equation}\label{eq:valley-ordering}
+  0 = M_0 < \mu_1 < M_1 < \mu_2 < M_2 < \dots < \mu_L < M_L < \mu_{L+1} = +\infty.
+\end{equation}
+Write $a_{L+1}=+\infty$ for the last ascent. For each $1\le i\le L$, let $a_i\in(c_{i-1},p_i)$ (with
+$c_0=0$) be the unique point on the $i$-th ascent where $E(a_i)=\mu_i$. Set $f(r)=E'(r)/r$ and define
+\begin{equation}\label{eq:valley-U-K}
+  U(t) = \int_0^t (fQ' - f'Q)\dd r, \qquad K_i = U(a_i) - U(c_i) + f(a_i)Q(c_i), \qquad C_j^* = \sum_{i=1}^j K_i \quad (C_0^*=0).
+\end{equation}
+
+On one increasing branch $-U$ is the first variation of
+\cite[Proposition~1]{DMH}, with $f_e=E'/r$ and $F_o=Q$ in their
+orientation. See also \cite[Proposition~2.2]{HD} with unperturbed
+restoring force. At a positive minimum the inverse $a_i$ follows the
+moving level $E(c_i)$. This contributes $f(a_i)Q(c_i)$ to $K_i$.
+
+For large $A>0$, consider the prepared polynomial
+\begin{equation}\label{eq:prepared-poly}
+  P_{A,\lambda}(x) = A^{d_0} E(x/A) + b A^{d_0-1} Q(x/A) + \lambda x^{m_0}, \qquad \tau = A^{-1}, \qquad \eps = A^{2-2d_0}.
+\end{equation}
+On compact subsets of $\mathbb{R}$, $P_{A,\lambda}\to P_{\mathrm{seed},\lambda}$ in $C^1$ as
+$A\to+\infty$. Because $E(r)/r^{d_0}$ has a positive infimum on $(0,\infty)$, $|Q(r)|/E(r)$ is bounded
+on $[1,\infty)$, and $|Q(r)|/E(r)=O(1/r)$ on $(0,1]$ (so $bA^{d_0-1}|Q(x/A)|/[A^{d_0}E(x/A)]=O(1/x)$
+for $0<x\le A$), there exist $c_0,K_0>0$ independent of all sufficiently large $A$ and $\lambda\in
+I_\lambda$ such that $P_{A,\lambda}(\pm x)\ge c_0 x^{d_0}$ for all $x\ge K_0$. By
+Lemma~\ref{lem:tail-inward}(ii)--(iv), for all sufficiently large $A$ there is a unique tail-balancing
+value $\lambda_A\in\operatorname{int}(I_\lambda)$ with $\lambda_A\to\lambda_0$, at which
+$\ell_+(P_{A,\lambda_A})=\ell_-(P_{A,\lambda_A})=:\ell_{\mathrm{phys}}(A)$, and both bounded ordinary
+brackets $B_1,B_2$ as well as the strict signs $(-,+)$ of
+$G_+(h_{\mathrm{seed},1})-G_-(h_{\mathrm{seed},1})$ and
+$G_+(h_{\mathrm{seed},2})-G_-(h_{\mathrm{seed},2})$ persist. Figure~\ref{fig:valley} illustrates why
+ordinary half-returns from $\{x=0,y>0\}$ and inward graphs from $r=+\infty$ sample different portions
+of $(\mu_i,M_i)$.
+
+\begin{lemma}[Signs of the three return comparisons at tail balance]\label{lem:valley-rates}
+Work at the balancing coefficient $\lambda=\lambda_A$ of \eqref{eq:prepared-poly}. Fix any finite list
+of strict tests chosen from the following three families, where scaled heights $h>0$ and depths $H>0$
+correspond to physical ordinates $A^{d_0}h$ and $-A^{d_0}H$:
+\begin{enumerate}
+  \item[\textup{(i)}] \emph{Regular ascent heights $M_j<h<\mu_{j+1}$ ($0\le j\le L$):} let
+  $t\in(c_j,a_{j+1})$ be the unique positive solution of $E(t)=h$, and set $V_o(h)=V_i(h)=U(t)+C_j^*$.
+  \item[\textup{(ii)}] \emph{Valley-band heights $\mu_i<h<M_i$ ($1\le i\le L$):} let $v\in(c_i,a_{i+1})$
+  be the first ascending solution of $E(v)=h$ past $c_i$, and set
+  \begin{equation}\label{eq:Vo-Vi-band}
+    V_o(h) = P_i := C_{i-1}^* + U(a_i) + f(a_i)Q(c_i), \qquad V_i(h) = P_i + U(v) - U(c_i).
+  \end{equation}
+  \item[\textup{(iii)}] \emph{Incoming heights $-H<0$, at depth $H>0$.} Set
+  \begin{equation}\label{eq:J-def}
+    J(H) = \int_0^\infty \frac{rQ(r)}{(H+E(r))^2}\dd r.
+  \end{equation}
+\end{enumerate}
+Then for all sufficiently large $A$, simultaneously at every test on the list where the respective variation is nonzero,
+\begin{align*}
+  \sgn\bigl(b_+(A^{d_0}h) - b_-(A^{d_0}h)\bigr) &= -\sgn V_o(h), \\
+  \sgn\bigl(G_+(A^{d_0}h) - G_-(A^{d_0}h)\bigr) &= +\sgn V_i(h), \\
+  \sgn\bigl(G_+(-A^{d_0}H) - G_-(-A^{d_0}H)\bigr) &= +\sgn J(H).
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+Pass to scaled coordinates $r=|x|/A$, $u=r^2/2$, $w=y/A^{d_0}$, $\tau=A^{-1}$, and $\eps=A^{2-2d_0}$;
+denote the scaled intercepts by $\tilde{b}_\sigma(h)=A^{-d_0}b_\sigma(A^{d_0}h)$,
+$\tilde{G}_\sigma(h)=A^{-d_0}G_\sigma(A^{d_0}h)$, and $\ell=A^{-d_0}\ell_{\mathrm{phys}}(A)<0$. Notice
+that $\sqrt{\eps}=A^{1-d_0}=o(\tau)$ and $\eps\log A=o(\tau)$ since $d_0=2m_0\ge 10$. The scaled
+half-profiles are $\phi_\sigma(u)=E(r)+\sigma b\tau Q(r)+\sigma\lambda_A A^{m_0-d_0}r^{m_0}$
+($r=\sqrt{2u}$), with $u$-derivatives denoted by $\phi_\sigma'(u)$. For $T>0$, set
+$l_{\sigma,T}(u)=\min_{s\in[u,T]}\phi_\sigma(s)$ ($0\le u\le T$), $l_{\sigma,\infty}(u)=\min_{s\ge
+u}\phi_\sigma(s)$, and
+\[
+  \mathcal{A}_\sigma(T) = \int_0^T \phi_\sigma'(u)\dd l_{\sigma,T}(u), \qquad I_\sigma(h) =
+  \int_0^\infty \phi_\sigma'(u)\dd\min\bigl(h,l_{\sigma,\infty}(u)\bigr).
+\]
+We claim that at every fixed positive test height $h$ on the list, if $T_\sigma(h)$ denotes the actual
+scaled turning $u$-coordinate from upper height $h$, then
+\begin{align}
+  -\eps\log\bigl(\tilde{b}_\sigma(h) - \ell\bigr) &= \inf_{T\ge T_\sigma(h)} \mathcal{A}_\sigma(T) + o(\tau), \label{eq:ord-rate}\\
+  -\eps\log\bigl(\ell - \tilde{G}_\sigma(h)\bigr) &= I_\sigma(h) + o(\tau). \label{eq:inc-rate}
+\end{align}
+
+To prove \eqref{eq:ord-rate}--\eqref{eq:inc-rate}, first truncate the unbounded range via a far rising
+strip. Choose $B_0>1$ beyond all test turns and all valley critical points such that
+$\phi_\sigma'(u)\ge b_* > 0$ throughout $[B_0,\infty)$ uniformly for large $A$, and such that $b_*^2
+B_0/4$ exceeds every test value of $\inf_{T\ge T_\sigma(h)}\mathcal{A}_\sigma(T)$ and $I_\sigma(h)$ by
+at least $1$. Choose a cutoff turn $T_{\mathrm{cut}}>4B_0$ and a cutoff height
+$h_{\mathrm{cut}}>\sup_{[0,4B_0]}\phi_\sigma+1$. Use the two cutoff graphs, the ordinary inward leg
+from $T_{\rm cut}$
+and the incoming graph at $h_{\rm cut}$. The critical inward graph from
+$\ell$ lies between them. Both cutoff graphs satisfy
+$\phi_\sigma(3B_0)-w(3B_0)=O(\sqrt\eps)$. For the finite turn this is
+\eqref{eq:envelope-bounds}. For the incoming graph, truncate at a fixed
+$B_1>T_{\rm cut}$ with $\phi_\sigma>h_{\rm cut}+1$ thereafter.
+The coercive tail gives $w(B_1)=h_{\rm cut}+O(\eps)$, and the same
+squared-gap comparison on $[3B_0,B_1]$ gives the estimate. Consequently, on $[B_0,2B_0]$ every such
+graph satisfies $0<\phi_\sigma(u)-w(u)\le 2\eps/b_*$: if $\phi_\sigma(u_0)-w(u_0)>2\eps/b_*$ at some
+$u_0\in[B_0,2B_0]$, then $(\phi_\sigma-w)'=\phi_\sigma'-\eps/(\phi_\sigma-w)\ge b_*/2$ from $u_0$ to
+$3B_0$, forcing $\phi_\sigma(3B_0)-w(3B_0)\ge b_* B_0/2$, a contradiction for large $A$. Subtracting
+$w'=\eps/(\phi_\sigma-w)$ and $w_{\sigma,\ell}'=\eps/(\phi_\sigma-w_{\sigma,\ell})$ yields
+$|w(0)-\ell|\le |w(2B_0)-w_{\sigma,\ell}(2B_0)|\exp(-\int_{B_0}^{2B_0}\frac{\eps\dd
+u}{(\phi_\sigma-w)(\phi_\sigma-w_{\sigma,\ell})}) \le \frac{2\eps}{b_*}\exp(-b_*^2 B_0/(4\eps))$,
+making the tail beyond $T_{\mathrm{cut}}$ and $h_{\mathrm{cut}}$ exponentially negligible relative to
+the main gaps.
+
+On $[T_\sigma(h),T_{\mathrm{cut}}]$, Lemma~\ref{lem:variational}(iii) gives
+$Y_\sigma(T_{\mathrm{cut}})-\frac{1}{2}\tilde{b}_\sigma(h)^2 = \int_{T_\sigma(h)}^{T_{\mathrm{cut}}}
+\eps e^{-J_{i,\sigma}(T)}\dd T$. Each monomial of $\phi_\sigma(u)$ has exponent at least $m_0/2>1$
+in $u$, and its coefficient is bounded. Hence $\phi'_\sigma$ is bounded
+and has uniformly bounded total variation on the entire cutoff interval.
+Integration by parts against the envelope error in
+\eqref{eq:envelope-bounds} gives $\eps J_{i,\sigma}(T)=
+\mathcal A_\sigma(T)+O(\sqrt\eps)$ uniformly on
+$[T_\sigma(h),T_{\rm cut}]$.
+Because $|l_{\sigma,T_1}-l_{\sigma,T_2}|\le (\sup_{[0,T_{\mathrm{cut}}]}|\phi_\sigma'|)|T_1-T_2|$ on
+$[0,\min(T_1,T_2)]$, $T\mapsto\mathcal{A}_\sigma(T)$ is uniformly Lipschitz on
+$[T_\sigma(h),T_{\mathrm{cut}}]$. Bounding the integral from above on $[T_\sigma(h),T_{\mathrm{cut}}]$
+and from below on a segment of length $\eps$ adjacent to a minimizer,
+where the action exceeds its minimum by at most $O(\eps)$, yields
+$-\eps\log(\frac{1}{2}\ell^2-\frac{1}{2}\tilde{b}_\sigma(h)^2)=\inf_{T\ge
+T_\sigma(h)}\mathcal{A}_\sigma(T)+O(\sqrt{\eps}+\eps|\log\eps|)$. Since $|\ell|$ and
+$|\tilde{b}_\sigma(h)|$ are of order $A^{-d_0}$ (bounded between fixed negative physical returns),
+dividing out $\frac{1}{2}(|\ell|+|\tilde{b}_\sigma(h)|)$ adds $O(\eps\log A)=o(\tau)$, proving
+\eqref{eq:ord-rate}.
+
+Similarly, differentiating $w_{\sigma,\tilde{h}}'(u)=\eps/(\phi_\sigma(u)-w_{\sigma,\tilde{h}}(u))$
+with respect to the boundary height $\tilde{h}\in[h,h_{\mathrm{cut}}]$ at infinity gives
+$\tilde{G}_\sigma'(\tilde{h})=\exp(-\eps\int_0^\infty(\phi_\sigma-w_{\sigma,\tilde{h}})^{-2}\dd u)$,
+so $-\eps\log\tilde{G}_\sigma'(\tilde{h})=\int_0^\infty (w_{\sigma,\tilde{h}}')^2\dd u$. Choosing
+$B_1>4B_0$ where $\phi_\sigma(u)\ge u^2>h_{\mathrm{cut}}+1$ thereafter, the tail on $[B_1,\infty)$
+contributes $O(\eps^2)$, $w_{\sigma,\tilde{h}}(B_1)=\tilde{h}+O(\eps)$, and the proof of
+\eqref{eq:envelope-bounds} gives $0\le
+\min(\tilde{h},l_{\sigma,\infty}(u))-w_{\sigma,\tilde{h}}(u)\le\sqrt{2\eps(B_1-u)}+O(\eps)$ on
+$[0,B_1]$. Using $w_{\sigma,\tilde{h}}'=\eps/(\phi_\sigma-w_{\sigma,\tilde{h}})$, the identity
+\[
+  \int_0^{B_1} (w_{\sigma,\tilde{h}}')^2\dd u = \int_0^{B_1} \phi_\sigma'(u)\dd
+  w_{\sigma,\tilde{h}}(u) - \eps\bigl[\log(\phi_\sigma(u)-w_{\sigma,\tilde{h}}(u))\bigr]_0^{B_1}
+\]
+gives $-\eps\log\tilde{G}_\sigma'(\tilde{h})=I_\sigma(\tilde{h})+O(\sqrt{\eps}+\eps|\log\eps|)$
+uniformly on $[h,h_{\mathrm{cut}}]$, since
+$\phi_\sigma(0)-w_{\sigma,\tilde{h}}(0)=-\tilde{G}_\sigma(\tilde{h})\ge |\ell|\asymp A^{-d_0}$. On
+$0\le r\le 2K_0/A$ the truncated envelope equals $l_{\sigma,\infty}$ independently of $\tilde h\ge h$.
+Thus $I_\sigma(\tilde{h})$ equals $\int
+\mathbf{1}_{\{l_{\sigma,\infty}(u)<\tilde{h}\}}(l_{\sigma,\infty}'(u))^2\dd u$ plus a constant, with
+bounded one-sided level derivatives given on tracked branches by $\phi_\sigma'(u)$ at the active
+endpoint in the $u$ coordinate. Thus $I_\sigma(\tilde{h})$ is nondecreasing and Lipschitz on
+$[h,h_{\mathrm{cut}}]$, and integrating $\tilde{G}_\sigma'(\tilde{h})$ from $h$ to $h_{\mathrm{cut}}$
+(with lower bound on $[h,h+\eps]$) proves \eqref{eq:inc-rate}.
+
+To evaluate the two actions, first control the region between the seed
+and the first fixed scaled radius. Write $p_\sigma(r)=\phi_\sigma(r^2/2)$.
+By \eqref{eq:prepared-poly},
+\[
+ p_\sigma(r)=E(r)+\sigma b A^{-1}Q(r)
+                    +\sigma\lambda_A A^{-m_0}r^{m_0},
+ \qquad d_0=2m_0 .
+\]
+The lowest powers of $E,Q$ are $r^{d_0},r^{d_0-1}$ with coefficient one.
+All higher even powers differ from $d_0$ by at least two. Thus on
+$K/A\le r\le r_0$, for $r_0$ small,
+\[
+ \frac{p_\sigma'(r)}{d_0 r^{d_0-1}}
+ =1+O(r^2)+O((Ar)^{-1})+O((Ar)^{-m_0}).
+\]
+The constants are uniform in the two signs and $\lambda_A\in I_\lambda$.
+Choose $r_0$ small and then $K\ge 2K_0$ large. The derivative is
+positive throughout this strip for all sufficiently large $A$. On
+$0\le r\le K/A$, the substitution $x=Ar$ and compact $C^1$ bounds
+for $P_{A,\lambda}$ give
+\[
+ \int_0^{K/A}\frac{p_\sigma'(r)^2}{r}\dd r
+ = A^{2-2d_0}\int_0^K\frac{P_{A,\lambda_A}'(\sigma x)^2}{x}\dd x
+ = O_K(A^{2-2d_0})=o(\tau).
+\]
+On $[0,K]$ the coefficients are uniformly bounded and the lowest
+power is $m_0$, so $|P_{A,\lambda_A}'(\sigma x)|\le C_K x^{m_0-1}$.
+On compact intervals beyond $r_0$, $C^2$ convergence preserves the
+simple critical points and the regular crossings. For sufficiently
+large $r$, $E'(r)\ge c r^{d_{\rm top}-1}$ and the perturbing
+derivatives have lower degree with uniformly bounded coefficients.
+Thus $p_\sigma$ is increasing on a common tail. The perturbed extrema
+$p_{i,\sigma}=p_i+O(\tau)$ and $c_{i,\sigma}=c_i+O(\tau)$ and the
+upstream roots $a_{i,\sigma}=a_i+O(\tau)$ of
+$p_\sigma(a_{i,\sigma})=p_\sigma(c_{i,\sigma})$ therefore retain the
+strict order in \eqref{eq:valley-ordering}. Set $c_{0,\sigma}=0$ and
+$a_{L+1,\sigma}=+\infty$ as integration endpoints. The level $M_0=0$
+belongs to the limiting profile. In the perturbed core $[0,K/A]$,
+$\sup|p_\sigma|=O_K(A^{-d_0})$, below every fixed positive test for
+large $A$. On this core a running minimum follows the profile or is
+constant almost everywhere, so its action is bounded by the
+squared-slope integral just estimated. Replacing its contribution by
+the full integral from zero costs $O_K(A^{2-2d_0})=O_K(\eps)$.
+
+Beyond $K/A$, a turn on the ascent after $c_{j,\sigma}$ has lower
+envelope following the successive rising arcs and skipping the
+intervals $(a_{k,\sigma},c_{k,\sigma})$, $1\le k\le j$. On the first
+ascent the regular part begins at $K/A$. If there is a subsequent
+descent, $\mathcal A_\sigma$ decreases there to its value at
+$c_{j+1,\sigma}$, the same as at $a_{j+1,\sigma}$ in radius. Later
+minima have higher levels. In the following integrals the extension
+of the first rising arc to $c_{0,\sigma}$ is included in the error.
+\begin{itemize}
+  \item If $M_j<h<\mu_{j+1}$, the unique regular inverse $t_\sigma(h)\in(c_{j,\sigma},a_{j+1,\sigma})$
+  satisfies $\sqrt{2T_\sigma(h)}=t_\sigma(h)+O(\sqrt{\eps})$, and both $\inf_{T\ge
+  T_\sigma(h)}\mathcal{A}_\sigma(T)$ and $I_\sigma(h)$ equal
+  \[
+    \sum_{k=1}^j \int_{c_{k-1,\sigma}}^{a_{k,\sigma}} \frac{(\partial_r\phi_\sigma)^2}{r}\dd r +
+    \int_{c_{j,\sigma}}^{t_\sigma(h)} \frac{(\partial_r\phi_\sigma)^2}{r}\dd r + O(\sqrt{\eps}).
+  \]
+  \item If $\mu_i<h<M_i$, the outgoing running maximum reaches $h$ at the pre-crest inverse
+  $u_{1,\sigma}(h)\in(a_{i,\sigma},p_{i,\sigma})$, so
+  $\sqrt{2T_\sigma(h)}=u_{1,\sigma}(h)+O(\sqrt{\eps})$ and $\inf_{T\ge
+  T_\sigma(h)}\mathcal{A}_\sigma(T)$ is attained at the valley bottom $T=c_{i,\sigma}^2/2$, giving
+  $\sum_{k=1}^i \int_{c_{k-1,\sigma}}^{a_{k,\sigma}} r^{-1}(\partial_r\phi_\sigma)^2\dd r +
+  O(\sqrt{\eps})$. Meanwhile, since $h<M_i<\mu_{i+1}$, the infinite envelope $\min(h,l_{\sigma,\infty})$
+  also tracks $[c_{i,\sigma},v_\sigma(h)]$ up to the first post-valley inverse
+  $v_\sigma(h)\in(c_{i,\sigma},a_{i+1,\sigma})$, adding
+  $\int_{c_{i,\sigma}}^{v_\sigma(h)}r^{-1}(\partial_r\phi_\sigma)^2\dd r$.
+\end{itemize}
+For the first variation put $\delta=\sigma b\tau$. On every fixed
+bounded interval the additional seed term in $p_\sigma-E-\delta Q$
+is $O(A^{-m_0})$ in $C^2$, with radial derivative
+$O(A^{-m_0}r^{m_0-1})$. Omitting it in the squared-slope integral
+costs $O(A^{-m_0})$, also at zero since the derivative bound is
+integrable against the other slopes with weight $1/r$. It moves each
+regular endpoint and each simple critical radius by $O(A^{-m_0})$.
+Both this error and the core error are $o(\tau)$.
+
+We may therefore differentiate the rising-arc integrals for
+$E+\delta Q$ at $\delta=0$. The lower endpoint contributes zero
+at each critical radius $c_{k-1}$, and the first lower endpoint is
+fixed at zero. The moving level gives
+$E'(a_k)\dot a_k=Q(c_k)-Q(a_k)$. In the integral of
+$2fQ'$ over $[c_{k-1},a_k]$, integration by parts gives
+$U(a_k)-U(c_{k-1})+f(a_k)Q(a_k)$ because $f(c_{k-1})=0$.
+Adding $f(a_k)E'(a_k)\dot a_k$ leaves
+$U(a_k)-U(c_{k-1})+f(a_k)Q(c_k)$. At a fixed-height upper
+endpoint $\phi_\sigma(t_\sigma(h)^2/2)=h$, $\dot{t}=-Q(t)/E'(t)$ cancels $+f(t)Q(t)$ completely,
+leaving $U(t)-U(c_j)$. Telescoping over $k$ yields $\inf\mathcal{A}_+-\inf\mathcal{A}_-=2b\tau
+V_o(h)+o(\tau)$ and $I_+(h)-I_-(h)=2b\tau V_i(h)+o(\tau)$. Since
+$\tilde{b}_+(h)-\tilde{b}_-(h)=(\tilde{b}_+(h)-\ell)-(\tilde{b}_-(h)-\ell)$ and
+$\tilde{G}_+(h)-\tilde{G}_-(h)=(\ell-\tilde{G}_-(h))-(\ell-\tilde{G}_+(h))$,
+\eqref{eq:ord-rate}--\eqref{eq:inc-rate} give the signs in~(i) and~(ii).
+
+For~(iii), at fixed $H>0$, $\phi_\sigma(u)+H\ge \frac{1}{2}(E(r)+H)>0$ for all $u\ge 0$ and large $A$.
+The inward solution $w_{\sigma,-H}(u)\le -H$ satisfies $0\le -H-w_{\sigma,-H}(u)=\int_u^\infty
+\eps(\phi_\sigma-w_{\sigma,-H})^{-1}\dd s\le 2\eps\int_{\sqrt{2u}}^\infty r(E(r)+H)^{-1}\dd r=O(\eps)$
+uniformly on $[0,\infty)$. Replacing $w_{\sigma,-H}$ by $-H$ in
+$\tilde{G}_\sigma(-H)=-H-\eps\int_0^\infty r(\phi_\sigma-w_{\sigma,-H})^{-1}\dd r$ incurs an error
+$O(\eps^2)=o(\eps\tau)$, and subtracting $\sigma=-$ from $\sigma=+$ gives
+\[
+  \tilde{G}_+(-H) - \tilde{G}_-(-H) = \eps\int_0^\infty \frac{r\bigl(2b\tau Q(r) + 2\lambda_A
+  A^{m_0-d_0}r^{m_0}\bigr)}{(\phi_+(u)+H)(\phi_-(u)+H)}\dd r + O(\eps^2) = 2b\eps\tau J(H) +
+  o(\eps\tau)
+\]
+by dominated convergence, as $A^{m_0-d_0}=A^{-m_0}=o(\tau)$ and $\deg Q=d_{\mathrm{top}}-1<d_{\mathrm{top}}=\deg E$.
+\end{proof}
+
+\subsection{A four-power block for comparisons at positive and negative heights}\label{subsec:valley-local}
+The four new powers place a positive minimum of height $m\sim(2/3)^n$
+near $z=r^D=1$. There the odd profile has value $-q(1+o(1))$, where
+$q=(3/4)^{\lfloor n/2\rfloor}$ and $m\ll q^2\ll q\ll1$. Since
+$P_1/f(a)=O(m/n)-q(1+o(1))$, both positive-height variations are
+negative at a test just above the minimum. For the negative-height
+comparison take $H=w^n$. The contribution of the minimum to the
+normalized integral $nHDJ(H)$ tends to zero exponentially at $w=1/2$
+and $7/8$ and tends to $-\infty$ at $w=2/3$. The other part of the
+integral has a positive finite limit at each of these three samples.
+They give the signs $+,-,+$, followed by $-,+$ at $w=3/2,4$.
+
+Fix the stride $D=258$, let $n$ be a positive integer, put $d=Dn$ and $z=r^D$, and define
+\begin{equation}\label{eq:valley-shapes}
+  C(z) = (1-z)^2(1+2z), \qquad B_\gamma(z) = 1 - \frac{9}{8}z + \frac{1}{8}z^{3-\gamma}, \qquad k_0 =
+  \frac{2}{3}, \qquad q_0 = \frac{3}{4},
+\end{equation}
+where $j\in\{0,1,2,3\}$ counts the odd powers inserted before the
+first valley in Section~\ref{subsec:inductive-valleys}. Their exponent
+shift $2j$ gives $\gamma=2j/D$. Write $B=B_0$ when $j=0$. Set $\eta=k_0^n$ and
+$q=q_0^{\lfloor n/2\rfloor}$, and consider the isolated model pair
+\begin{equation}\label{eq:isolated-pair}
+  E(r) = r^d C_\eta(z), \quad C_\eta(z) = C(z) + \eta z^2, \qquad Q(r) = r^{d-1+2j}\bigl(B_\gamma(z) - qz\bigr).
+\end{equation}
+Notice that $r^{d-1+2j}z^{3-\gamma}=r^{d+3D-1}$ is an odd integer power of $r$ for every
+$j\in\{0,1,2,3\}$, and $B_\gamma(0)=1$, $B_\gamma(1)-q=-q<0$ (since $1-9/8+1/8=0$), so Descartes' rule
+gives $Q$ exactly two positive roots.
+
+\begin{lemma}[Local valley signs for the four choices of $j$]\label{lem:valley-local}
+For every $j\in\{0,1,2,3\}$ and every sufficiently large integer $n$, the isolated pair
+\eqref{eq:isolated-pair} satisfies $E(r)>0$ on $r>0$ with a single simple local maximum $p$ followed
+by a single simple local minimum $c$ ($0<E(c)<E(p)$), supplies six strict sign changes to each of
+$V_o(h)$ and $V_i(h)$ in increasing $h>0$, and supplies four strict sign changes to $J(H)$ in
+increasing $H>0$. All three lists start and end strictly positive.
+\end{lemma}
+
+\begin{proof}
+Differentiating $E(r)=z^n C_\eta(z)$ with respect to $z>0$ gives
+$z^{n-1}[n-(n+2)(3-\eta)z^2+2(n+3)z^3]$. For large $n$, evaluating the cubic factor at $z=0$, $1-1/n$,
+and $1$ gives $n>0$, $-3/n+O(n^{-2}+n\eta)<0$, and $(n+2)\eta>0$; by Descartes' rule (two sign
+changes), these bracket the only positive critical points: a simple maximum $z_p\in(0,1-1/n)$ of value
+$M=E(p)\ge E((1-1/n)^{1/D})\sim 3/(e n^2)$ and a simple minimum $z_c\in(1-1/n,1)$ of value $m=E(c)$.
+With $P(z)=z^n C_\eta(z)$, on $|z-1|\le n^{-2}$ one has $P''(z)=6+O(n^{-1}+n^2\eta)$ uniformly while
+$P'(1)=(n+2)\eta$, so $z_c=1-\frac{n+2}{6}\eta(1+o(1))=1+O(n\eta)$,
+$m=P(z_c)=\eta(1+o(1))=k_0^n(1+o(1))$, and $Q(c)=c^{d-1+2j}(B_\gamma(z_c)-qz_c)=-q(1+o(1))$ since
+$n\eta=o(q)$. For the pre-crest inverse $a\in(0,p)$ with $E(a)=m$, bracketing $P(z)$ around
+$k_0\in(0,1)$ gives $z_a=a^D\to k_0$, and $a^d=z_a^n=m/C_\eta(z_a)\sim m/C(k_0)$ with $C(k_0)=7/27>0$.
+
+For fixed $z>0$ ($r=z^{1/D}$), $f(r)=d r^{d-2}(C_\eta(z)+zC_\eta'(z)/n)$, so termwise integration gives
+\[
+  \frac{(2d-3+2j)U(r)}{d\,r^{2d-3+2j}} \xrightarrow{n\to\infty} W_{D,\gamma}(z) :=
+  (1+2j)C(z)B_\gamma(z) + Dz\bigl(C(z)B_\gamma'(z) - C'(z)B_\gamma(z)\bigr)
+\]
+uniformly on compact subsets of $(0,\infty)$.
+The choice $D=258$ allows one rational estimate at each of six nodes
+for all four prefix choices.
+Write $l=2j$, $\xi=z^{-l/D}$, and abbreviate $W=W_{D,\gamma}(z)$.
+Inserting $8B_\gamma=8-9z+\xi z^3$ and using $3C-zC'=3(1-z^2)$ gives
+\[
+ 8W=(8-9z)\bigl((1+l)C-DzC'\bigr)-9DzC
+       +\xi z^3\bigl(C+3D(1-z^2)\bigr).
+\]
+For $2^{-13}\le z\le2^{13}$ and $0\le l\le6$ we have
+$1\le\xi\le5/4$ below $1$ and $4/5\le\xi\le1$ above $1$.
+Indeed $(5/4)^{10}>9$, $(5/4)^3>3/2$, and
+$(5/4)^{43}>9^4(3/2)>2^{13}$, while $6/D=1/43$.
+For each node the expression is affine in $(l,\xi)$. The signs of the
+coefficients $(8-9z)C$ and $z^3(C+3D(1-z^2))$ give the minimizing
+corner for $sW$ on the indicated rectangle. With $D=258$ the
+substitutions are
+\[
+\begin{array}{c|rrrrrr}
+ z&2^{-13}&1/8&1/2&3/2&16&2^{13}\\
+ s&+1&-1&+1&+1&-1&+1\\
+ (l,\xi)_{\min}&(0,1)&(6,5/4)&(0,1)&(6,1)&(0,4/5)&(6,4/5)\\
+ m_z&9/10&10&20&300&10^7&10^{22}\\
+ \lfloor 100sW_*/m_z\rfloor&107&105&106&116&113&575
+\end{array}
+\]
+Here $W_*$ denotes $W$ evaluated at the listed corner. For example,
+at $z=1/8$ the corner gives $W=-44226735/4194304$. Each entry
+in the last row exceeds $100$, so $sW>m_z$ throughout its rectangle.
+For
+large $n$, at the first three nodes $E(r)=z^n(C(z)+o(1))<m\sim(2/3)^n$ (since $1/2<2/3$), so
+$V_o=V_i=U(r)$ takes signs $+,-,+$. At the last three nodes ($z\ge 3/2>1$), $E(r)\to+\infty>M$, so
+$V_o=V_i=U(r)+U(a)-U(c)+f(a)Q(c)$; here $|U(c)|=O(1)$, $|U(a)|=O(m^2)$, and $|f(a)Q(c)|=O(nmq)$,
+whereas $|U(r)|\gtrsim (9/4)^n/n\to+\infty$, so $V_o$ and $V_i$ retain the signs $+,-,+$ at the last
+three nodes. Inside the valley band $(m,M)$, since $a^d=O(m)$ gives
+$|U(a)|/f(a)=O(a^{d-1+2j}/n)=O(m/n)$ and $m\sim(2/3)^n=o(q)$, we have
+\[
+  \frac{P_1}{f(a)} = \frac{U(a)}{f(a)} + Q(c) = O\!\left(\frac{m}{n}\right) - q\bigl(1+o(1)\bigr) < 0.
+\]
+Hence $V_o(h)=P_1<0$ for every $h\in(m,M)$, and choosing $h\in(m,M)$ close enough to $m$ that
+$|U(v)-U(c)|<\frac{1}{2}|P_1|$ gives $V_i(h)=P_1+U(v)-U(c)<0$ as well. Inserting this negative
+sign between the tests at $z=1/2$ and $z=3/2$ yields the seven alternating signs $+,-,+,-,+,-,+$ ($6$ sign changes)
+on both $V_o$ and $V_i$.
+
+For the negative-height integral, changing variables to $z=r^D$ ($\nu=(1+2j)/D$) gives
+\begin{equation}\label{eq:J-in-z}
+  D J(H) = \int_0^\infty \frac{z^{n+\nu-1}\bigl(B_\gamma(z) - qz\bigr)}{\bigl(H + z^n C_\eta(z)\bigr)^2}\dd z.
+\end{equation}
+Evaluate \eqref{eq:J-in-z} at $H=w^n$ along the five ordered depth parameters
+\[
+  w \in \left\{\frac{1}{2},\, \frac{2}{3},\, \frac{7}{8},\, \frac{3}{2},\, 4\right\}.
+\]
+First note the signs of $B_\gamma(w)$: on $0<w<1$, $w^{3-\gamma}\ge w^3$ gives $B_\gamma(w)\ge
+B_0(w)=\frac{1}{8}(1-w)(8-w-w^2)>0$; at $w=3/2$, $(3/2)^{3-\gamma}\le(3/2)^3$ gives $B_\gamma(3/2)\le
+B_0(3/2)=-17/64<0$; and at $w=4$, $4^\gamma\le 4^{6/258}<2$ gives
+$B_\gamma(4)=1-9/2+8/4^\gamma>1/2>0$.
+
+For $w>1$ ($w\in\{3/2,4\}$), pick $1<b_w<w$. On $[0,b_w]$, bounding the denominator below by
+$H^2=w^{2n}$ shows $nH\int_0^{b_w}\le O(n(b_w/w)^n)\to 0$. On $[b_w,\infty)$, substituting
+$z=wX^{1/n}$ ($\dd z=\frac{w}{n}X^{1/n-1}\dd X$, $z^n=HX$) with $C_\eta(z)\ge c_1(1+z^3)$ and
+$|B_\gamma(z)-qz|\le C_1 C_\eta(z)$ gives an integrable majorant $C_2\mathbf{1}_{X<1}+C_2
+X^{-3/2}\mathbf{1}_{X\ge 1}$ and limit $nHDJ(w^n)\to w^\nu B_\gamma(w)\int_0^\infty(1+XC(w))^{-2}\dd X
+= w^\nu B_\gamma(w)/C(w)$, which is strictly negative at $w=3/2$ and strictly positive at $w=4$.
+
+For $w<1$ ($w\in\{1/2,2/3,7/8\}$), fix $z_{\rm cut}=15/16\in(7/8,1)$ and split $(0,\infty)$ into $(0,z_{\rm cut}]$ and
+$[z_{\rm cut},\infty)$. On $(0,z_{\rm cut}]$, $C_\eta(z)$ has a uniform positive infimum, so the substitution $z=wX^{1/n}$
+yields
+\[
+  nH\int_0^{z_{\rm cut}} \frac{z^{n+\nu-1}(B_\gamma(z)-qz)}{(H+z^n C_\eta(z))^2}\dd z \xrightarrow{n\to\infty} \frac{w^\nu B_\gamma(w)}{C(w)} > 0.
+\]
+To evaluate the valley integral on $[z_{\rm cut},\infty)$, introduce on $|z-1|\le n^{-2}$ the Morse coordinate
+\[
+  y(z) = (z-z_c)\sqrt{\int_0^1 (1-t)P''\bigl(z_c+t(z-z_c)\bigr)\dd t}, \qquad P(z) = m + y(z)^2.
+\]
+Since $P''(z)=6+O(n^{-1})$ with derivatives of all fixed orders growing at most polynomially in $n$ on
+$|z-1|\le n^{-2}$, $y$ maps $[z_c-n^{-2}/2,z_c+n^{-2}/2]$ diffeomorphically onto an interval
+containing $[-y_n,y_n]$ with $y_n=n^{-2}/4$, and its inverse $z(y)$ has derivatives through order
+three bounded by $O(n^K)$ for a fixed $K$. Expanding $z(y)^{n+\nu-1}(B_\gamma(z(y))-qz(y))\frac{\dd
+z}{\dd y} = A_n + B_n y + O(n^K y^2)$ on $[-y_n,y_n]$, where
+\[
+  A_n = \frac{z_c^{n+\nu-1}\bigl(B_\gamma(z_c)-qz_c\bigr)}{\sqrt{P''(z_c)/2}} = -\frac{q}{\sqrt{3}}\bigl(1+o(1)\bigr),
+\]
+the odd term $B_n y$ integrates to $0$; extending $\int_{-y_n}^{y_n} A_n(H+m+y^2)^{-2}\dd y$ to
+$\mathbb{R}$ costs $O(|A_n|y_n^{-3})=O(n^6)$ while $\int_{-\infty}^\infty (H+m+y^2)^{-2}\dd
+y=\pi/[2(H+m)^{3/2}]$; and $\int_{-y_n}^{y_n} n^K y^2(H+m+y^2)^{-2}\dd y = O(n^K/\sqrt{H+m})$. Outside
+$y^{-1}([-y_n,y_n])$ inside $[z_{\rm cut},2]$, $|z-1|\ge c_2 n^{-2}$ implies $C_\eta(z)\ge c_3 n^{-4}$, so the
+integral is $O(n^8 z_{\rm cut}^{-n})$, and $[2,\infty)$ contributes $O(2^{-n})$. Thus (enlarging $K$ if needed)
+\[
+  nH\int_{z_{\rm cut}}^\infty \frac{z^{n+\nu-1}(B_\gamma(z)-qz)}{(H+z^n C_\eta(z))^2}\dd z =
+  -\frac{\pi}{2\sqrt{3}}\,\frac{n q H}{(H+m)^{3/2}}\bigl(1+o(1)\bigr) + O\!\left(n^{K+1}\sqrt{H} +
+  n^{K+1}\Bigl(\frac{w}{z_{\rm cut}}\Bigr)^n\right).
+\]
+Since $w\le 7/8<z_{\rm cut}<1$, both error terms tend to $0$. With $H=w^n$, $m\sim k_0^n=(2/3)^n$, and
+$q=(3/4)^{\lfloor n/2\rfloor}$, the exponential bases of $qH/(H+m)^{3/2}$ at $w=1/2$, $2/3$, and $7/8$
+are respectively
+\[
+  \frac{(1/2)\sqrt{3/4}}{(2/3)^{3/2}} = \sqrt{\frac{81}{128}} < 1, \qquad \sqrt{\frac{3/4}{2/3}} =
+  \sqrt{\frac{9}{8}} > 1, \qquad \sqrt{\frac{3/4}{7/8}} = \sqrt{\frac{6}{7}} < 1.
+\]
+Hence the negative valley contribution vanishes at $w=1/2$ and $w=7/8$ (leaving the positive $(0,z_{\rm cut}]$
+limit) and diverges to $-\infty$ at $w=2/3$, proving the ordered signs $+,-,+,-,+$ of $J(w^n)$.
+The middle sample is one depth where domination occurs. For example,
+the same estimate at $w=7/10$ has base $\sqrt{15/14}>1$, even though
+$H/m\sim(21/20)^n$.
+\end{proof}

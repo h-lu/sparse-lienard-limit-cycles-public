@@ -1,0 +1,70 @@
+\section{Finite inputs for the return comparisons}\label{sec:reproduce}\label{sec:finite-inputs}
+\hypertarget{finite.inputs}{}
+
+For the seed and fold tests below, the programs evaluate rational
+polynomial antiderivatives at endpoints isolated by bisection.
+The improper integrals in the ten-term examples are bounded using
+outward-rounded real balls in Arb \cite{Johansson2017}.
+
+\subsection{Trinomials and the two extensions in low degree}\label{subsec:finite-seed}
+Table~\ref{tab:trinomial-cert} supplies the finite cases in
+Lemma~\ref{lem:trinomial-Id}. Its analytic estimate gives
+$dI_d<-71/6480$ for the remaining even $d\ge20$. At $d=6,8$ the same equal-minimum integrals give $I_d>0$.
+The negative action difference used for $d\ge10$ occurs in neither
+of these two rows.
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Exact rational enclosures $L<1000dI_d<U$ on $a_d\in[c-10^{-9},c+10^{-9}]$ for the trinomial
+  equal-depth contraction difference $I_d$ in \eqref{eq:Id-def}.}
+  \label{tab:trinomial-cert}
+  \begin{tabular}{@{}rrrr@{}}
+    \toprule
+    $d$ & $c$ & $L$ & $U$ \\
+    \midrule
+    $6$  & $0.062500000$ & $130$ & $135$ \\
+    $8$  & $0.040486856$ & $25$  & $27$  \\
+    $10$ & $0.029550858$ & $-24$ & $-22$ \\
+    $12$ & $0.023104700$ & $-51$ & $-50$ \\
+    $14$ & $0.018889538$ & $-69$ & $-67$ \\
+    $16$ & $0.015933561$ & $-81$ & $-79$ \\
+    $18$ & $0.013753521$ & $-89$ & $-88$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+For the degree-ten seed, the equal-minimum radius, peak, two
+curvatures and action gaps at $20,100,200$ have rational enclosures
+in the proof of Article, Lemma~3.1. Section~\ref{subsec:four-five}
+combines those three actions with the tests at $1/100,1,2$ on the
+outer degree-twelve profile.
+
+\subsection{The fold and the single crest}\label{subsec:finite-crest}
+The six-power construction uses the degree-eighteen fold data, and
+Corollary~\ref{cor:seven-inner} adds a lower odd power. The five-power
+examples require rising, reflected and depth tests for two walls;
+the alternative seven-power construction starts with a cubic.
+For eight powers the rising-node margin is $1/410000$ and the wall
+exponent $2^{38}$ bounds the reflected correction by $1/440000$
+(Section~\ref{subsec:eight-powers}). For nine powers, the seven rational
+inputs to $J_{17}$ have alternating signs and absolute values greater
+than $1/1000$. The new odd power gives one further sign by
+$1/6161-3/6163<0$. Proposition~\ref{prop:two-marks} uses these tests
+after the final even exponent is fixed.
+
+\subsection{Reproducing the calculations}\label{subsec:replay}
+In the standalone computation archive, \texttt{README.txt} lists each
+test with its command and the file containing its reference output.
+The standard suite covers the rational seed enclosures, the
+degree-eighteen fold and the tests in Proposition~\ref{prop:two-marks}.
+For Article, Corollary~4.6, it encloses the seed and positive-height
+variations at $768$ bits and the five depth integrals with analytic
+tails. A central difference at $\pm2^{-240}$ also checks the ordinary
+variation at the moving minimum and its upstream inverse. Article,
+Lemma~3.4 proves the signs for all four prefix choices. The suite
+checks the fixed degree-$26$ profile at $512$ bits and refines the
+integrals in degrees $26$ and $67088$. A separate $512$-bit check uses
+reciprocal substitution for degree $22$.
+The archived enclosures concern the local inputs to Article,
+Corollary~4.6 and Corollary~5.2.

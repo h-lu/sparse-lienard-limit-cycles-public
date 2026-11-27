@@ -1,0 +1,7 @@
+$ python3 -B code/return_identities.py
+Symbolic Euler elimination identity verified.
+Exact fixed-level and equal-cost derivatives agree on ascending and descending inverse branches.
+At equal-height radii 1/5 and 7/5, f(descending)=-24/25, reflected variation=320952/546875.
+The averaged binomial energy drift has a simple zero at 2/sqrt(3); the outer-oval derivative identity holds symbolically.
+
+Exit status 0

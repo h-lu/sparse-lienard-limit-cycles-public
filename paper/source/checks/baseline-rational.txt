@@ -1,0 +1,6 @@
+$ python3 -B code/baseline_checks.py
+[PASS] Trinomial {1, d-1, d} certificates verified for d = 6..18 and d >= 20.
+[PASS] Balanced degree-10 seed and extensions {3,5,9,10}, {5,9,10,11,12}, {5,9,10,11,13,18} verified.
+PASS trinomial, balanced-seed and fold enclosures.
+
+Exit status 0

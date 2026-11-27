@@ -1,0 +1,87 @@
+\hypertarget{outer.extension}{}
+\begin{proposition}[Odd-power extension]\label{prop:outer-extension}
+Let a primitive $F$ in \eqref{eq:lienard} have a finite nonempty
+collection of nested hyperbolic cycles. For every odd $p>\deg F$, there
+are arbitrarily small nonzero coefficients of $x^p$ for which the
+perturbed system retains these cycles and has a further hyperbolic
+cycle outside them. In particular, for each $k\ge3$ the support
+$\{1,9,10\}\cup\{2i+3:4\le i\le k\}$ admits an open set with at least
+$k$ hyperbolic cycles.
+\end{proposition}
+\begin{proof}
+The outer trapping step follows the higher-damping construction of
+\cite[Remark~1.2]{DPR} and the odd-primitive extension in
+\cite[\S3.2]{DMH}. We show that adjoining any odd power $x^p$ with $p>\deg F$ to a
+polynomial having a finite nonempty hyperbolic nest gives one more cycle.
+Take the outermost selected cycle and, by reversing time and replacing
+$y$ by $-y$ if necessary, make it repelling. In a thin exterior collar
+choose a smooth Jordan curve $C_i$ crossed strictly outwards. Such curves
+are small constant transverse-coordinate curves in Floquet coordinates
+at a repelling cycle. Choose the collar so that $C_i$ meets the upper
+axis just once, at height $\beta_i$.
+
+For $P_\delta(x)=F(x)+\delta x^p$, all selected cycles and the strict
+crossing persist for sufficiently small $\delta>0$. Fix one such
+$\delta_0$ and put $P=P_{\delta_0}$. Define
+\[
+ v(x)=\int_0^x\frac{\dd s}{1+P(s)^2},\qquad
+ W=\tfrac12(x^2+y^2)-yv(x).
+\]
+The function $v$ is bounded, $|v(x)|<|x|$ for $x\ne0$, and
+$0<v'\le1$. Completing the square gives
+$2W=(y-v)^2+x^2-v^2$. The last two terms increase strictly with $|x|$
+on each half-line. Large levels are therefore smooth ovals, each meeting
+the positive axis once. Direct differentiation gives
+\[
+ \dot W=-x(P-v)-v'(y-P/2)^2+v'P^2/4 .
+\]
+The last term is at most $1/4$. The first tends to $-\infty$ as
+$|x|\to\infty$ because the leading coefficient of $P$ is positive and
+$p$ is odd. For bounded $x$, the squared term gives the same conclusion
+as $|y|\to\infty$. Choose an enclosing level $C_o$ with $\dot W<0$ and
+upper-axis height $\beta_o$. Keep both ovals fixed while varying $\delta$
+in a small open interval about $\delta_0$. The annulus between the ovals
+is positively invariant and contains no equilibrium.
+
+For each $\beta\in[\beta_i,\beta_o]$ the forward orbit returns to the
+positive axis. Indeed its omega-limit set in the annulus is a periodic
+orbit by Poincar\'e--Bendixson, and a flow box at that orbit's transverse
+axis crossing forces a return. Transversality and the polynomial vector
+field give real-analytic dependence of the full return $\Pi_\delta$ on
+the launch height. At the boundaries $\Pi_\delta(\beta_i)>\beta_i$ and
+$\Pi_\delta(\beta_o)<\beta_o$. Thus for the fixed $\delta_0$ at least
+one exterior fixed point is isolated and of odd multiplicity.
+Hyperbolicity requires a simple fixed point. We now vary $\delta$
+inside the interval on which both crossings persist.
+At any zero of $\Pi_\delta(\beta)-\beta$ both reflected half-returns exist
+in a neighborhood. Differentiating
+$b_-(\Pi_\delta(\beta),\delta)=b_+(\beta,\delta)$ there gives at the zero
+\[
+ \partial_\delta\Pi_\delta=
+ \frac{\partial_\delta b_+-\partial_\delta b_-}{\partial_\beta b_-}<0
+\]
+by Lemma~\ref{lem:variational}(ii). The local zero curves therefore
+project to the $\delta$-axis with critical values of measure zero
+(Sard's theorem, as in Lemma~\ref{lem:hyperbolicity}). For a regular
+$\delta$ the opposite boundary signs give a hyperbolic cycle in the
+annulus. The original nest persists inside $C_i$, and the new coefficient
+is nonzero.
+
+Alternatively, if $x$ is already in the support, hold $\delta_0$ fixed
+and vary the linear coefficient $a_1$. The same annulus persists.
+In \eqref{eq:b-param} the two variations are $+r$ and $-r$,
+so $\partial_{a_1}(b_+-b_-)>0$ at every return zero. Equivalently
+$\det((y-F,-x),(-x,0))=-x^2$ along the orbit, strictly negative
+off the axis. The local zero curves and the same regular-value argument
+give a simple exterior cycle while $a_1$ stays nonzero. Undoing the time and ordinate reversal, when used, restores
+the original coefficients of $F$.
+
+For the stated support take $d=10$ in Section~3 of the electronic
+supplement. A regular value of the trinomial matching curve gives
+three simple returns of $C(x^{10}+x^9-ax)$ with $C,a>0$. The three
+hyperbolic cycles enclose the unique equilibrium, so they form the
+nest required above. This is the degree-ten case originally obtained
+in \cite[proof of Theorem~1.2]{CJLZ}. Successively adjoining
+$11,13,15,\ldots$ as exponents preserves the earlier cycles and adds
+one each time. Persistence at each finite stage gives the open set.
+\end{proof}

@@ -1,0 +1,281 @@
+\input{tex/preamble.tex}
+\hypersetup{pdfauthor={Haibo Lu},pdftitle={Electronic supplement: Limit cycles on small supports},
+  pdfsubject={Small-support constructions for Positive valleys and hyperbolic limit cycles in classical Lienard systems with a k-term primitive}}
+\title[Electronic supplement: limit cycles on small supports]{Electronic supplement\\ Limit cycles on small supports}
+\author{Haibo Lu}
+\address{Shanghai Institute of Technology}
+\date{November 27, 2026}
+\thanks{ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}.}
+
+\begin{document}
+\maketitle
+\noindent Electronic supplement to \emph{Positive valleys and hyperbolic limit
+cycles in classical Li\'enard systems with a $k$-term primitive}. References prefixed
+by \emph{Article} use the numbering of the main text.
+\section{What a small support can realize}\label{sec:supp-intro}\hypertarget{public.audit}{}
+We count limit cycles of a single system
+\begin{equation}\label{eq:lienard}
+  \dot{x}=y-F(x),\qquad \dot{y}=-x,\qquad F(0)=0,
+\end{equation}
+with real collected primitive
+\begin{equation}\label{eq:collected}
+  F(x)=\sum_{i=1}^k a_i x^{m_i},\qquad 1\le m_1<\cdots<m_k,\qquad a_i\ne0 .
+\end{equation}
+The exponents are integers and the degree is free. Let $H(k)$ and
+$\LieM(k)$ be the respective suprema for hyperbolic and isolated cycles,
+with values in $\mathbb Z_{\ge0}\cup\{+\infty\}$.
+At six and seven terms a distant maximum closes ordinary and incoming
+returns on the same axis. At eight and nine terms the rise and fall of
+a single crest give two sets of sign brackets. Sections~3--6 prove the
+bounds below. Section~7 identifies the finite inputs.
+
+\begin{theorem}\label{thm:lower}
+\leavevmode
+\begin{enumerate}
+  \item[\textup{(i)}] Chen, Jin, Li and Zhou attribute the one- and
+  two-term counts for isolated cycles to Cen, Chen, Tian and Zhao
+  \cite[p.~2]{CJLZ}. Section~\ref{subsec:baselines-lift}
+  proves $H(1)=\LieM(1)=0$ and $H(2)=\LieM(2)=1$, including
+  hyperbolic attainment in the two-term case.
+  \item[\textup{(ii)}] For each of the following supports there is a
+  nonempty open set in $(\mathbb R\setminus\{0\})^k$ on which the given
+  number is a lower bound for the number of distinct hyperbolic limit cycles.
+  In the last row every sufficiently large even $M$ works after the
+  preceding profile has been fixed.
+\[
+\begin{array}{@{}rcl@{}}
+\toprule
+ k & \text{Cycles} & \supp(F)\\
+\midrule
+ 3 & 3  & \{1,d-1,d\},\quad d\ge10\ \text{even}\\
+ 4 & 4  & \{3,5,9,10\}\\
+ 5 & 7  & \{5,9,10,29,16384\}\\
+ 6 & 10 & \{5,9,10,11,13,18\}\\
+ 7 & 11 & \{3,5,9,10,11,13,18\}\\
+ 8 & 14 & \{3,5,8,10,11,12,37,2^{38}\}\\
+ 9 & 19 & \{5,9,10,1033,2058,3081,3082,3083,M\}\\
+\bottomrule
+\end{array}
+\]
+  Six cycles also occur on
+  $\{5,9,10,11,12\}$, and eleven on $\{5,9,10,11,13,15,M\}$ for every
+  sufficiently large even $M$ in this second construction.
+\end{enumerate}
+\end{theorem}
+
+\hypertarget{trinomial.extension}{}
+\begin{corollary}[Odd-power extension of the three-cycle trinomial]\label{cor:odd-lift}
+For every $k\ge3$, an open set of coefficients on
+$\{1,9,10\}\cup\{2i+3:4\le i\le k\}$ realizes at least $k$
+hyperbolic cycles.
+\end{corollary}
+
+Article, Proposition~A.1, proves this extension. Section~\ref{subsec:nine-powers}
+applies it to a nineteen-cycle nest to obtain at least twenty cycles
+on ten terms.
+
+\subsection{Comparison on fixed supports}\label{subsec:full-support}
+On $\{1,9,10\}$ the three simple return matches of Chen, Jin, Li and
+Zhou give three hyperbolic cycles \cite[(3.1) and proof of
+Theorem~1.2]{CJLZ}. Section~\ref{sec:trinomials} recovers this case
+at $d=10$. Article, Proposition~A.1, successively adjoins the powers
+$11,13,\ldots,21$, giving column two of Table~\ref{tab:low-comparison}.
+At four terms Theorem~\ref{thm:lower}(ii) keeps the degree at ten.
+
+For column three, the published count in degrees $3,4$ is exactly one
+\cite{LMP,LL}. In degree $5$ the classical construction gives two
+hyperbolic cycles \cite[p.~336]{LMP}. For $k\ge6$ the bound is $k-2$
+in degree $k$ \cite[Theorem~1]{DMH}. By hyperbolic persistence these
+examples can occupy the full support $\{1,\ldots,k\}$.
+
+The unsigned Palomar preprint gives a rational sextic on full support
+and a coefficient box of radius $10^{-40}$ in each coordinate. At
+seven increasing positive heights its enclosures of both half-returns
+give the signs $+,-,+,-,+,-,+$ for the difference $A^+-A^-$ of their
+depths \cite[table \emph{Certified half-returns} and appendix]{Palomar}.
+In our convention $b_\pm=-A^\pm$, so the signs reverse. Trapping between
+the two bounding returns on each side supplies transverse returns
+throughout the six brackets \cite[subsection \emph{Trapping}]{Palomar}.
+Continuity allows their shared strict endpoints to be separated.
+
+At each new degree the proof of \cite[Theorem~2]{Palomar} adjoins a
+small nonzero term $cx^{n+1}$ while keeping the old coefficients and
+strict samples. Each new odd degree supplies one more bracket by an
+exterior test. For the specified septic $F_6+10^{-41}x^7$ this gives
+seven. The full supports in degrees $6$ through $10$ thus carry
+$6,7,7,8,8$ brackets. Palomar obtains isolated cycles throughout
+the sextic box and for the specified septic. For column four, vary
+the nonzero linear coefficient slightly. Its derivative in $b_+-b_-$
+is positive on each return interval, so Article, Lemma~2.3 gives one
+regular value with a hyperbolic cycle in every bracket. These cycles
+persist on an open set.
+
+Starting instead with the six nearby hyperbolic cycles and successively
+adjoining $p=7,9,11,13$ by Article, Proposition~A.1, gives $8,9,10$
+cycles on $8,9,10$ terms in degrees $9,11,13$. The
+support $\{1,2,3,4,5,6,7,9,11,13\}$ of degree thirteen appears
+in Article, Table~1. Lu's open exact-degree examples give column five
+on full support in degrees $6$ through $9$, and at least fourteen
+hyperbolic cycles on $\{1,\ldots,10\}$
+\cite[supplement, Proposition~S1.2]{LuDegree}.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Lower bounds for hyperbolic cycles on $k$ nonzero terms. Full
+support means $\{1,\ldots,k\}$. Column~2 (`Seed or lift', from
+\cite{CJLZ} and Article, Proposition~A.1) uses degrees
+$10,11,13,15,17,19,21$. Column~3 gives published bounds
+\cite{LMP,LL,DMH}. Column~4 uses the Palomar brackets at nearby
+coefficients. Columns~5--6 use Lu's preprint \cite{LuDegree}, at full
+support and on the indicated degree-twelve supports before closure.}
+\label{tab:low-comparison}
+\begin{tabular}{@{}rccccccr@{}}
+\toprule
+ & & \multicolumn{3}{c}{Full support, degree $k$}
+ & Degree $12$ & \multicolumn{2}{c}{Theorem~\ref{thm:lower}(ii)}\\
+\cmidrule(lr){3-5}\cmidrule(lr){6-6}\cmidrule(l){7-8}
+$k$ & Seed or lift & \cite{LMP,LL,DMH} & \cite{Palomar} + Art.\ Lem.~2.3 & \cite{LuDegree}
+    & Precl.\ \cite{LuDegree} & Cycles & Degree\\
+\midrule
+3 & 3 & 1 & -- & -- & -- & 3 & even $d\ge10$\\
+4 & 4 & 1 & -- & -- & -- & 4 & 10\\
+5 & 5 & 2 & -- & -- & -- & 7 & 16384\\
+6 & 6 & 4 & 6 & 6 & -- & 10 & 18\\
+7 & 7 & 5 & 7 & 7 & -- & 11 & 18\\
+8 & 8 & 6 & 7 & 9 & 10 & 14 & $2^{38}$\\
+9 & 9 & 7 & 8 & 10 & 11 & 19 & large even $M$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Column~6 counts the ordinary returns before exterior closure in
+Lu's degree-twelve construction \cite[\S\S5.2--5.3]{LuDegree}.
+For one separated radius
+($h=1$), Lu's Lemma~5.3 uses even powers $2,8,10,12$ and odd powers
+$3,5,7$, with $b_7>0$. The linear term of his Proposition~3.1 gives the
+allowed support $S_8=\{1,2,3,5,7,8,10,12\}$. In Lu's depth convention a
+small launch gives $+$ and the eight tests near the radius alternate
+from $-$ to $+$. By \cite[(3.8)]{LuDegree} a farther test has sign
+$\operatorname{sgn}((7-12+2)b_7)=-$. Detuning the higher matched
+reference to $+$ gives $1+7+1+1=10$ ordinary brackets.
+
+For $S_9=S_8\cup\{9\}$ first add a sufficiently small negative
+ninth-power coefficient $b_9$ to the profile. The preceding strict
+tests persist and a new farther test has sign
+$\operatorname{sgn}((9-12+2)b_9)=+$ \cite[Lemma~3.2]{LuDegree}.
+Choose the reference above this test and detune it to $-$, giving
+$1+7+2+1=11$ brackets. In each case one regular choice of the linear
+coefficient gives a simple zero in every bracket
+\cite[Proposition~2.4(i)]{LuDegree}. Hyperbolic persistence allows
+any missing coefficients within $S_8$ or $S_9$ to be filled, giving
+exactly eight or nine terms, respectively.
+
+For the comparison per primitive term in Article, Section~1.3, stop
+Lu's construction after $s\ge1$ separated radii in the proof of
+\cite[Lemma~5.3]{LuDegree}. With $m=8+4s$ the available even powers
+are $2,8,10,\ldots,m$ and the odd powers are $3,5,\ldots,5+2s$.
+The ordinary, positive-height incoming and negative-height incoming
+comparisons give at least $7s,3s,s$ changes. A small term of degree
+$m-1$ preserves these signs. A linear coefficient realizes the
+ordinary returns and regularizes their zeros while preserving the
+incoming signs \cite[Lemma~3.2(ii) and Propositions~3.1, 2.4(i)]{LuDegree}.
+At zero translation the two incoming sets of heights give at least
+$4s$ changes. The exterior primitive adds at most the powers
+$m+1,m+2,m+3$ and gives one additional cycle
+\cite[Proposition~3.3, (3.9) and (3.11)]{LuDegree}. This proves the
+count $7s+4s+1=11s+1$ on at most $(2s+2)+(s+2)+1+1+3=3s+9$
+powers, in degree at most $m+3=4s+11$.
+
+Keeping all the remote odd powers at one radius gives the sharper
+finite counts used in the article. Set $h=1$ in the table in the
+proof of \cite[Proposition~5.1]{LuDegree}. Its rows $e=0,1$ use
+the same even powers $2,8,10,12$. Their highest inner odd powers
+are $9$ and $11$, respectively. After adjoining the linear and
+exterior powers the supports are
+$\{1,\ldots,14\}\setminus\{4,6\}$ and
+$\{1,\ldots,15\}\setminus\{4,6\}$. The counts $14h+9,14h+10$
+therefore give $H(12)\ge23$ in degree $14$ and $H(13)\ge24$ in
+degree $15$. With full supports in degrees $12,13,14$, the same
+preprint gives $19,22,25$, respectively \cite[supplement, Theorem~S1.1
+and Proposition~S1.2, and article, Theorem~1.1]{LuDegree}.
+
+\subsection{Which tests a crest can transfer}
+For a three-power seed we first match the two limiting lower intercepts
+while retaining strict ordinary return brackets. The six-term construction
+adds three powers at a remote fold. Three equations on finite half-returns
+close incoming trajectories from prescribed heights in the same field
+as the ordinary tests. The low-degree seven-term example then adds a
+lower odd power. At five, eight and nine terms we use a different
+transfer that requires two finite matches and no prescribed shift for
+a list of incoming heights.
+
+For the latter construction take a rising even primitive $E_b$,
+$E_b'(r)=rf_b(r)>0$ for $r>0$. Subtract $f_b(1)r^M/M$ with $M$ even,
+above every old even power and $M-2>\sup_{r>0}rf_b'(r)/f_b(r)$.
+The resulting $E$ has one simple maximum at $1$. Choose an odd profile
+$Q$ with $Q(1)=0$ and top power below $M$. With $f=E'/r$ put
+$U(t)=\int_0^t(fQ'-f'Q)\dd r$. A test at $a<1$ and its partner
+$z>1$ with $E(z)=E(a)$ read
+\[
+ U(a),\qquad U(a)-\frac{f(a)}{f(z)}[U(z)-U(1)] .
+\]
+To use $n$ changes on both branches, the two expressions must have the
+same strict alternating signs at the $n+1$ chosen nodes. The mark
+and the two far depths must also have the signs specified in
+Proposition~\ref{prop:two-marks}. This is a comparison along the
+rise and descent of the crest. Each test already compares the two
+reflected half-planes. In the nine-term case seven brackets on each
+branch, two simple marks, an exterior bracket and two bounded brackets
+give nineteen. In the eight-term case the explicit wall exponent is
+$2^{38}=274\,877\,906\,944$.
+
+\section{Return conventions and the first two counts}\label{sec:toolkit}
+In Article, Section~2 the left half-plane is reflected and time is reversed.
+At a common upper launch $\beta>0$ with two transverse returns,
+$b_\sigma(\beta)$ is the lower intercept for $P_\sigma(r)=F(\sigma r)$,
+$r=|x|$. Zeros of $\oscD=b_+-b_-$ give cycles; at such a zero the
+multiplier is $\exp(J_--J_+)$, where $J_\sigma=\int P_\sigma'(r)\dd t$
+on the half-orbit. The comparison of ordered profiles assumes order on
+the union of the two radial ranges and strict order on an interval that
+both arcs traverse (Article, Lemma~2.1). The tail gap is
+$\Delta=\ell_+-\ell_-$, $\ell_\sigma=\lim_{\beta\to\infty}b_\sigma(\beta)$.
+The entering graph with limiting ordinate $h$ has axis ordinate $G_\sigma(h)$.
+
+For radius and ordinate scales $\Lambda,M$, put $u=(r/\Lambda)^2/2$,
+$w=y/M$, $\eps=(\Lambda/M)^2$ and $\phi_\sigma=P_\sigma(r)/M$.
+The outgoing and incoming legs end at a common turn $T$ and have
+positive and negative axis ordinates, respectively. Write $X,Y$ for
+half their squared axis ordinates and $m_{\sigma,T},l_{\sigma,T}$ for
+the suffix maximum and minimum of $\phi_\sigma$ on $[u,T]$.
+Article (2.5)--(2.8) give the launch, coefficient and turn derivatives
+and the envelope errors. Article, Lemma~2.2 gives the finite-turn
+comparison and the incoming graph. Article, Lemma~2.3 supplies one
+regular perturbation of an existing odd coefficient for any finite
+list of strict brackets.
+\input{tex/baselines-and-lift.tex}
+\input{tex/trinomials.tex}
+
+\section{A balanced trinomial and its first extensions}\label{sec:balanced}\hypertarget{seed.balance}{}
+For the primitive $x^{10}+bx^9+\lambda x^5$, Article, Lemma~3.1
+gives the balancing interval and the compact brackets. Its proof
+encloses the two turning radii and the action difference at each of
+the heights $20,100,200$.
+\input{tex/four-and-five.tex}
+
+\section{Ten cycles in degree eighteen}\label{sec:six}
+\subsection{Matching at a distant fold}\label{subsec:supp-fold}
+Apply Article, Proposition~4.4 and Corollary~4.5, with $d_{\rm top}=10$
+and $m_0=5$. The three new powers are $11,13,18$. Write
+$\beta_{\rm refl}$ for the upper launch at the end of the descending
+fold bracket and $\beta_{\rm ext}$ for the plus upper hit at the
+exterior test depth $s_0<S_*$. Between them lie the launches
+corresponding to the prescribed shifted incoming tests, in decreasing
+order of physical turning height. Both endpoint displacements are
+positive. The two simple marks and both fold brackets lie outside
+this open interval.
+\input{tex/six-powers.tex}
+\input{tex/two-matches.tex}
+\input{tex/supplement-inputs.tex}
+\input{tex/bibliography.tex}
+\end{document}

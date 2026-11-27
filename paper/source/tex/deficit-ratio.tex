@@ -1,0 +1,73 @@
+Use the deep orbit of each half as a reference for all its earlier
+turns. Lu compares secants to a common terminal section by bounding
+the variation of its derivative \cite[Lemma~3.4]{LuDegree}.
+On a regular descent we can instead integrate the exact difference of
+the two graph equations against the same reference leg. The remainder
+in the unscaled logarithm is bounded uniformly in the two turns.
+
+\begin{lemma}[Upper deficits on a regular descent]\label{lem:deficit-ratio}
+Let $\eps\downarrow0$. For each scaled profile let $T_b$ be a later turn
+and $I=[T_1,T_2]\subset(0,T_b)$ a compact interval of earlier
+turns. All these outgoing legs have transverse positive upper hits.
+Write $\mathfrak d(T)=X(T_b)-X(T)$. Suppose $|\phi'|\le M$ on $[0,T_b]$,
+and on $[T_1,T_b]$ suppose $\nu=-\phi'$ satisfies
+$0<\nu_*\le\nu\le\nu^*$ and $|\nu'|\le M_1$. Assume
+$T_b-T_2\ge b>0$, $|I|\le L$, and assume the upper hits of the
+reference and test legs lie in a compact subinterval of $(0,\infty)$.
+For a family of profiles take all these bounds common to the family.
+Then, uniformly for $T,T_0\in I$ and all sufficiently small $\eps$,
+\begin{equation}\label{eq:deficit-ratio}
+ \log\frac{\mathfrak d(T)}{\mathfrak d(T_0)}=-\frac{1}{\eps}\int_{T_0}^{T}
+ (\phi')^2\dd u+O(1).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $w_*$ be the outgoing leg of $T_b$, $\zeta=w_*-\phi$ and
+$d_T=w_*-w_T>0$ up to the earlier turn. In backward distance
+$v=T_b-u$ put $Z(v)=\zeta(T_b-v)$. Then $Z(0)=0$ and for $v>0$,
+\[
+ (Z^2)_v=2\eps+2\phi'(T_b-v)Z .
+\]
+The right side extends continuously to $v=0$. Integrating first from
+a positive lower endpoint and taking its limit gives this identity
+in integral form from the turn. Put $c=1/[2(M+1)]$. While $Z\le c\eps$
+the squared gap grows at speed at least $\eps$. It reaches $c^2\eps^2$
+by $v=c^2\eps$ and cannot recross this level downwards. For $\eps$ so
+small that $c^2\eps<b/2$, we have $\zeta(u)\ge c\eps$ from every
+test turn back to the axis.
+
+On the descent the same squared equation at $Z=\eps/\nu_*$ gives an
+upper barrier starting from zero. Write $N(v)=\nu(T_b-v)$ there.
+The error $e=Z-\eps/N$ obeys $e_v=-(N/Z)e-(\eps/N)_v$, with
+$N/Z\ge\nu_*^2/\eps$ and $|(\eps/N)_v|\le M_1\eps/\nu_*^2$.
+At $v=b/2$, $|e|\le C\eps$. Hence for $T_b-v\in I$,
+$|e|\le C\eps e^{-\nu_*^2 b/(2\eps)}+C\eps^2=O(\eps^2)$.
+
+The exact difference equation yields an integrable identity even at
+the earlier turn,
+\[
+ (\log d_T)'=\frac{\eps}{\zeta(\zeta-d_T)}
+             =\frac{\eps}{\zeta^2}+\frac{d_T'}{\zeta},\qquad d_T(T)=\zeta(T).
+\]
+Indeed $d_T'>0$, so its contribution at the turn satisfies
+\[
+ 0\le E_T:=\int_0^T\frac{d_T'}\zeta\,\dd u
+ \le\frac{\zeta(T)-d_T(0)}{\inf_{[0,T]}\zeta}=O(1).
+\]
+The numerator is at most $\zeta(T)=O(\eps)$ and the denominator is at
+least $c\eps$. Integrating up to the turn by a one-sided limit gives
+\[
+ \log d_T(0)=\log \zeta(T)-\int_0^T\frac{\eps}{\zeta^2}\,\dd u-E_T .
+\]
+The same reference leg $w_*$ occurs for $T_0$, hence subtraction
+cancels the integral on the common interval exactly. Also
+$\mathfrak d(T)=d_T(0)[w_*(0)+w_T(0)]/2$. The upper-hit bounds and the bounds
+on $\zeta(T)/\eps$ give bounded logarithms for both endpoint ratios. Thus
+\[
+ \log\frac{\mathfrak d(T)}{\mathfrak d(T_0)}
+ =-\int_{T_0}^T\frac{\eps}{\zeta^2}\,\dd u+O(1).
+\]
+On $I$ the expansion for $\zeta$ gives
+$\eps/\zeta^2=\nu^2/\eps+O(1)$. The integration length is at most
+$L$, which gives the uniform remainder in \eqref{eq:deficit-ratio}.
+\end{proof}

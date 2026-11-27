@@ -1,0 +1,197 @@
+Lu matches upper hits on the descent and obtains the first-order
+correction corresponding to $U(a)-f(a)\Tr(t)/f(t)$
+\cite[supplement, p.~16, (S5.12)--(S5.13)]{LuDegree}.
+Two accuracies are needed here. Before the reference hits agree, the
+exponential rate locates each upper deficit. After matching, the two
+terms in the derivative of the lower-intercept difference have a
+common exponential rate through the crest. Their first-order log
+ratio determines the sign away from the crest.
+
+\begin{lemma}[Single-half deficits and a common exponent across a crest]\label{lem:common-crest}
+Use the scaled legs of Lemma~\ref{lem:variational}, with potential
+coordinate $u=r^2/2$ and half-profiles $p_\sigma(r)=\phi_\sigma(u)$,
+$\sigma=\pm1$. Let $t_{b,\sigma}\to t_b$ be later reference radii and
+fix a finite $T_{\max}>t_b^2/2$. On $\mathcal I=[0,T_{\max}]$ set
+$\widetilde E(u)=E(\sqrt{2u})$ and $\widetilde Q(u)=Q(\sqrt{2u})$.
+Assume the profiles vanish at the axis, $E(0)=Q(0)=0$, and, as $\delta\downarrow0$,
+\[
+ \|\phi_\sigma-\widetilde E-\sigma\delta\widetilde Q\|_{C^1(\mathcal I)}
+     =o(\delta),\qquad
+ \sup_{\delta,\sigma}\operatorname{Var}_{\mathcal I}(\phi_\sigma')<\infty,
+ \qquad \sqrt\eps+\eps|\log\eps|=o(\delta).
+\]
+On each compact subinterval of $(0,T_{\max}]$ assume
+$\phi_\sigma\to\widetilde E$ in $C^2$.
+For $0<r\le\sqrt{2T_{\max}}$, the even $E$ rises to a simple maximum
+at $1$ and then decreases through zero at $1<g<t_b$, with nonzero
+slope off the crest. The perturbed profiles likewise have a regular
+ascent and descent outside an initial interval $0\le u\le\eta_\delta$,
+where $\eta_\delta\to0$ and
+$\int_0^{\eta_\delta}|\phi_\sigma'|^2\dd u=o(\delta)$.
+Assume transverse axis hits for the turns used below, including the turns
+up to each reference endpoint $T_{b,\sigma}=t_{b,\sigma}^2/2$.
+Put $f=E'/r$, $U(t)=\int_0^t(fQ'-f'Q)\dd r$, and $\Tr(t)=U(t)-U(1)$.
+\begin{enumerate}
+  \item[\textup{(i)}] \emph{Single-half deficit rate.} Without assuming
+  equality of the reference upper hits, write
+  $\mathcal A_{\mathrm{out},\sigma}(S)=\int_0^S \phi_\sigma'\dd m_{\sigma,S}$.
+  Uniformly on compact subsets of $T\in[0,t_b^2/2)$ bounded away from $T_{b,\sigma}$,
+  \[
+    -\eps\log\bigl(X_\sigma(T_{b,\sigma})-X_\sigma(T)\bigr)
+    = \min_{S\in[T,T_{b,\sigma}]} \mathcal A_{\mathrm{out},\sigma}(S)
+      + O\bigl(\sqrt\eps+\eps|\log\eps|\bigr).
+  \]
+  In particular, for a descending turn $T$ bounded away from the perturbed
+  crest $r_{\mathrm{crest},\sigma}$ and from $T_{b,\sigma}$, the minimum is
+  attained at $S=T$ and equals
+  $\int_{r_{\mathrm{crest},\sigma}}^{\sqrt{2T}}(\partial_r p_\sigma)^2\dd r/r$.
+  \item[\textup{(ii)}] \emph{Matched reference upper hits.} Assume in addition
+  that $X_+(T_{b,+})=X_-(T_{b,-})$. Let $t_-(t)$ match the upper hit of the
+  plus turn $t$, write $\Delta_Y(t)=Y_+(t^2/2)-Y_-(t_-^2/2)$ and
+  $J_\pm=J_{i,\pm}+J_{o,\pm}$ at these actual turns, and for $0<t<g$ let $a=t$
+  on the ascent and let $a\le 1$ satisfy $E(a)=E(t)$ on the descent. On compact
+  subintervals of $(0,g)$, including those containing $1$, both positive terms
+  \[
+   \mathcal L=e^{-J_{i,+}},\qquad \mathcal N=e^{J_{o,+}-J_{o,-}-J_{i,-}},\qquad
+   \Delta_Y'=\eps t(\mathcal L-\mathcal N)
+  \]
+  satisfy $-\eps\log \mathcal L,\,-\eps\log \mathcal N\to W(t)=\int_0^a f(r)^2r\dd r$
+  uniformly. On compact sets of regular turns the finer limit is
+  \begin{equation}\label{eq:crest-splitting}
+   \frac{\eps}{2\delta}\log(\mathcal N/\mathcal L)\longrightarrow
+   \begin{cases}U(t),&0<t<1,\\
+   U(a)-f(a)\Tr(t)/f(t),&1<t<g .
+   \end{cases}
+  \end{equation}
+  If in addition $\Delta_Y(a_*)=0$ for $0<a_*<1$, the signs of the ordinary
+  displacement at $a_i<a_*$ and at its descending partner
+  $z_i>1$ with $E(z_i)=E(a_i)$ are the negative and the positive,
+  respectively, of the corresponding nonzero expressions in
+  \eqref{eq:crest-splitting}. A nonzero $U(a_*)$ makes the marked orbit simple.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For part~\textup{(i)}, suppress $\sigma$ and write $T_b=T_{b,\sigma}$.
+For each $0<S\le T_b$ the two envelope actions are
+\[
+ \mathcal A_{\rm out}(S)=\int_0^S\phi'\dd m_S,\qquad
+ I(S)=\int_0^S\phi'\dd l_S,
+\]
+where $m_S,l_S$ are the suffix extrema in \eqref{eq:running-extrema}.
+Integration by parts on $[0,S]$, using \eqref{eq:turn-derivs} and
+\eqref{eq:envelope-bounds}, bounds the errors in $-\eps J_o(S)$ and
+$\eps J_i(S)$ by $\sqrt{2\eps S}\,(2\|\phi'\|_{\infty,\mathcal I}+
+\operatorname{Var}_{\mathcal I}\phi')$. Thus one bound applies from the axis to
+either reference turn for all sufficiently small $\delta$.
+The envelopes change by at most $\|\phi'\|_\infty |T-T'|$ on their
+common interval. The actions are uniformly Lipschitz in the turn by
+the same integration by parts. They converge uniformly to those of $E$:
+the envelopes converge in sup norm, their variations are bounded, and
+the limiting slope is of bounded variation. The limiting upper action
+is zero up to the crest and then equals $\int_1^t f^2 r\dd r$, strictly
+increasing. The lower action for $0<t<g$ is $W(t)$.
+
+Put $X_*=X_\sigma(T_b)$.
+The exact deficit $X_*-X_\sigma(T)=\int_T^{T_b}\eps e^{J_{o,\sigma}(S)}\dd S$
+has negative scaled logarithm within
+$O(\sqrt\eps+\eps|\log\eps|)$ of $\min_{[T,T_b]}\mathcal A_{\rm out}(S)$,
+uniformly away from $T_b$. For the upper bound on the integral use the minimum cost on the
+whole interval. For the lower bound integrate on a segment of length
+$\eps$ adjacent to a minimizer, where Lipschitz continuity bounds the
+increase in action by $O(\eps)$. At a regular descending turn the
+suffix maximum follows the descent from the perturbed crest, so the
+minimum outgoing cost occurs at the first endpoint and equals
+$\int_{r_{\mathrm{crest},\sigma}}^{\sqrt{2T}}(\partial_r p_\sigma)^2\dd r/r$.
+This proves part~\textup{(i)}.
+
+For part~\textup{(ii)}, differentiate the equality of the upper hits
+$X_+(t^2/2)=X_-(t_-(t)^2/2)$ using \eqref{eq:turn-derivs} to obtain the
+formula for $\Delta_Y'$. Part~\textup{(i)} distinguishes the branches for
+paired upper hits. On the ascent the limiting upper
+height increases to $E(1)$, which rules out a partner beyond the crest
+for a regular rising turn. On the descent the limiting deficit cost is
+strictly increasing and positive, whereas its value is zero on the ascent.
+For a compact test range in $(0,g)$ choose a fixed descending radius
+between $g$ and $t_b$. Its limiting deficit cost exceeds all the test
+costs, so monotonicity of $X_-$ keeps the partner below this radius.
+As $t\to1$, a limiting partner must attain both upper height $E(1)$
+and zero deficit cost. A radius below $1$ misses the former and a
+radius above $1$ misses the latter. Hence $t_-(t)-t\to0$ uniformly
+through the crest as well. The costs of $\mathcal L,\mathcal N$ are therefore
+$I_+$ and $I_-+\mathcal A_{{\rm out},+}-\mathcal A_{{\rm out},-}$ up to $O(\sqrt\eps)$, both with limit $W$.
+
+Write $\kappa_+=p_+(t)$ and $\kappa_-=p_-(t_-(t))$ for the
+actual scaled turning ordinates of the two arcs with common upper hit.
+For a fixed level $\kappa$ on the rising branch, the endpoint defined
+by $E(a)+\delta Q(a)=\kappa$ has derivative $-Q(a)/E'(a)$. In the variation of
+$\int (E'+\delta Q')^2\dd r/r$ its boundary term cancels $f(a)Q(a)$
+in $2\int fQ'$. This gives $U(a)$ up to the initial endpoint term,
+which vanishes here ($Q(0)=0$ for the half-profiles).
+The analogous descending integral from the crest gives $\Tr(t)$, since
+$f(1)=0$. On the initial interval a suffix envelope follows the profile or is
+constant, so its action there is bounded by
+$\int_0^{\eta_\delta}|\phi_\sigma'|^2\dd u=o(\delta)$.
+The $C^1(\mathcal I)$ expansion gives the same bound for the contribution of
+$(\widetilde E')^2$ there. Local $C^2$ convergence at the simple crest
+controls the perturbed maximum, while the first variations use the
+$C^1(\mathcal I)$ remainder.
+On the ascent the matched terminal levels $\kappa_\pm$ agree to
+$O(\sqrt\eps)=o(\delta)$, so the inward variation gives the first
+line of \eqref{eq:crest-splitting}.
+
+On a compact interval of regular descending levels write
+$O_\sigma(k)$ for the outgoing envelope action at the turn of level $k$.
+Write $z(k)>1$ for the descending inverse of $E$. At zero perturbation
+$O_0(k)=\int_1^{z(k)} f(r)^2r\dd r$, hence $O_0'(k)=f(z(k))<0$.
+The fixed-level variation just computed gives
+$O_\sigma(k)=O_0(k)+\sigma\delta\Tr(z(k))+o(\delta)$ uniformly there.
+At the paired turns $T_+=t^2/2$, $T_-=t_-(t)^2/2$, both the upper
+hit and the later reference hit agree. Hence the two actual deficits
+are the same positive number
+\[
+ \mathfrak d_*=X_+(T_{b,+})-X_+(T_+)=X_-(T_{b,-})-X_-(T_-).
+\]
+On a compact set of regular descending turns the pairs stay a fixed
+distance from their respective reference endpoints. The outgoing
+envelope action on $[T_\sigma,T_{b,\sigma}]$ is minimized at
+$T_\sigma$. With $e_\eps=\sqrt\eps+\eps|\log\eps|$, the single-half
+deficit estimate above thus gives
+$O_\sigma(\kappa_\sigma)=-\eps\log\mathfrak d_*+O(e_\eps)$ for each sign,
+uniformly on this set. The bound for the actual outgoing leg now gives
+\[
+ -\eps\bigl(J_{o,+}(T_+)-J_{o,-}(T_-)\bigr)
+ = O_+(\kappa_+)-O_-(\kappa_-)+O(\sqrt\eps)
+ = O(e_\eps)=o(\delta).
+\]
+Since $|O_0'|$ is bounded away from zero, the mean value theorem first
+gives $\kappa_+-\kappa_-=O(\delta)$. Both levels tend to $E(t)$, so
+applying the same expansion at the two moving levels gives
+\[
+ o(\delta)=O_+(\kappa_+)-O_-(\kappa_-)
+ =f(t)(\kappa_+-\kappa_-)+2\delta\Tr(t)+o(\delta).
+\]
+Thus $\eps\log(\mathcal N/\mathcal L)=\eps(J_{i,+}-J_{i,-})+o(\delta)$.
+The inward action retains the change of level through its derivative
+$f(a)$, in addition to its fixed-level variation $U(a)$. Consequently
+\[
+ \frac{\eps}{2\delta}\log\frac{\mathcal N}{\mathcal L}
+ =U(a)+f(a)\frac{\kappa_+-\kappa_-}{2\delta}+o(1)
+ =U(a)-f(a)\frac{\Tr(t)}{f(t)}+o(1).
+\]
+All remainders in this first-order calculation are uniform on compact
+sets of regular turns.
+
+On $[a_i,a_*]$ the cost $W$ increases strictly. On $[a_*,z_i]$
+it first increases to $W(1)$ and then decreases strictly to
+$W(z_i)=W(a_i)<W(a_*)$, since $E(z_i)=E(a_i)<E(a_*)$.
+Each test is therefore the unique minimum on its interval to the mark. In a fixed neighborhood of that endpoint the larger of
+$\mathcal L,\mathcal N$ exceeds the smaller by $\exp(c\delta/\eps)$ for some $c>0$.
+Outside that neighborhood the limiting cost is at least
+$W(\text{test})+3\gamma$ for some $\gamma>0$. On a shorter interval
+at the test it is below $W(\text{test})+\gamma$.
+Uniform logarithmic convergence makes the latter signed mass dominate.
+Integrating in the appropriate direction and using
+$\sgn\oscD=-\sgn \Delta_Y$ proves the assertions. At the mark the multiplier
+is $e^{J_--J_+}$.
+\end{proof}

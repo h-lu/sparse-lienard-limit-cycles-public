@@ -1,0 +1,63 @@
+\subsection{Eight powers at explicit degree $2^{38}$ ($14$ cycles)}\label{subsec:eight-powers}
+
+For $k=8$ we work from the three-power seed $x^8+x^5+\lambda x^3$ ($d=8$, $q=5$, $l=3$, $b=1$, $N=0$)
+and insert two intermediate even powers $\{10,12\}$ so that $f_b(r)=E_b'(r)/r>0$ develops a deep
+positive dip without vanishing, amplifying the ascending action reversals of
+$Q(r)=r^5-512r^{11}+511r^{37}$ to five before closing the crest with the explicit high even exponent
+$M=2^{38}=274{,}877{,}906{,}944$.
+
+\begin{proof}[Proof of the $k=8$ row of Theorem~\ref{thm:lower}\textup{(ii)}]
+Set $d=8$, $q=5$, $l=3$, $z=8r^2$, and $C(z)=1-\frac{19}{10}z+z^2>0$. In \eqref{eq:crest-wall} define
+\[
+  f_b(r) = 8r^6 C(z), \qquad Q(r) = r^5 - 512r^{11} + 511r^{37}, \qquad M = 2^{38}.
+\]
+Here $Q(1)=0$, $Q'(1)=13280$, $A_1:=f_b(1)=1992/5$, and integrating $r f_b(r)$ gives
+\[
+  E_b(r) = r^8 - \frac{304}{25}r^{10} + \frac{128}{3}r^{12}, \qquad E_b(1) = \frac{2363}{75}.
+\]
+Using $C(z)\ge(1-\frac{19}{20})(1+z^2)=\frac{1}{20}(1+z^2)$, the logarithmic slope satisfies
+$rf_b'(r)/f_b(r)=6+2zC'(z)/C(z)\le 6+4\cdot 20=86<M-2$, so the single-crest monotonicity condition
+holds on $(0,\infty)$. At the seven ordered nodes
+\[
+  z \in \left\{\frac{1}{5},\, \frac{1}{2},\, 1,\, 2,\, \frac{11}{2},\, 7,\, \frac{15}{2}\right\}
+\]
+(the last serving as the marked ascending turn $a_*=\sqrt{15/16}<1$), writing $G(z)=1-z^3+511(z/8)^{16}$
+expresses the unclosed ratio $U_{f_b,Q}(r)/f_b(r)$ in exact rational form up to $(z/8)^{5/2}$:
+\[
+  \frac{U_{f_b,Q}(r)}{f_b(r)} = \left(\frac{z}{8}\right)^{5/2}\frac{1}{C(z)}\sum_{i,j} C_i G_j\,\frac{-1+2(j-i)}{11+2(i+j)}\,z^{i+j}.
+\]
+Exact rational arithmetic gives the bounds in Section~\ref{sec:reproduce} and shows that these seven
+values have signs $-,+,-,+,-,+,+$ and magnitudes exceeding $1/400{,}000$. Because $r^2\le 15/16$ at
+all seven nodes, each integrated cross-term with $-A_1 r^{M-2}$ has exponent factor of modulus at most
+$1$, $\sum|[r^p]Q|=1024$, and $f_b(r)\ge \frac{2}{5}r^6$, so subtracting the $M=2^{38}$ wall changes
+$U/f_b$ by at most $2^{20}(15/16)^{(M-8)/2}<10^{-9}$. Since $0<f(r)\le f_b(r)$ at the test nodes,
+$B_L/f=U_{f,Q}/f$ retains the signs $-,+,-,+,-,+,+$ with magnitudes exceeding $1/410{,}000$.
+
+At $M=2^{38}$ we check the descent at the positive test levels and at
+the two negative levels. All ascending test levels lie in $(0,21)$ because $E(r)$ increases on $(0,1)$ and
+$E_b(\sqrt{15/16})<21$. For every $y\in[-1,21]$, the descending inverse $z(y)>1$ solving $A_1
+z^M=M(E_b(z)-y)$ satisfies
+\[
+  1 + \frac{16}{M} < z(y) < 1 + \frac{40}{M}, \qquad -f\bigl(z(y)\bigr) > \frac{1}{2}M(H_c-y).
+\]
+Indeed, $(1+16/M)^M<3^{16}$ whereas $(1+40/M)^M\ge\exp(40-800/M)>2^{39}$; throughout $[1,1+40/M]$ one
+has $r^{37}<4/3$, whence $E_b(r)<114$ and $f_b(r)<1300$ by triangle bounds on their coefficients,
+while $E_b(r)\ge E_b(1)>31.5$ brackets $z(y)$ inside $(1+16/M,1+40/M)$. Furthermore, $1/z^2>3/4$,
+$H_c=E(1)>31$, and $f(z)=f_b(z)-M(E_b(z)-y)/z^2$, proving $-f(z(y))>\frac{1}{2}M(H_c-y)$.
+
+On $[1,1+40/M]$, $|Q''(r)|<2\cdot 736{,}992$ implies $13{,}000<Q'(r)<14{,}000$. Substituting these
+bounds into the exact integration-by-parts identity
+\[
+  \frac{\Tr(z)}{f(z)} = -Q(z) + \frac{2\int_1^z f(r)Q'(r)\dd r}{f(z)}
+\]
+(using $f(1)=Q(1)=0$ and $\int_1^z|f(r)|\dd r\le\int_1^z|E'(r)|\dd r=H_c-y$) gives $Q(z)>16\cdot
+13{,}000/M$ while the integral ratio has modulus at most $4\cdot 14{,}000/M$. Consequently
+$\Tr(z)/f(z)<0$ (whence $\Tr(z)>0$ because $f(z)<0$, giving $\Tr(z(-1/2))>0$ and $\Tr(z(-1))>0$) and
+\[
+  \left|\frac{\Tr(z)}{f(z)}\right| \le \frac{(40+4)\cdot 14{,}000}{M} < \frac{1}{440{,}000} < \frac{1}{410{,}000}.
+\]
+Hence at each ascending test $a_i$ ($0\le i\le 5$), the descending expression
+$B_R(a_i)/f(a_i)=B_L(a_i)/f(a_i)-\Tr(z(E(a_i)))/f(z(E(a_i)))$ preserves every strict sign
+$-,+,-,+,-,+$. Applying Proposition~\ref{prop:two-marks} with $N=0$, $n=5$, and $\sigma=-1$ yields
+$0+5+5+2+1+1=14$ simultaneous hyperbolic limit cycles on $\{3,5,8,10,11,12,37,2^{38}\}$.
+\end{proof}

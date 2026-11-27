@@ -1,0 +1,6 @@
+$ python3 -B code/check_ledger.py
+Support sizes agree for k=3,...,9. Each radial average has k nonzero coefficients. Seven new odd powers give the recorded ten-term extension.
+The seven nine-power cubic values have the stated signs and strict rational margins.
+The ten exponents and target signs agree. The count and support ledgers agree on all four residues through 32 blocks; the proof covers every block count.
+
+Exit status 0

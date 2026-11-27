@@ -1,0 +1,261 @@
+{
+  "equation": "x'=y-F(x), y'=-x, F(0)=0",
+  "unit": "positive exponent of a nonzero coefficient of the collected primitive F",
+  "low": [
+    {
+      "k": 3,
+      "project_support": [
+        1,
+        "d-1",
+        "d"
+      ],
+      "project_hyperbolic": 3,
+      "restriction": "even d >= 10",
+      "certificate": "trinomial",
+      "seed_or_odd_extension": 3
+    },
+    {
+      "k": 4,
+      "project_support": [
+        3,
+        5,
+        9,
+        10
+      ],
+      "project_hyperbolic": 4,
+      "restriction": "explicit support",
+      "certificate": "four-term",
+      "seed_or_odd_extension": 4
+    },
+    {
+      "k": 5,
+      "project_support": [
+        5,
+        9,
+        10,
+        29,
+        16384
+      ],
+      "project_hyperbolic": 7,
+      "restriction": "explicit support",
+      "certificate": "five-crest",
+      "seed_or_odd_extension": 5
+    },
+    {
+      "k": 6,
+      "project_support": [
+        5,
+        9,
+        10,
+        11,
+        13,
+        18
+      ],
+      "project_hyperbolic": 10,
+      "restriction": "explicit support",
+      "certificate": "six-fold",
+      "seed_or_odd_extension": 6
+    },
+    {
+      "k": 7,
+      "project_support": [
+        3,
+        5,
+        9,
+        10,
+        11,
+        13,
+        18
+      ],
+      "project_hyperbolic": 11,
+      "restriction": "degree 18, one new lower odd term on the six-term example",
+      "certificate": "six-fold",
+      "seed_or_odd_extension": 7
+    },
+    {
+      "k": 8,
+      "project_support": [
+        3,
+        5,
+        8,
+        10,
+        11,
+        12,
+        37,
+        274877906944
+      ],
+      "project_hyperbolic": 14,
+      "restriction": "explicit support",
+      "certificate": "eight-profile",
+      "seed_or_odd_extension": 8
+    },
+    {
+      "k": 9,
+      "project_support": [
+        5,
+        9,
+        10,
+        1033,
+        2058,
+        3081,
+        3082,
+        3083,
+        "M"
+      ],
+      "project_hyperbolic": 19,
+      "restriction": "all sufficiently large even M after fixing the cubic and terminal odd power",
+      "certificate": "nine-bounded",
+      "seed_or_odd_extension": 9
+    }
+  ],
+  "fixed_degree_alternatives": [
+    {
+      "k": 5,
+      "exponents": [
+        5,
+        9,
+        10,
+        11,
+        20000000
+      ],
+      "cycles": 7,
+      "kind": "second certified crest"
+    },
+    {
+      "k": 5,
+      "exponents": [
+        5,
+        9,
+        10,
+        11,
+        12
+      ],
+      "cycles": 6,
+      "kind": "two outer powers and a match in degree twelve"
+    }
+  ],
+  "public_odd_lift": {
+    "seed": [
+      1,
+      9,
+      10
+    ],
+    "new_powers": [
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23
+    ],
+    "kind": "CJLZ degree-ten seed and Article, Proposition A.1; seven extensions through ten terms."
+  },
+  "nine_power_input": {
+    "stride": 1024,
+    "lift": "1/1073741824",
+    "separation": "15/8",
+    "nodes": [
+      "1/16",
+      "1/6",
+      "1",
+      "15/8",
+      "4",
+      "32",
+      "4096"
+    ],
+    "signs": [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "lower_absolute": "1/1000"
+  },
+  "ten_power_input": {
+    "D": 258,
+    "n": 257,
+    "seed_odd": 33153,
+    "seed_even": 66306,
+    "exponents": [
+      33153,
+      66305,
+      66306,
+      66563,
+      66822,
+      67079,
+      67080,
+      67081,
+      67083,
+      67088
+    ],
+    "cycles": 26,
+    "precision_bits": 768,
+    "ordinary_positive_signs": [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "incoming_positive_signs": [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "negative_w": [
+      "1/2",
+      "2/3",
+      "7/8",
+      "3/2",
+      "4"
+    ],
+    "negative_scaled_boxes": [
+      [
+        "7/10",
+        "6/5"
+      ],
+      [
+        "-400000000",
+        "-300000000"
+      ],
+      [
+        "12/5",
+        "3"
+      ],
+      [
+        "-29/100",
+        "-23/100"
+      ],
+      [
+        "1/25",
+        "7/100"
+      ]
+    ],
+    "parameters": "explicit exponents and model inputs; physical dilation, matching and regular coefficients selected by existence"
+  },
+  "eventual_even_wall_alternative": {
+    "k": 7,
+    "exponents": [
+      5,
+      9,
+      10,
+      11,
+      13,
+      15,
+      "M"
+    ],
+    "cycles": 11,
+    "restriction": "all sufficiently large even M after preparing the crest",
+    "certificate": "seven-crest"
+  }
+}

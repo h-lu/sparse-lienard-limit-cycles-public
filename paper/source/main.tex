@@ -1,0 +1,422 @@
+\input{tex/preamble.tex}
+\hypersetup{pdfauthor={Haibo Lu},pdftitle={Positive valleys and hyperbolic limit cycles in classical Lienard systems with a k-term primitive},
+  pdfsubject={Positive minima, sparse polynomial primitives and finite return matching}}
+\title[Positive valleys in sparse classical Li\'enard systems]{Positive valleys and hyperbolic limit cycles\\
+in classical Li\'enard systems with a $k$-term primitive}
+\author{Haibo Lu}
+\address{Shanghai Institute of Technology}
+\date{November 27, 2026}
+\thanks{ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}.}
+\subjclass[2020]{34C07, 34C23, 34E15}
+\keywords{Classical Li\'enard system, sparse polynomial primitive, hyperbolic limit cycle, half-return map, slow divergence integral}
+
+\begin{document}
+\begin{abstract}
+For every $k\ge10$ there is a support of $k$ positive integer powers
+on which a nonempty open set of primitives $F$ gives at least $4k-17$
+simultaneous hyperbolic limit cycles of the classical system
+$\dot x=y-F(x)$, $\dot y=-x$. Published averaging constructions give
+$k-1$ hyperbolic cycles. Counting powers in a construction from Lu's
+fixed-degree preprint gives an asymptotic lower bound of $11/3$ cycles
+per primitive term. Here each block of four new powers adds sixteen
+cycles to the guaranteed count, raising that asymptotic bound to four.
+
+A positive valley is a local minimum above zero in the even profile
+obtained by reflecting and rescaling the two halves of the system.
+Between the minimum and the preceding maximum, a return from the
+positive axis and a trajectory entering from infinity sample different
+rising arcs. With four suitably chosen new powers we obtain six changes
+of the ordinary return comparison. The incoming comparison gives six
+changes at positive heights and four at negative heights. Matching the
+two halves at common finite launches yields the cycles. For profiles
+with factors quadratic in $r^p$, the minimum has height $\sim\eta$ as
+$\eta\downarrow0$. A negative first variation at some incoming height
+$-H<0$ occurs precisely above an odd amplitude
+$q_c(\eta)\sim K_{d,p}\eta^{1/2+1/d}$, where $d$ is the lowest even
+power. This family gives ten-term examples with at least sixteen hyperbolic
+cycles in each of degrees $22$ and $26$.
+\end{abstract}
+\maketitle
+
+\section{How many cycles can a sparse primitive produce?}\label{sec:intro}
+Fix the restoring force $x$ and consider the classical Li\'enard system
+\begin{equation}\label{eq:lienard}
+ \dot x=y-F(x),\qquad \dot y=-x ,
+\end{equation}
+where $F(0)=0$ and the $k$ monomials are in collected form,
+\begin{equation}\label{eq:collected}
+ F(x)=\sum_{i=1}^k a_i x^{m_i},\qquad
+ 1\le m_1<\cdots<m_k,\qquad a_i\in\mathbb R\setminus\{0\}.
+\end{equation}
+The integer exponents form the support. We allow the degree $m_k$ to
+vary. In the scalar equation $\ddot x+F'(x)\dot x+x=0$, the damping
+polynomial has the same term count and degree $m_k-1$. All periodic
+orbits enclose the unique equilibrium and hence form one nest. Write
+$H(k)$ for the supremum of the number of hyperbolic limit cycles in
+that nest and $\LieM(k)$ for the corresponding supremum for isolated
+periodic orbits. Thus $H(k)\le\LieM(k)$, with both suprema taken in
+$\mathbb Z_{\ge0}\cup\{+\infty\}$.
+
+With the restoring force fixed, the classical averaging construction
+already gives $H(k)\ge k-1$. On the odd powers $1,3,\ldots,2k-1$ the
+first averaged displacement of a circle of radius $\rho$ is $\rho$
+times a polynomial in $\rho^2$ of degree $k-1$ whose coefficients
+can be chosen independently. Taking $k-1$ distinct positive roots gives
+hyperbolic cycles \cite[p.~336]{LMP}, \cite[\S II.B]{Sanjuan},
+\cite[Theorem~1.1 and \S5]{BCG}. For isolated cycles, Chen, Jin, Li and Zhou
+\cite[p.~2, Conjecture~A]{CJLZ} report that Cen, Chen, Tian and Zhao
+\cite{CCTZ} obtained $\LieM(k)\ge k-1$, proved equality for $k=1,2$
+and conjectured equality for all $k$. Chen, Jin, Li and Zhou disprove
+the conjecture with three simple return matches on $\{1,9,10\}$
+\cite[Theorem~1.2 and its proof]{CJLZ}.
+
+Lu's preprint on the same classical system \cite{LuDegree} fixes the
+degree of the primitive and allows all lower positive powers. Counting
+the powers in one truncation of its construction gives an asymptotic
+lower bound of $11/3$ cycles per term
+(Section~\ref{subsec:other-comparisons}). Lu follows trajectories from
+the axis and from infinity, closes them at a distant maximum by comparing
+ratios of return gaps, and uses a regular coefficient to obtain
+hyperbolicity. One of his local constructions already gains three
+ordinary, three positive-height incoming and one negative-height incoming
+sign change with one even and one odd power \cite[Proposition~4.3]{LuDegree}.
+We use this global method with a different local source of cycles.
+Our rescaled even primitive has a shallow positive minimum. At heights
+just above it, only the incoming contraction rate includes the rise
+beyond the minimum (Figure~\ref{fig:valley}). The two comparisons
+therefore respond differently to the same odd perturbation. Four new
+powers exploit that difference, and the construction can be repeated on
+a support with no linear term. The return estimates and the matching
+argument for these supports are proved in Sections~\ref{sec:toolkit}--\ref{sec:assembly}.
+
+\hypertarget{main.theorem}{}
+\begin{theorem}[Lower bound at fixed term count]\label{thm:main}
+For $k\ge10$, write $k=4L+6+j$ with $L$ a positive integer and $j\in\{0,1,2,3\}$.
+There exist a support $S_k\subset\mathbb Z_{>0}$ of size $k$ and a
+nonempty open set $U_k\subset(\mathbb R\setminus\{0\})^k$ such that
+every coefficient vector in $U_k$ on $S_k$ gives at least
+$16L+10+3j$ simultaneous hyperbolic limit cycles. In particular, for every $k\ge10$,
+\begin{equation}\label{eq:main-bound}
+ \LieM(k)\ge H(k)\ge 4k-14-j\ge 4k-17,
+ \qquad \liminf_{k\to\infty} H(k)/k\ge4 .
+\end{equation}
+Taking $L=1$ and $j=0$ gives $H(10)\ge26$.
+\end{theorem}
+
+For fixed $j$, one more block adds two even powers, two odd powers and
+sixteen cycles to the lower bound. The smallest exponent in
+\eqref{eq:support-general} is $129n_0$, and the $k$ powers comprise
+$2L+2$ even and $2L+4+j$ odd exponents. Asymptotic sign estimates
+give a common lower cutoff for the odd integers $n_0$ that work for
+every finite $L$ and each $j$. The construction chooses the scales
+and coefficients after $L,j,n_0$ have been fixed. For ten terms,
+Corollary~\ref{cor:ten-support} verifies the particular choice
+$n_0=257$, giving at least 26 cycles on a support of degree $67088$.
+
+A simpler family shows how the odd amplitude interacts with the depth
+of a valley. Write $r=|x|/A$ at a large radial scale $A$. The two
+reflected primitives have the same rescaled even part $E(r)$ and
+opposite odd parts. By a \emph{positive valley} we mean a nondegenerate
+local minimum of $E$ at positive radius whose value is positive. Take
+even integers $d\ge10$, $p\ge2$ and put
+\[
+ z=r^p,\qquad E_\eta=r^d\bigl((1-z)^2+\eta z\bigr),\qquad
+ Q_q=r^{d-1}\bigl((1-z)^2-qz\bigr).
+\]
+Here $p$ is the spacing between successive powers within each profile.
+The minimum near $r=1$ has height asymptotic to $\eta$, and the term
+$-q r^{d+p-1}$ sets the odd amplitude there. When the two incoming trajectories have limiting
+height $-H<0$, the first variation of their lower-intercept difference
+has the sign of the integral $J(H)$ below.
+Proposition~\ref{prop:threshold} gives a critical amplitude
+$q_c(\eta)\sim K_{d,p}\eta^{1/2+1/d}$ as $\eta\downarrow0$.
+There is a depth $H>0$ with $J(H)<0$ precisely when $q>q_c(\eta)$.
+At equality $J\ge0$, with a zero at a minimizing depth for small $\eta$.
+The minimizing depths are of order $\eta$. There a positive contribution
+of order $H^{-(1-1/d)}$ from near the origin balances a negative one
+of order $q(H+\eta)^{-3/2}$ from near the minimum. For $d=10$ the
+spacings $p=2$ and $p=4$ give ten-term supports in degrees $22$ and
+$26$, respectively, each with an open set giving at least sixteen
+hyperbolic cycles (Corollary~\ref{cor:short-lists}).
+The repeated construction in Theorem~\ref{thm:main} uses cubic
+factors to gain four sign changes at negative heights in each block.
+
+\subsection{Ordinary returns and trajectories entering from infinity}
+Reflect the left half-plane onto the right and reverse time on the
+reflected half. For the inner primitive $P$ of even degree greater than
+two, with positive leading coefficient and $P'(0)=0$, write
+$b_\pm(\beta)<0$ for the lower-axis intercepts of the two trajectories
+launched at $(0,\beta)$, $\beta>0$. An equality $b_+(\beta)=b_-(\beta)$
+closes a periodic orbit. One can also specify a trajectory by its
+limiting ordinate $h$ at infinite radius. Following it inwards gives a
+lower intercept $G_\pm(h)$. We vary an odd coefficient of the inner
+trinomial until the two limits of $b_\pm(\beta)$ as $\beta\to\infty$
+agree at a common ordinate $\ell$. Two bounded ordinary sign brackets
+and two opposite incoming signs survive this choice
+(Lemma~\ref{lem:compact-seed}). The comparison of limiting intercepts
+and their exponential rates also occurs in
+\cite[Proposition~2.2 and (3.17)--(3.19)]{CJLZ}.
+
+At scale $A$ the reflected profiles are, to first order,
+$E(r)\pm(b/A)Q(r)$ with $b>0$. For a turn at radius $R_0$, the
+limiting inward graph follows the running minimum
+$\min_{r\le s\le R_0} E(s)$. Its rising arcs contribute to the
+zeroth-order contraction action, while horizontal portions contribute
+zero. The action over a rising arc $[r_1,r_2]$ is
+\[
+ \mathcal S_E(r_1,r_2)=\int_{r_1}^{r_2}\frac{E'(r)^2}{r}\dd r .
+\]
+Consider the first valley in Figure~\ref{fig:valley}. Write
+$\mu_1=E(c_1)$ for the minimum, $M_1$ for the preceding maximum and
+$a_1$ for the first radius with $E(a_1)=\mu_1$. At scaled height
+$\mu_1<h<M_1$ the ordinary turn approaches the first crossing $t$ of
+level $h$. Its gap from $\ell$ integrates over all larger turns, so
+the exponential rate is the least action among them. Here it occurs at
+$c_1$ and equals $\mathcal S_E(0,a_1)$.
+The incoming trajectory at height $h$ also follows the rise from
+$c_1$ to the later crossing $v$ of $h$. Its action has the additional
+term $\mathcal S_E(c_1,v)$. These two ways of traversing a fold already
+appear in \cite[\S3.1]{LuDegree}.
+
+\input{tex/valley-geometry.tex}
+
+To see the effect of the odd part, differentiate the actions for
+$E+\delta Q$ at $\delta=0$. Put $f=E'/r$ and
+$U(t)=\int_0^t(fQ'-f'Q)\dd r$. On $[0,a_1]$ the integrand varies by
+$2fQ'$, whose integral is $U(a_1)+f(a_1)Q(a_1)$.
+The endpoint follows the minimum level, so
+$E'(a_1)\dot a_1=Q(c_1)-Q(a_1)$. Its contribution
+$f(a_1)E'(a_1)\dot a_1$ leaves the boundary term $f(a_1)Q(c_1)$.
+At $c_1$ the slope vanishes, and at $v$ the level is fixed. Thus the
+ordinary and incoming first variations in this window are
+\[
+ V_o(h)=U(a_1)+f(a_1)Q(c_1),\qquad
+ V_i(h)=V_o(h)+U(v)-U(c_1).
+\]
+On an uninterrupted first ascent both variations equal $U$, with the
+opposite orientation to the slow divergence integral in
+\cite[Proposition~1]{DMH}. At tail balance the signs of
+$b_+-b_-$ and $G_+-G_-$ at strict positive-height tests are respectively
+$-\sgn V_o$ and $\sgn V_i$ for large $A$
+(Lemma~\ref{lem:valley-rates}).
+
+At a negative scaled height $-H$ the incoming trajectory stays below
+the even profile. The leading splitting of its two intercepts is a positive multiple of
+\[
+ J(H)=\int_0^\infty\frac{rQ(r)}{(H+E(r))^2}\dd r
+     =\int_0^\infty\frac{\rho(t)}{(H+t)^2}\dd t,\qquad
+ \rho(t)=\sum_{E(r)=t,\ r>0}\frac{rQ(r)}{|E'(r)|}.
+\]
+Here $E(0)=0$, $E(r)>0$ for $r>0$, and $E$ tends to infinity.
+Changing variables on each monotone branch gives the displayed density
+at every regular level. If $E'(r)>0$ for $r>0$, each height
+has one inverse, so $\rho$ has the sign changes of $Q$ in their original
+order. The strictly totally positive kernel $(H+t)^{-2}$ then bounds
+the positive zeros of $J$, counted with multiplicity, by the number of
+sign changes of $Q$ when $\deg Q<\deg E$
+(Proposition~\ref{prop:monotone-obstruction}). Three odd powers allow
+at most two such zeros. The ordinary variation $U$ can nevertheless
+have six simple positive zeros on three even and three odd powers,
+as the example in Section~\ref{subsec:obstruction-proof} shows.
+
+Above a simple minimum at $c_1$, two additional inverse branches enter
+the sum for $\rho$. Just above $\mu_1$ their combined density has an
+integrable inverse-square-root singularity with the sign of $Q(c_1)$
+when $Q(c_1)\ne0$. The kernel is the same, but the signs of the
+density in height order now depend on all the branches. In our cubic
+block $\mu_1\sim(2/3)^n$ and $Q(c_1)\sim-q$ with
+$q=(3/4)^{\lfloor n/2\rfloor}$. The negative contribution outweighs
+the positive background at $H=(2/3)^n$ and is negligible at the sampled
+depths $(1/2)^n,(7/8)^n$. With two farther tests, $J$ has the ordered
+signs $+,-,+,-,+$. The same choice of $q$ reverses $V_o$ through
+$f(a_1)Q(c_1)$, and taking $h$ just above $\mu_1$ keeps
+$U(v)-U(c_1)$ small enough to reverse $V_i$ as well.
+Together with the rising-arc tests this gives six changes for each
+positive-height comparison (Lemma~\ref{lem:valley-local}).
+Each subsequent valley is placed above the earlier test levels.
+Compact convergence and an integrable bound on the tail of $J$ preserve
+their strict signs (Lemma~\ref{lem:inductive-valleys}).
+
+\subsection{Closing the incoming trajectories at a common launch}
+An incoming intercept comparison is made at infinity. To turn two
+opposite signs into a cycle one needs the two half-returns from
+\emph{one} upper-axis point at each end of the interval. First translate
+the left incoming height by a small physical distance $s>0$. At the
+finitely many heights already chosen, $G_+(h)-G_-(h+s)$ keeps the
+prescribed signs. Since $G_\pm(h)=h+o(1)$ as $h\to-\infty$, a
+sufficiently deep additional sample has negative sign. To realize
+these comparisons on finite orbits, adjoin the powers $d+1,d+3,d+8$
+to the inner primitive of even degree $d$. They produce a distant
+maximum at radial scale $R$ (Figure~\ref{fig:outer-fold}).
+
+\input{tex/fold-geometry.tex}
+
+One orbit closes on the ascent when the lower intercepts from a chosen
+upper launch agree (M1). A second closes when the upper hits from a
+chosen deep lower intercept agree (M2). This second orbit supplies a
+reference on each half-plane. At a descending turn of physical height
+$h$, let $\mathfrak d_\pm(h)$ be the difference between half the squared
+scaled upper launch of the reference and the corresponding quantity for
+the turn. The third condition is $\mathfrak d_+(0)=\mathfrak d_-(s)$
+(M3). One inner odd coefficient and the two new exterior odd
+coefficients realize all three equalities (\eqref{eq:miranda-box}).
+
+Lu's exterior construction already compares ratios of gaps from a
+reference on each half and pairs a finite set of heights to physical
+accuracy $o(1)$ by controlling the distortion on a common terminal
+section \cite[Proposition~3.3 and Lemma~3.4]{LuDegree}. His
+degree-twelve construction also uses three matches and a first-order
+correction for turns on the descent \cite[supplement, \S S5]{LuDegree}.
+For the present profiles we compare two turns directly along the same
+deep reference trajectory. In the logarithm of the ratio of their
+deficits, the integral along the common part of that trajectory cancels
+exactly (Lemma~\ref{lem:deficit-ratio}). What remains is a squared-slope
+integral between the turns with a bounded logarithmic remainder.
+On the regular descent this gives an error $O(R^{-1}+R^{2-d})$ on the
+physical height scale in \eqref{eq:physical-deficit}. After (M2) and
+(M3), the right turn at each prescribed $h$ and a left turn at
+$h+s+o(1)$ therefore have the same launch.
+
+The $2+6L+j$ ordinary sign changes and the $10L+2j+4$ obtained from
+incoming trajectories now occur in disjoint launch intervals. The
+outer fold supplies two further intervals of opposite endpoint signs
+and the two simple periodic orbits just matched. Both half-returns exist
+transversely throughout every interval. One regular value of an odd
+coefficient already in the support gives a hyperbolic cycle in each
+interval and preserves the two simple orbits
+(Lemma~\ref{lem:hyperbolicity}). For one valley and $j=0$ this is
+$8+14+2+2=26$ (Table~\ref{tab:ordered-returns}).
+
+\subsection{Comparison at fixed term count and at fixed degree}\label{subsec:other-comparisons}
+Table~\ref{tab:ten-comparison} compares ten-term examples with the
+counts available at the same degree when all powers are allowed.
+
+\begin{table}[!htbp]
+\centering\small
+\caption{Lower bounds for hyperbolic cycles with restoring force $x$.
+The third column uses ten nonzero primitive terms. The last column
+allows every power through the indicated degree and gives Lu's
+exact-degree bounds \cite[Theorem~1.1 and supplement, Proposition~S1.2]{LuDegree}.
+The sextic and trinomial rows use the odd-power extension of
+Proposition~\ref{prop:outer-extension}.}
+\label{tab:ten-comparison}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Ten-term construction & Degree & Ten terms & Degree only\\
+\midrule
+Full support, published \cite[Theorem~1]{DMH} & 10 & 8 & 14\\
+Full support, preprint \cite[supplement, Proposition~S1.2]{LuDegree} & 10 & 14 & 14\\
+Palomar sextic and four odd powers \cite{Palomar} & 13 & 10 & 22\\
+Ten odd powers, averaging \cite{LMP,BCG} & 19 & 9 & 43\\
+Quadratic factors, $p=2$ (Corollary~\ref{cor:short-lists}) & 22 & 16 & 53\\
+Trinomial and seven odd powers \cite{CJLZ} & 23 & 10 & 57\\
+Quadratic factors, $p=4$ (Corollary~\ref{cor:short-lists}) & 26 & 16 & 67\\
+Cubic factors, $n_0=257$ (Corollary~\ref{cor:ten-support}) & 67088 & 26 & 234784\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+To compare growth per term in Lu's construction, stop after $s\ge1$ separated radii, before the remaining high
+odd powers are added. The three comparisons give at least $7s,3s,s$
+sign changes. One linear coefficient realizes the ordinary cycles
+while preserving the incoming signs, and the outer maximum closes
+the incoming trajectories. The resulting primitive has degree at most
+$4s+11$ and gives at least $11s+1$ hyperbolic cycles on at most $3s+9$
+powers. For $k\ge12$, put $s=\lfloor(k-9)/3\rfloor$ and fill any
+missing powers by hyperbolic persistence. This gives the comparison
+\[
+ H(k)\ge11\lfloor(k-9)/3\rfloor+1,\qquad \liminf_{k\to\infty} H(k)/k\ge11/3 .
+\]
+The term count for this truncation and the stronger one-radius examples
+of $23$ and $24$ cycles on twelve and thirteen terms in degrees $14$
+and $15$ are detailed in the electronic supplement, Section~1.1.
+
+The increase from $11/3$ to $4$ in the guaranteed count per term
+comes with a larger degree per block. In \eqref{eq:support-general}
+each four-power block increases the degree by $774$, and the final degree is
+$258n_0+774L+8=(387/2)k+O_{n_0}(1)$ for fixed admissible $n_0$.
+At the same actual degree Lu's unrestricted theorem gives
+$\lceil(7n-48)/2\rceil$ cycles for every $n\ge14$
+\cite[Theorem~1.1]{LuDegree}. In degrees
+$22$ and $26$ the two ten-term supports each give sixteen. With all
+powers available, published constructions for $n\ge6$ give
+$\lfloor(n-1)/2\rfloor+2$ \cite[Theorem~2]{DMD} and $n-2$
+\cite[Theorem~1]{DMH}. The latter gives $20$ and $24$ at these degrees,
+and Lu's preprint gives $53$ and $67$.
+Hyperbolic persistence permits all missing powers through the given
+degree to be filled.
+
+The unsigned Palomar preprint proves an isolated-cycle lower bound
+$\lfloor(n-1)/2\rfloor+4$ in exact degree $n\ge6$. Its certified sextic
+has six strict return brackets \cite[Theorems~1--2 and Appendix~A]{Palomar}.
+Varying its linear coefficient gives six hyperbolic cycles at nearby
+coefficients by Lemma~\ref{lem:hyperbolicity}. Adjoining the powers
+$7,9,11,13$ then gives the degree-thirteen entry. The degree-twenty-three
+entry starts with the three hyperbolic cycles on $\{1,9,10\}$ of
+Chen, Jin, Li and Zhou \cite[proof of Theorem~1.2]{CJLZ}.
+Section~3 of the electronic supplement also proves this starting case.
+One higher odd power at a time gives $H(k)\ge k$ for $k\ge3$
+(Appendix~\ref{app:extension}).
+
+The order of the even and odd powers matters. With the even power last,
+Chen, Jin, Li and Zhou give two cycles on $\{1,3,2N\}$ for $N\ge3$
+\cite[Theorem~1.1 and (2.1)]{CJLZ}. With the even power first,
+Chen, Lu, Wang and Zhang consider
+$F(x)=a_1x^{2N}+a_2x^{2m+1}+x^{2n+1}$, where $2\le N\le m<n$
+and $a_1a_2\ne0$. Their Theorem~4 gives no limit cycles for $a_2>0$
+and exactly one, hyperbolic and attracting, for $a_2<0$. In its proof
+they invoke Cen and coauthors for nonexistence in the first case and
+existence in the second, then establish uniqueness and hyperbolicity
+in the second case \cite[Theorem~4 and \S3]{CLWZ}.
+
+Term counts depend on the chosen coordinates. Centering the restoring force $\eps(\lambda-x)$
+replaces the primitive by $[F(X+\lambda)-F(\lambda)]/\sqrt\eps$
+\cite[(5)]{DMH}, so a single power can contribute every lower positive
+power when $\lambda\ne0$. A different restriction appears near a
+single reversible center. If the even primitive is fixed and the
+coefficients of $b\ge1$ prescribed odd powers vary near zero, at most
+$b-1$ isolated cycles can shrink to this center (Remark~\ref{rem:local-cyclicity}).
+The cycles of Theorem~\ref{thm:main} occupy separated radial scales.
+
+Counting monomials in both components gives $m=k+2$ in
+\eqref{eq:lienard}, including $y$ and $-x$ \cite[\S2.5, Problem~8]{Gasull2021}.
+With a polynomial restoring force, the examples of \'Alvarez, Coll,
+De Maesschalck and Prohens \cite{ACDP} give a lower bound asymptotic
+to $m\log m/(2\log 2)$ along a sequence by the count of
+\cite[Theorems~1.2, 3.6 and \S5]{BCG}. For general planar fields,
+Gasull and Santana obtain a quadratic lower bound from period annuli
+at several centers \cite[Theorem~1 and \S3]{GS}.
+
+\input{tex/half-returns.tex}
+
+\section{The balanced trinomial and the positive valleys}\label{sec:valleys}
+\subsection{A trinomial at exact tail balance}\label{subsec:seed-main}
+\input{tex/balanced-seed.tex}
+\input{tex/valleys.tex}
+
+\input{tex/assembly.tex}
+\subsection{Closing the incoming trajectories}\label{subsec:fold-closure}
+\input{tex/distant-fold.tex}
+\input{tex/conclusion.tex}
+\input{tex/ordered-returns.tex}
+\input{tex/valley-threshold.tex}
+
+\appendix
+\section{Adjoining one exterior cycle}\label{app:extension}
+\input{tex/odd-extension.tex}
+
+\section*{Supplementary material and computation}
+Theorem~1.1(ii) of the electronic supplement, \emph{Limit cycles on
+small supports}, gives the supports and cycle counts for $3\le k\le9$.
+Section~6.4 of the supplement extends its nine-term example to ten terms.
+The editable archive contains the LaTeX sources for both papers and
+all calculation files. The standalone archive \texttt{sparse-lienard-replay.zip}
+contains the same numerical inputs, programs and reference outputs.
+Its \texttt{README.txt} gives the commands for reproducing the checks in
+this article and in Section~7 of the supplement.
+
+\section*{Declaration of generative AI and AI-assisted technologies in manuscript preparation}
+The author used OpenAI 6.2 Astra (via Codex) to explore candidate constructions, develop and check parts of the proofs, write reproducibility code, and revise the manuscript. Google Gemini 4 Carbon was used to critique draft manuscripts and identify issues in the arguments, presentation, and references. The author reviewed and revised the resulting material and takes full responsibility for the final manuscript.
+
+\input{tex/bibliography.tex}
+\end{document}

@@ -1,0 +1,4 @@
+$ python3 -B code/crest.py --new-odd 3
+Rational block with 3 added odd powers: 3 simple action roots; final primitive root has 1 < r^2 < 2.
+
+Exit status 0

@@ -1,0 +1,44 @@
+\subsection{Ten cycles on six powers and eleven cycles on seven powers in degree eighteen}\label{subsec:six-power-proof}
+
+The balanced trinomial already has two compact brackets and two
+incoming tests. The fold of Article, Proposition~4.4 closes
+the incoming trajectories in degree eighteen. The second construction
+uses the empty interval between the origin and the innermost of these
+cycles to add one more power.
+
+\begin{proof}[Proof of the $k=6$ row of Theorem~\ref{thm:lower}\textup{(ii)}]
+Take the monic balanced degree-ten seed $P_{\mathrm{seed},\lambda}(x)=x^{10}+bx^9+\lambda x^5$
+($d_{\mathrm{top}}=10$, $m_0=5$) from Article, Lemma~3.1(ii)--(iii). It provides
+$N_{\mathrm{ord}}=2$ bounded ordinary sign brackets and two negative heights
+$0>h_{\mathrm{seed},1}>h_{\mathrm{seed},2}$ at which $G_+(h)-G_-(h)$ at $\lambda_0$ has signs $-,+$.
+Fix $s>0$ so small that $G_+(h_{\mathrm{seed},1})-G_-(h_{\mathrm{seed},1}+s)<0$ and
+$G_+(h_{\mathrm{seed},2})-G_-(h_{\mathrm{seed},2}+s)>0$, and choose
+$h_{\mathrm{deep}}<h_{\mathrm{seed},2}$ so negative that $|G_\pm(h)-h|<s/4$ for all $h\le
+h_{\mathrm{deep}}+s$ (by Article, Lemma~2.2(iv)), ensuring
+$G_+(h_{\mathrm{deep}})-G_-(h_{\mathrm{deep}}+s)<-s/2<0$. Apply Article, Proposition~4.4 to
+$(h_1,h_2,h_3)=(h_{\mathrm{seed},1},h_{\mathrm{seed},2},h_{\mathrm{deep}})$ with signs $(-,+,-)$.
+From $\beta_{\rm refl}$ to $\beta_{\rm ext}$ the signs $(+,-,+,-,+)$
+give four disjoint brackets. With the two bounded seed brackets, two
+fold brackets and two marked cycles, Article, Proposition~4.4
+gives ten simultaneous hyperbolic limit cycles on $\{5,9,10\}\cup\{11,13,18\}=\{5,9,10,11,13,18\}$.
+\end{proof}
+
+\begin{corollary}[Explicit degree-eighteen seven-power support]\label{cor:seven-inner}
+A nonempty open subset of $(\mathbb{R}\setminus\{0\})^7$ on the degree-$18$ support
+$\{3,5,9,10,11,13,18\}$ realizes at least $11$ simultaneous hyperbolic limit cycles.
+\end{corollary}
+
+\begin{proof}
+Fix a six-term polynomial $F_0$ on $\{5,9,10,11,13,18\}$ with ten hyperbolic limit cycles, and isolate
+their positive $y$-axis intercepts in pairwise disjoint compact intervals. Below the innermost
+interval, the linearized rotation gives two transverse returns for
+small launches. Choose $\beta_0>0$ so both arcs lie in a neighborhood of
+$(0,0)$ where the odd part of $F_0$ has the strict sign of its lowest odd coefficient $a_5\ne 0$; by
+Article, Lemma~2.1(ii), $\oscD_{F_0}(\beta_0)$ has the strict sign $\sgn(a_5)$. Adjoin
+$\gamma x^3$ of opposite sign $\sgn(\gamma)=-\sgn(a_5)$ with $|\gamma|>0$ small enough that all ten
+hyperbolic cycles and the strict sign at $\beta_0$ persist. At a still smaller height
+$\beta_1\in(0,\beta_0)$, the cubic term $\gamma r^3$ dominates the odd part on both half-arcs, giving
+$\sgn\oscD(\beta_1)=\sgn(\gamma)=-\sgn\oscD(\beta_0)$ and bracketing an eleventh periodic orbit in
+$(\beta_1,\beta_0)$. Applying Article, Lemma~2.3 to the $x^3$ coefficient makes all eleven
+orbits simultaneously hyperbolic while keeping all seven powers in $\{3,5,9,10,11,13,18\}$ nonzero.
+\end{proof}

@@ -1,0 +1,169 @@
+\section{Three hyperbolic cycles in every even degree \texorpdfstring{$d\ge 10$ ($k=3$)}{d >= 10 (k = 3)}}\label{sec:trinomials}
+
+Chen, Jin, Li and Zhou construct three hyperbolic cycles for
+$C(-Ax+Bx^9+x^{10})$ by varying $A$ along a curve of matched
+half-returns \cite[\S3, Lemmas~3.1--3.2 and Theorem~1.2]{CJLZ}.
+We use their matching curve and their comparison at two equal minima.
+To treat every even $d\ge10$, we normalize the coefficient of $x^{d-1}$
+inside the parentheses to one. A test height at which both turn
+equations factor then gives an action gap with a uniform sign for
+$d\ge20$ and rational enclosures for the five smaller even degrees.
+
+Work first with $F(x)=C(x^d+x^{d-1}-ax)$, where $d\ge 10$ is even and $a,C>0$, so the scaled half-profiles are
+\begin{equation}\label{eq:trinomial-profiles}
+  f_\sigma(x,a) = x^d + \sigma(x^{d-1} - ax) \qquad (x\ge 0,\ \sigma=\pm 1).
+\end{equation}
+Set $\tau_*=(d-2)/(d-1)$, $\rho_*=(d-1)/d$, $a_c=\tau_*^{d-2}/(d-1)=\max_{[0,1]}x^{d-2}(1-x)$, and
+$K_*=\rho_*^{d-1}/d$. For $0<a<a_c$, $f_+'(x,a)=dx^{d-1}+(d-1)x^{d-2}-a$ has a unique positive root
+$s\in(0,1)$, where $f_+$ attains its global minimum, while $f_-'(x,a)=x^{d-2}(dx-(d-1))+a$ first
+decreases and then increases on $(0,\infty)$, taking a negative value at $\tau_*$ and the positive
+value $a$ at $\rho_*$, so $f_-$ attains its negative global minimum at its outer critical point
+$r\in(\tau_*,\rho_*)$. Both minima are nondegenerate, and $\partial_a[f_+(s,a)-f_-(r,a)]=-s-r<0$.
+Since $(f_+(s,a),f_-(r,a))$ equals $(0,-K_*)$ at $a=0$ and $(f_+(s,a_c)<0,\,0)$ at $a=a_c$, there is a
+unique $a_d\in(0,a_c)$ at which $f_+(s,a_d)=f_-(r,a_d)<0$.
+
+In the degree-ten proof, the level $60$ after scaling is chosen above
+the inner maxima \cite[Lemma~3.2, (3.14)--(3.19)]{CJLZ}.
+Fix $a=a_d$ and choose the test height $H=a_d>0$. The exact factorizations
+\begin{equation}\label{eq:trinomial-fact}
+  f_+(x,a) - a = (x+1)(x^{d-1}-a), \qquad f_-(x,a) - a = (x-1)(x^{d-1}+a)
+\end{equation}
+show that $f_+$ and $f_-$ stay strictly below $H=a_d$ on $[0,t)$ and $[0,1)$, respectively, and cross
+$H$ transversely at $t=a_d^{1/(d-1)}<1$ and $1$. Define the equal-depth contraction difference
+\begin{equation}\label{eq:Id-def}
+  I_R = \int_s^t \frac{f_+'(x,a_d)^2}{x}\dd x, \qquad I_L = \int_r^1 \frac{f_-'(x,a_d)^2}{x}\dd x, \qquad I_d = I_R - I_L.
+\end{equation}
+
+\begin{lemma}[Uniform negative contraction gap for $d\ge 10$]\label{lem:trinomial-Id}
+For every even integer $d\ge 10$, one has $I_d<0$; for every even $d\ge 20$, $d I_d < -71/6480$.
+\end{lemma}
+
+\begin{proof}
+At $a=a_d$, comparing the equal minima via $f_+(s,a)\ge -a$ and $f_-(r,a)\le
+f_-(\rho_*,a)=-K_*+a\rho_*$ gives $a\ge K_*/(1+\rho_*)$. Using $f_+(s,a)\le
+f_+(2/3,a)=(5/3)(2/3)^{d-1}-(2/3)a$ and $f_-(r,a)=r^{d-1}(r-1)+ar\ge -K_*+ar$ gives $ar-K_*\le
+(5/3)(2/3)^{d-1}-(2/3)a$, so $(r+2/3)a\le K_*+(5/3)(2/3)^{d-1}$ with $r>\tau_*=(d-2)/(d-1)$.
+
+Assume $d\ge 20$. Since $(1-1/d)^{d-1}=(1+1/(d-1))^{-(d-1)}>1/e>1/3$ and $(19/20)^{19}<19/50$, we have
+$1/3<dK_*<19/50$. Both $d(5/3)(2/3)^{d-1}$ and $d(3/4)^{d-1}$ decrease for $d\ge 20$, and at $d=20$
+are strictly less than $1/60$ and $1/6$, respectively. Hence
+\[
+  \frac{1}{6d} = \frac{1/3}{2d} < a_d \le \frac{dK_* + d(5/3)(2/3)^{d-1}}{d(\tau_* + 2/3)} <
+  \frac{19/50 + 1/60}{18/19 + 2/3}\,\frac{1}{d} < \frac{1}{4d},
+\]
+and $(3/4)^{d-1}<1/(6d)<a_d=t^{d-1}$ implies $t>3/4$. On $[s,t]$ we have $0\le f_+'(x,a_d)\le
+(dt+d-1)x^{d-2}$. Extending the integral to $[0,t]$ and using $t^{d-1}=a_d<1/(4d)$ and $t>3/4$ gives
+\[
+  d I_R \le \frac{d}{2(d-2)}(da_d)^2\left(1+\frac{d-1}{dt}\right)^2 <
+  \frac{20}{36}\cdot\frac{1}{16}\cdot\left(\frac{7}{3}\right)^2 = \frac{245}{1296}.
+\]
+On $[\rho_*,1]\subset[r,1]$, dropping $+a_d>0$ from $f_-'(x,a_d)=x^{d-2}(dx-(d-1))+a_d>0$ and setting
+$w=d(1-x)\in[0,1]$ (since $2d-5<2d$ and $(1-w/d)^d\ge 1-w$ by Bernoulli's inequality on $[0,1]$)
+yields
+\[
+  d I_L \ge \int_0^1 \left(1-\frac{w}{d}\right)^{2d-5}(1-w)^2\dd w \ge \int_0^1 (1-w)^4\dd w = \frac{1}{5}.
+\]
+Thus $dI_d < 245/1296 - 1/5 = -71/6480 < 0$ for all even $d\ge 20$. For $d=10,12,14,16,18$, exact
+rational interval arithmetic (Table~\ref{tab:trinomial-cert} in Section~\ref{sec:reproduce}) certifies
+$1000dI_d\in(-24,-22)$, $(-51,-50)$, $(-69,-67)$, $(-81,-79)$, and $(-89,-88)$, respectively.
+\end{proof}
+
+\begin{lemma}[Global matching curve for $F(x)=C(x^d+x^{d-1}-ax)$]\label{lem:trinomial-curve}
+Fix even $d\ge 10$ and $C>0$.
+\begin{enumerate}
+  \item[\textup{(i)}] For every $\beta>0$ there exists a unique $a=\mu_C(\beta)>0$ at which both
+  half-arcs from $(0,\beta)$ return transversely to the same negative intercept
+  $b_+(\beta,a)=b_-(\beta,a)<0$. The function $\mu_C:(0,\infty)\to(0,a_c+2/C)$ is real analytic,
+  satisfies $\lim_{\beta\downarrow 0}\mu_C(\beta)=0$, and along $a=\mu_C(\beta)$ one has
+  $\sgn\mu_C'(\beta)=\sgn(J_+(\beta)-J_-(\beta))$ and $\Pi'(\beta)=\exp(J_-(\beta)-J_+(\beta))$.
+  \item[\textup{(ii)}] For fixed $d,C$, $\mu_C'(\beta)>0$ for all sufficiently large $\beta$.
+  \item[\textup{(iii)}] As $C\to+\infty$, $\mu_C(Ca_d)\to a_d$ and $C^{-2}\bigl(J_+(Ca_d)-J_-(Ca_d)\bigr)\to I_d$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+We adapt Chen, Jin, Li and Zhou's degree-ten matching curve
+\cite[Lemmas~3.1--3.2]{CJLZ}. The degree-dependent checks are as follows.
+
+(i) At $a=0$ coercive tails and rotation at the origin give both
+transverse returns, and $f_+>f_-$ on $x>0$ gives $\oscD>0$.
+For $a>0$ the plus origin repels and its tail forces a turn.
+On the common return domain Article~(2.6) gives
+$\partial_a b_+<0<\partial_a b_-$. Lowering $a$ lowers the minus
+profile: its graph in decreasing $y$ stays outside any returning
+reference arc, is bounded by coercivity and crosses $y=0$ at positive
+radius. After that it hits the axis since $\dot x=y-Cf_-(x,a)$
+is negative near $x=0$ at a negative ordinate. Thus the minus return
+domain at fixed $\beta$ is an interval beginning at zero.
+For $a\ge a_c+2/C$ we have $Cf_-(x,a)\ge2x$; the wedge
+$0\le x\le y$ is invariant. At the upper endpoint of the return
+interval the bounded minus arc approaches the hyperbolic sink.
+A trapping neighborhood gives $b_-\to0$ there while $b_+<0$.
+Strict monotonicity gives the unique analytic match. For
+$0<a<2/C$ the two linear focus half-turns give
+$\oscD(\beta,a)/\beta\to-2\sinh(\pi Ca/\sqrt{4-C^2a^2})<0$
+as $\beta\downarrow0$, hence $\mu_C(\beta)\to0$.
+Article~(2.5) gives the derivative sign and multiplier at a match.
+
+(ii) For $\beta\to\infty$ put $R=(\beta/C)^{1/d}$, let
+$x_\sigma=\sqrt{2T_\sigma}$ be the turning radius, and write
+$G(u)=Cf_\sigma(\sqrt{2u},a)$ with $a=\mu_C(\beta)$ bounded.
+Article~(2.8) gives $\beta=G(T_\sigma)+O(x_\sigma)$ and hence
+$x_\sigma=R-\sigma/d+O(R^{-1})$. The common lower hit $\alpha$
+is bounded away from zero by $b_+(1,0)<0$ for $\beta\ge1$.
+Choose $K$ with $G(u)\ge u-K$; the barrier $u-y-K-2<0$
+persists from the turn to the axis since its $y$-derivative is at
+least one at equality. Thus $\alpha\ge-K-2$.
+
+On the inward leg the gap $z=G-w_i$ solves $z'=G'-1/z$ with
+$z(T_\sigma)=0$. Beyond a fixed $U$ both $G',G''>0$; a crossing
+of $z=1/G'$ would have positive relative derivative, so $0<z<1/G'$
+throughout that strip. In $\int G'/z$ use $1/z=G'-z'$ and integrate
+by parts: the remainder involves $\int G''z\le\log(G'(T_\sigma)/G'(U))$
+and bounded endpoint terms. On $[0,U]$ the inward gap stays bounded
+below: at zero use $-\alpha$, and on a regular compact strip a small
+gap forces $(z^2)'\le-1$ until it closes before the distant turn.
+The slope is integrable at zero. The outgoing leg contributes
+$O(x_\sigma^{d-1})$: on $[U,T_\sigma]$ use
+$|G'|=O(x_\sigma^{d-2})$ and the ordinate change at most
+$x_\sigma$; on $[0,U]$ its gap grows with $\beta$.
+Consequently
+\[
+ J_\sigma=C^2\left(\frac{d^2 x_\sigma^{2d-2}}{2d-2}
+ +\sigma\frac{2d(d-1)x_\sigma^{2d-3}}{2d-3}\right)+O_{d,C}(R^{2d-4}).
+\]
+The turn shifts contribute $-2d$ to the leading difference. Hence
+$J_+-J_-\sim [2d/(2d-3)]C^2R^{2d-3}>0$.
+
+(iii) At the fixed height $H=a_d$, \eqref{eq:trinomial-fact}
+places the two outer roots on regular rising branches above all earlier
+maxima, uniformly near $a=a_d$. With $\Lambda=1,M=C$, Article~(2.8)
+gives convergence of $b_\sigma(CH,a)/C$ to the respective minima.
+Their difference crosses zero with derivative $-s-r$, so
+$\mu_C(CH)\to a_d$. The actual turns converge uniformly to the outer
+roots. On a short initial interval the two legs have gaps bounded away
+from zero and $\int|\phi_\sigma'|\dd u<\infty$. On the remaining
+interval apply Article~(2.7)--(2.8) and integrate by parts. The
+outgoing envelope is constant; the incoming envelope follows the
+profile from its minimum to the turn. Thus $C^{-2}J_{o,\sigma}\to0$
+and $C^{-2}J_{i,\sigma}$ tends to the corresponding integral of
+$(f_\sigma')^2/x$, uniformly near $a_d$. Evaluating at the matching
+parameter gives \eqref{eq:Id-def}.
+\end{proof}
+
+\begin{proof}[Proof of the $k=3$ row of Theorem~\ref{thm:lower}\textup{(ii)}]
+As in the proof of Theorem~1.2 of \cite{CJLZ}, a regular horizontal
+level of the matching curve yields three simple crossings.
+Fix even $d\ge 10$. By Lemmas~\ref{lem:trinomial-Id} and~\ref{lem:trinomial-curve}(i),(iii), fix $C>0$
+so large that $\mu_C'(Ca_d)<0$, and choose $0<\beta_1<\beta_2$ near $Ca_d$ with
+$\mu_C(\beta_1)>\mu_C(\beta_2)$. By Lemma~\ref{lem:trinomial-curve}(ii), $\mu_C$ attains its minimum
+on $[\beta_2,\infty)$ at some finite $\beta_m\ge\beta_2$ and admits $\beta_3>\beta_m$ with
+$\mu_C(\beta_3)>\mu_C(\beta_m)$. Because $\mu_C$ is real analytic and nonconstant, its critical values
+are at most countable; choose a regular value
+$a\in(\mu_C(\beta_m),\min\{\mu_C(\beta_1),\mu_C(\beta_3)\})$. Since $\lim_{\beta\downarrow
+0}\mu_C(\beta)=0<a$, the graph of $\mu_C$ crosses level $a$ upward in $(0,\beta_1)$, downward in
+$(\beta_1,\beta_m)$, and upward in $(\beta_m,\beta_3)$, yielding three distinct hyperbolic limit
+cycles (attracting, repelling, attracting). Rescaling $(x,y)=C^{-1/(d-1)}(X,Y)$ transforms
+$C(x^d+x^{d-1}-ax)$ into $X^d+C^{1/(d-1)}X^{d-1}-CaX$, and hyperbolic persistence yields a nonempty
+open neighborhood of $(A,b)=(Ca,C^{1/(d-1)})\in(0,\infty)^2$ on $\{1,d-1,d\}$.
+\end{proof}

@@ -1,0 +1,284 @@
+\section{Two matched orbits at a single crest}\label{sec:two-matches}
+A high even power can bend an increasing primitive over a crest. The
+ascending and descending turns then see the same height at different
+radii. Two exact matches fix the constants of integration in the return
+comparison. A list on the ascent gives a second set of brackets only
+when the descending variation, including motion of the paired turn,
+has the required strict signs at the same limiting levels.
+Proposition~\ref{prop:two-marks} specifies the sign at each node and
+the additional conditions at the marked turn and at the two outer depths.
+
+\subsection{Two finite-return matches across a single crest}\label{subsec:two-marks}
+Let $E_b(r)$ be an even polynomial with $E_b(0)=0$ and $E_b'(r)=r f_b(r)$, where $f_b(r)>0$ for all
+$r>0$ and $f_b$ has lowest term $d r^{d-2}$ ($d\ge 8$ even). Choose an even integer $M$ strictly
+exceeding every exponent of $E_b$ and satisfying $M-2>\sup_{r>0} r f_b'(r)/f_b(r)$, and set
+\begin{equation}\label{eq:crest-wall}
+  E(r) = E_b(r) - \frac{f_b(1)}{M}r^M, \qquad f(r) = \frac{E'(r)}{r} = f_b(r) - f_b(1)r^{M-2}, \qquad H_c = E(1) > 0.
+\end{equation}
+Because $f_b(r)/r^{M-2}$ decreases strictly on $(0,\infty)$, $f(r)$ is positive on $(0,1)$, vanishes
+simply at $r=1$, and is negative on $(1,\infty)$, so $E$ attains a unique positive critical point at
+$r=1$ (a strict global maximum $H_c$). For $y<H_c$, let $z(y)>1$ denote the unique descending root of
+$E(z)=y$, and put $g=z(0)>1$. Let $Q(r)$ be an odd polynomial with lowest term $r^q$ ($3<q<d$ odd),
+all remaining powers strictly above $d$, highest odd power $P<M$ carrying a nonzero coefficient
+$[r^P]Q\ne 0$, and $Q(1)=0$. Define
+\begin{align}
+  U(a) &= \int_0^a \bigl(f(r)Q'(r)-f'(r)Q(r)\bigr)\dd r, \qquad \Tr(t) = U(t) - U(1), \nonumber\\
+  B_L(a) &= U(a), \qquad B_R(a) = U(a) - \frac{f(a)}{f\bigl(z(E(a))\bigr)}\Tr\bigl(z(E(a))\bigr). \label{eq:two-actions}
+\end{align}
+The correction in $B_R$ comes from matching the upper hits of
+descending turns, as in the preprint formula
+\cite[supplement, p.~16, (S5.12)--(S5.13)]{LuDegree}; Article,
+Lemma~4.2\textup{(ii)}, gives a self-contained proof of the common
+leading rate of the two derivative terms through the crest and the
+first-order formulas $B_L,B_R$ uniformly on compact sets of regular
+turns.
+
+Combine $(E,Q)$ with a three-power inner seed $P_{\mathrm{seed},\lambda}(x)=x^d+bx^q+\lambda x^l$
+($b>0$, $3\le l<q$ odd) on a compact interval $I_\lambda\subset(-\infty,0)$ across whose endpoints the
+tail gap $\Delta(P_{\mathrm{seed},\lambda})=\ell_+-\ell_-$ has opposite strict signs while $N$
+pairwise disjoint bounded ordinary brackets persist throughout $I_\lambda$:
+\begin{itemize}
+  \item When $(l,q,d)=(5,9,10)$, Article, Lemma~3.1 supplies $I_\lambda\subset(-\infty,0)$ and $N=2$ bounded brackets.
+  \item When $(l,q,d)=(3,5,8)$ with $b=1$, we take $N=0$ and verify that an interval
+  $I_\lambda\subset(-\infty,0)$ straddles tail balance: at $\lambda=0$,
+  $P_{\mathrm{seed},0}(r)=r^8+r^5>r^8-r^5=P_{\mathrm{seed},0}(-r)$ on $r>0$, so
+  $\Delta(P_{\mathrm{seed},0})>0$ by Article, Lemma~2.2(iii); for $\lambda<0$, evaluating an
+  inward graph at $r=1$ gives
+  $\ell_+(P_{\mathrm{seed},\lambda})<P_{\mathrm{seed},\lambda}(1)=2+\lambda$, whereas monotonicity in
+  $\lambda$ (Article, Lemma~2.2(iii)) gives
+  $\ell_-(P_{\mathrm{seed},\lambda})>\ell_-(P_{\mathrm{seed},0})>-\infty$, so
+  $\Delta(P_{\mathrm{seed},\lambda_1})<0$ for $\lambda_1<\ell_-(P_{\mathrm{seed},0})-3$ and continuity
+  yields $\Delta(P_{\mathrm{seed},\lambda_2})>0$ for $\lambda_2\in(\lambda_1,0)$ close to $0$.
+\end{itemize}
+For large radial scale $R>1$ and $|\theta|\le\delta:=\frac{1}{2}|[r^P]Q|>0$, define the physical primitive
+\begin{equation}\label{eq:two-field}
+  F_{R,\lambda,\theta}(x) = R^d E(x/R) + b R^q\bigl[Q(x/R) + \theta (x/R)^P\bigr] + \lambda x^l.
+\end{equation}
+Because $|\theta|<|[r^P]Q|$ and $\lambda\in I_\lambda$ avoids $0$, every listed power in
+$\supp(F_{R,\lambda,\theta})$ carries a nonzero coefficient.
+
+\begin{proposition}[Finite single-crest transfer]\label{prop:two-marks}
+Fix $0<a_0<\dots<a_n<a_*<1$ and $\sigma\in\{+1,-1\}$. Suppose that for $0\le i\le n$, both $B_L(a_i)$
+and $B_R(a_i)$ have strict sign $\sigma(-1)^i$, while $B_L(a_*)$, $\Tr(z(-1/2))$, and $\Tr(z(-1))$ all
+have strict sign $\sigma(-1)^n$. Then for all sufficiently large $R>1$, there exist
+$(\lambda_R,\theta_R)\in I_\lambda\times[-\delta,\delta]$ and an arbitrarily small perturbation of
+$\lambda_R$ such that system \eqref{eq:lienard} for $F_{R,\lambda,\theta_R}$ has at least
+\[
+  N + 2n + 2 + \mathbf{1}_{\{n\text{ odd}\}} + \mathbf{1}_{\{N=0,\ \sigma=-1\}}
+\]
+simultaneous hyperbolic limit cycles on $\supp(F_{R,\lambda,\theta_R})$.
+\end{proposition}
+
+\begin{proof}
+Pass to outer scaled coordinates $r=|x|/R$, $u=r^2/2$, $w=y/R^d$, $\tau=R^{q-d}$, and $\eps=R^{2-2d}$,
+so the scaled half-profiles are $p_\pm(r)=E(r)\pm b\tau(Q(r)+\theta r^P)\pm\lambda R^{l-d}r^l$.
+Because $q\ge 5>1$ and $l<q$, one has $\sqrt{\eps}=R^{1-d}=o(\tau)$, $\eps|\log\eps|=o(\tau)$, and
+$R^{l-d}=o(\tau)$.
+
+On the rectangle $I_\lambda\times[-\delta,\delta]$ we solve two simultaneous finite-return equations:
+\begin{enumerate}
+  \item At the upper intercept $\beta(R a_*)$ of the plus turn $r=Ra_*$, require
+  $b_+(\beta(Ra_*))=b_-(\beta(Ra_*))$. Choose $t_0\in(a_*,1)$: on $[0,t_0]$, $E(r)/r^d$ has a positive
+  minimum, so $F_{R,\lambda,\theta}(\pm x)\ge c x^d$ holds uniformly on $K_0\le x\le R t_0$, while
+  $F_{R,\lambda,\theta}\to P_{\mathrm{seed},\lambda}$ in $C^1$ on compacts along converging parameters. The finite turns meet both axes
+  by rotation near the origin. For $0<t_1<a_*<t_0$ their rescaled upper hits
+  at $Rt_1,Ra_*,Rt_0$ tend to $E(t_1)<E(a_*)<E(t_0)$ for each sign by
+  Article~(2.8). Thus $\beta(Ra_*)\to\infty$ and its minus
+  turn also lies below $Rt_0$. Both inward legs start at the profile
+  value at their own turn. The finite-turn comparison of Article, Lemma~2.2(ii)
+  gives $b_+(\beta(Ra_*))-b_-(\beta(Ra_*))\to\Delta(P_{\mathrm{seed},\lambda})$ uniformly in
+  $\theta\in[-\delta,\delta]$, yielding opposite strict signs on $\partial
+  I_\lambda\times[-\delta,\delta]$.
+  \item At common scaled lower depth $s=1$ (physical lower intercept $-R^d$, i.e., $Y_\pm(\widehat
+  T_\pm(1))=1/2$ with $\sqrt{2\widehat T_\pm(1)}\to z(-1)>1$), require $X_+(\widehat
+  T_+(1))=X_-(\widehat T_-(1))$. Because $z(-1)>1$ lies past the perturbed crests $\rho_\pm=1+O(\tau)$
+  and $Q(1)=0$, Article~(2.8) encloses $\sqrt{2X_\pm(\widehat T_\pm(1))}$ within
+  $O(\sqrt{\eps})$ of the peak heights $p_\pm(\rho_\pm)=H_c\pm b\tau\theta+O(\tau^2+R^{l-d})$, so
+  $\sqrt{2X_+(\widehat T_+(1))}-\sqrt{2X_-(\widehat T_-(1))}=2b\tau\theta+o(\tau)$ has opposite strict
+  signs on $I_\lambda\times\{\pm\delta\}$.
+\end{enumerate}
+By the two-dimensional Poincar\'e--Miranda theorem, for all large $R$ there exists a simultaneous
+solution $(\lambda_R,\theta_R)\to(\lambda_0,0)$, at which the $N$ bounded seed brackets persist by
+compact $C^1$ convergence.
+
+To apply Article, Lemma~4.2, fix $T_{\max}>z(-1)^2/2$ and
+$\mathcal I=[0,T_{\max}]$ after choosing the wall exponent $M$. The later
+turns $\widehat T_\pm(1)$ lie inside $\mathcal I$ for large $R$ and the second
+match gives equal upper hits there. At the matched parameters put
+$\delta_{\rm c}=bR^{q-d}$. The remainders beyond
+$E\pm\delta_{\rm c}Q$ have $C^1(\mathcal I)$ norm
+$O(\delta_{\rm c}|\theta_R|+R^{l-d})=o(\delta_{\rm c})$ in $u$,
+since $l\ge3$ and $l<q$. The slope of each monomial has bounded
+variation on $\mathcal I$, uniformly in $R$, and away from $u=0$ the profiles
+converge in $C^2$ to $E(\sqrt{2u})$, preserving the simple crest.
+Moreover $\sqrt\eps/\delta_{\rm c}=R^{1-q}/b\to0$.
+On the early ascent, division by $r^{d-1}$ in the radial derivative
+bounds the two lower powers by multiples of $(Rr)^{q-d}$ and
+$(Rr)^{l-d}$. Thus every additional critical point lies at
+$r\le K_0/R$ for fixed sufficiently large $K_0$.
+There the physical slopes divided by the physical radius are bounded,
+so $\phi_\pm'=O(R^{2-d})$ on an interval of $u$-length $O(R^{-2})$.
+Its action is $O(R^{2-2d})=o(\delta_{\rm c})$.
+Together with the transverse hits this proves the hypotheses up to
+the depth-one reference. The lemma now gives
+$\sgn\oscD(\beta(Ra_i))=-\sigma(-1)^i$ on the ascent and
+$\sgn\oscD(\beta(Rz(E(a_i))))=\sigma(-1)^i$ on the descent.
+Since $X_+$ is strictly increasing, the descending tests occur in
+reverse index order. There are $n$ strict brackets on each side and
+a simple marked orbit at $a_*$. The last descending sign is $\sigma$.
+
+For the two exterior depths take $v_0=1/2$, $V=1$ and
+$\alpha=b\tau=\delta_{\rm c}$. The expansion $p_\pm=E\pm\alpha Q+o(\alpha)$
+holds at the matched parameters with the uniform bounds just established.
+Use the exterior comparison in the proof of Article, Proposition~4.4.
+Here $z(-v)$ remains on the regular descent for $1/2\le v\le1$ and
+both legs return transversely. At common lower depth $v$ the actual
+turn levels are $-v+O(\sqrt\eps)$ by Article~(2.8). Therefore the
+common cost $C(v)=\int_1^{z(-v)} f^2r\dd r$ increases strictly, and
+the signed splitting there is $\pm\alpha\Tr(z(-v))+o(\alpha)$ in
+$-\eps J_\pm$, uniformly. For $K(v)=(\beta_+(v)^2-\beta_-(v)^2)/(2R^{2d})$,
+the upper match gives $K(1)=0$. The nonzero $\Tr(z(-1/2))$ fixes the
+sign of $-K'$ near $1/2$; the cost gap in the cited integral estimate
+makes that neighborhood dominate $K(1/2)=-\int_{1/2}^1K'(v)\dd v$.
+The nonzero $\Tr(z(-1))$ gives $K'(1)\ne0$. Since $b_-'<0$, passing
+from the upper-hit difference at fixed lower hit to $\oscD$ at the
+plus launch preserves the sign and preserves simplicity at the mark.
+At depth $1/2$ this gives $\sgn\oscD(\beta_+(1/2))
+=\sgn\Tr(z(-1/2))=\sigma(-1)^n$. This turn has radius asymptotic to
+$Rz(-1/2)$ and lies beyond $Rz(E(a_0))$. The second marked orbit
+lies at depth $1$. When $n$ is odd, $\sigma$ and $\sigma(-1)^n=-\sigma$ are opposite, creating one
+additional bracket between $Rz(E(a_0))$ and depth $1/2$. When $N=0$ and $\sigma=-1$, the first
+ascending test has $\oscD(\beta(Ra_0))>0$ (at height $\asymp R^d E(a_0)\to+\infty$), while for fixed
+$\lambda_R<0$ the lowest odd term $\lambda_R x^l$ forces $\oscD(\beta_0)<0$ at a small $\beta_0>0$,
+creating one inner bracket in $(\beta_0,\beta(Ra_0))$. Slightly shrinking shared bracket endpoints and
+applying Article, Lemma~2.3 to the $x^l$ coefficient makes all counted periodic orbits
+simultaneously hyperbolic.
+\end{proof}
+
+\subsection{Five powers ($7$ cycles) and seven powers ($11$ cycles)}\label{subsec:five-seven}
+Take the balanced degree-ten seed $(l,q,d)=(5,9,10)$ ($N=2$) with pure monomial slope $f_b(r)=10r^8$,
+so for $Q(r)=\sum b_p r^p$ one has $U_{f_b,Q}(r)=10r^8\sum c(p)b_p r^p$ with $c(p)=(p-8)/(p+8)$.
+
+\begin{proof}[Proof of the $k=5$ and $k=7$ rows of Theorem~\ref{thm:lower}\textup{(ii)}]
+For $k=5$, set $Q(r)=r^9-r^{29}$ and fix the explicit wall exponent $M=16384$. Bisection with dyadic test points, outward interval evaluation on the
+decreasing branch and polynomial antiderivatives give the enclosures below.
+At $(a_0,a_1,a_*)=(\frac{5}{6},\frac{19}{20},\frac{39}{40})$, the scaled pairs
+$1000\bigl(B_L(a)/f(a),\,B_R(a)/f(a)\bigr)$ lie in
+\[
+  (8,9)\times(2,3), \qquad (-92,-91)\times(-97,-96), \qquad (-226,-225)\times(-231,-230),
+\]
+while $\Tr(z(-1/2))\in(-176,-175)$ and $\Tr(z(-1))\in(-247,-246)$. Proposition~\ref{prop:two-marks}
+with $N=2$, $n=1$, and $\sigma=+1$ yields $2+2+2+1=7$ simultaneous hyperbolic limit cycles on
+$\{5,9,10,29,16384\}$.
+
+For this five-term support let $z_i=z(E(a_i))$ and
+write $\beta(t)$ here for the upper hit of the plus turn at physical
+radius $Rt$. Let $\beta_v$ be its upper hit at scaled lower depth $v$.
+At the simultaneous solution, the following are the actual
+lower-intercept signs in increasing order of upper launch.
+\[
+\begin{array}{@{}lcccccc@{}}
+\toprule
+ &\text{seed}& \beta(a_0),\beta(a_1)&\beta(a_*)&
+ \beta(z_1),\beta(z_0)&\beta_{1/2}&\beta_1\\
+\midrule
+\sgn(b_+-b_-)&-,+,-&-,+&0&-,+&-&0\\
+\bottomrule
+\end{array}
+\]
+The two zeros displayed are simple. The sign following $\beta(z_0)$
+supplies the fifth strict bracket. The two marked orbits complete the count.
+
+The same test applies to $Q=r^9-r^{11}$ and $M=20{,}000{,}000$.
+At $a=1/2,3/4,4/5$ both actions have signs $+,-,-$; the two depth
+actions lie in $(-39,-38)$ and $(-53,-52)$, respectively
+(Section~\ref{sec:reproduce}). This also gives seven cycles on
+$\{5,9,10,11,20{,}000{,}000\}$.
+
+For $k=7$, put $p_j=9+2j$ ($0\le j\le 3$), $(\xi_1,\xi_2,\xi_3)=(\frac{1}{192},\frac{1}{96},1)$, and
+\[
+  V(z) = c(9)\prod_{j=1}^3\left(1 - \frac{z}{\xi_j}\right), \qquad b_{p_j} = \frac{[z^j]V}{c(p_j)},
+  \qquad Q_{\mathrm{raw}}(r) = \sum_{j=0}^3 b_{p_j}r^{p_j}.
+\]
+Then $U_{f_b,Q_{\mathrm{raw}}}(r)=10r^{17}V(r^2)$ has three simple positive roots
+$\sqrt{\xi_1}<\sqrt{\xi_2}<1$. Using $1/c(p)=1+16/(p-8)$ and $V(1)=0$, exact integration gives
+$Q_{\mathrm{raw}}(1)=16\int_0^1 V(t^2)\dd t>0$, while $b_{15}<0$. Because $U_{f_b,Q_{\mathrm{raw}}}'$
+has at least three positive roots by Rolle's theorem and at most three by Descartes' rule,
+$(Q_{\mathrm{raw}}/f_b)'$ has strict negative sign on $(1,\infty)$, giving a unique simple root $C>1$
+of $Q_{\mathrm{raw}}$ with $Q_{\mathrm{raw}}'(C)<0$. Rescaling $Q(r):=C^{-9}Q_{\mathrm{raw}}(Cr)$
+places all three simple roots of $U_{f_b,Q}$ inside $(0,1)$, satisfies $Q(1)=0$ and
+$Q'(1)=C^{-8}Q_{\mathrm{raw}}'(C)<0$, and allows us to fix $0<a_0<a_1<a_2<a_3<a_*<1$ at which
+$U_{f_b,Q}$ alternates through signs $+,-,+,-,-$.
+
+Now let $M>15$ be an even integer tending to $+\infty$. At each fixed $a_i$ and $a_*$ in $(0,1)$,
+$B_L(a)\to U_{f_b,Q}(a)$. For any fixed regular height $y<E_b(1)$ (specifically
+$y=E_b(a_i)+O(M^{-1})$, $y=-1/2$, and $y=-1$), solving $f_b(1)z^M=M(E_b(z)-y)$ gives $M\log z=\log
+M+O(1)$, i.e., $z-1=(\log M)/M+O(M^{-1})$, while $f(z)\sim -M(E_b(1)-y)<0$ and $\int_1^z|f(r)|\dd r\le
+H_c-y=O(1)$. Integration by parts therefore yields
+\begin{equation}\label{eq:wall-correction}
+  \frac{\Tr(z)}{f(z)} = -Q(z) + \frac{2\int_1^z f(r)Q'(r)\dd r}{f(z)} = -Q'(1)\frac{\log M}{M} + O(M^{-1}).
+\end{equation}
+As $M\to+\infty$, $\Tr(z(E(a_i)))/f(z(E(a_i)))\to 0$, so $B_R(a_i)$ retains the strict signs $+,-,+,-$
+of $U_{f_b,Q}(a_i)$; simultaneously, since $f(z)<0$ and $Q'(1)<0$, multiplying
+\eqref{eq:wall-correction} by $f(z)$ gives $\Tr(z(-s))\sim (E_b(1)+s)Q'(1)\log M<0$ at $s=1/2$ and
+$s=1$ (sign $-1=\sigma(-1)^3$). Fixing any sufficiently large even $M$,
+Proposition~\ref{prop:two-marks} with $N=2$, $n=3$, and $\sigma=+1$ yields $2+6+2+1=11$ simultaneous
+hyperbolic limit cycles on $\{5,9,10,11,13,15,M\}$.
+\end{proof}
+
+\input{tex/eight-powers.tex}
+
+\subsection{Nine powers via rational cubic separation ($19$ cycles)}\label{subsec:nine-powers}
+At $k=9$, starting from the balanced seed $\{5,9,10\}$ ($N=2$) we insert two intermediate even powers
+$\{2058,3082\}$ and three odd powers $\{1033,3081,3083\}$ before closing the crest with a large even
+wall $M>3083$, achieving $n=7$ ascending action sign changes and $2+14+2+1=19$ simultaneous hyperbolic
+limit cycles.
+
+\begin{proof}[Proof of the $k=9$ row of Theorem~\ref{thm:lower}\textup{(ii)}]
+Start with $f_0(r)=10r^8$ and $Q_{\mathrm{base}}(r)=r^9$. Set $D_9=1024$, $h=2^{-30}$, $T_0=15/8$, and define the positive cubics
+\[
+  C(z) = (1-z)^2(1+2z) + h z^2, \qquad G(z) = \left(1-\frac{z}{T_0}\right)^2\left(1+\frac{z}{2T_0}\right) + h z.
+\]
+For $z=r^{D_9}$, put $f_b(r)=10r^8 C(z)$ (strictly positive on $r>0$, integrating to $E_b$ with even
+primitive exponents $\{10,2058,3082\}$) and $Q_0(r)=r^9 G(z)$ (odd exponents $\{9,1033,3081\}$).
+Termwise integration gives $U_{f_b,Q_0}(r)=10 r^{17} J_{17}(z)$, where
+\[
+  J_{17}(z) = \sum_{i,j} C_i G_j\,\frac{1 + D_9(j-i)}{17 + D_9(i+j)}\,z^{i+j}.
+\]
+At the seven ordered nodes
+\[
+  z \in \left\{\frac{1}{16},\, \frac{1}{6},\, 1,\, \frac{15}{8},\, 4,\, 32,\, 4096\right\},
+\]
+exact rational evaluation gives the signs $+,-,+,-,+,-,+$ for $J_{17}(z)$ with $|J_{17}(z)|>1/1000$ at every node.
+
+Here the top exponents of $f_b$ and $Q_0$ are $e=3080$ and $p=3081$, both with positive leading
+coefficients. To append a seventh sign reversal and create the crest zero of $Q$, set $P=3083$ and
+define $Q_B(r)=Q_0(r)-Q_0(B)(r/B)^P$ for large $B>1$. As $B\to+\infty$, $Q_B\to Q_0$ on compact
+intervals so the seven alternating signs $+,-,+,-,+,-,+$ persist at the fixed nodes above, while at
+$r=B$ one has $Q_B(B)=0$, $Q_B'(B)<0$ (since $P>p$ and $Q_0$ has positive coefficients at $p=3081$ in
+dominance), and dividing $U_{f_b,Q_B}(B)$ by the product of the positive leading coefficients of
+$f_b,Q_0$ and $B^{e+p}$ gives the strict negative limit
+\[
+  \frac{p-e}{p+e} - \frac{P-e}{P+e} = \frac{1}{6161} - \frac{3}{6163} < 0.
+\]
+Fix $B$ sufficiently large, choose a seventh test $r_7<B$ and a marked turn $r_*<B$ near $B$ where
+$U_{f_b,Q_B}<0$, and rescale $r\mapsto Br$ (dividing $E_b$ by $B^{10}$ and $Q_B$ by $B^9$ to preserve
+the lowest seed normalization $r^{10}$ and $r^9$) so that the eight ascending points
+$0<a_0<\dots<a_7<a_*<1$ carry signs $+,-,+,-,+,-,+,-,-$ and the rescaled odd polynomial satisfies
+$Q(1)=0$ and $Q'(1)<0$.
+
+Finally, choose any sufficiently large even integer $M>3083$ satisfying
+$M-2>\sup_{r>0}rf_b'(r)/f_b(r)$ and such that the asymptotic bound \eqref{eq:wall-correction}
+preserves all eight ascending signs on $B_L(a_i)$ and $B_R(a_i)$ ($i=0,\dots,7$), preserves
+$B_L(a_*)<0$, and gives $\Tr(z(-1/2))<0$ and $\Tr(z(-1))<0$ (matching $\sgn Q'(1)=-1=\sigma(-1)^7$).
+Proposition~\ref{prop:two-marks} with $N=2$, $n=7$, and $\sigma=+1$ then yields $2+14+2+1=19$
+simultaneous hyperbolic limit cycles on $\{5,9,10,1033,2058,3081,3082,3083,M\}$.
+\end{proof}
+
+\smallskip\noindent\emph{Twenty cycles on ten terms.}
+For every sufficiently large even $M>3083$ after the profiles above
+are fixed, the nineteen-cycle nest is hyperbolic. Since $M+1$ is odd
+and exceeds the degree, Article, Proposition~A.1, adjoins $x^{M+1}$
+with an arbitrarily small nonzero coefficient of suitable sign.
+The nineteen cycles persist and the new exterior cycle is hyperbolic,
+giving at least twenty on this ten-term support.

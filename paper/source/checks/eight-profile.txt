@@ -1,0 +1,4 @@
+$ python3 -B code/two_profiles.py --terms 8
+Fourteen-cycle support verified: seven ascent tests and the wall bounds for M=2^38 pass.
+
+Exit status 0

@@ -1,0 +1,61 @@
+\subsection{One and two terms}\label{subsec:baselines-lift}
+
+With two odd powers, an energy comparison orders any two putative cycles.
+For attainment it suffices to perturb a single family of circles.
+
+\begin{proof}[Proof of Theorem~\ref{thm:lower}\textup{(i)}]
+An even $F$ has identical half-profiles. Every periodic orbit belongs to
+an open annulus of periodic orbits by transversality of its two axis hits. This includes two even powers.
+For a single odd monomial the divergence $-F'(x)$ has one strict sign off
+$x=0$, so Green's theorem excludes a periodic orbit. This proves the
+one-term assertion. With one odd and
+one even power, $F(r)-F(-r)$ has a strict sign on $r>0$. A periodic
+orbit would supply two transverse returns from its upper intercept.
+Article, Lemma~2.1(ii) orders their lower hits strictly.
+
+It remains to bound the number for two odd powers. Equal coefficient signs
+again give divergence of one sign. With opposite signs we may reverse
+time and replace $y$ by $-y$ so that
+\[
+ F(x)=-c x^{2p+1}+e x^{2q+1},\qquad c,e>0,\quad 0\le p<q .
+\]
+If $p=0$, the damping $F'$ is negative at zero and increases on
+the positive half-axis, so Massera's uniqueness theorem applies
+\cite[pp.~367--369]{Massera}. For $p>0$, $F'$ initially decreases.
+The energy comparison below covers both cases. Let $a=(c/e)^{1/(2q-2p)}$. Then $F<0$ on $(0,a)$ and $F$ increases
+strictly from zero on $[a,\infty)$. Central reflection preserves the
+field's orbits. Each closed orbit is centrally symmetric, since its image
+is either itself or a strictly nested closed orbit, and applying the
+reflection twice rules out strict nesting.
+
+Write $V=(x^2+y^2)/2$. Along an orbit $\dot V=-xF(x)$ and
+$\dd V=F(x)\dd y$. On the right half of a closed orbit $V$ takes the
+same value at the two axis hits. This arc must pass $x=a$, since $V$
+strictly increases while $0<x<a$. Denote the upper and lower ordinates
+at abscissa $x$ by $y_o(x)>F(x)>y_i(x)$. The gain of $V$ in $0<x<a$ is
+\[
+ \int_0^a x[-F(x)]\!
+ \left(\frac1{y_o(x)-F(x)}+\frac1{F(x)-y_i(x)}\right)\dd x .
+\]
+For a strictly enclosing orbit the gain is smaller, since both vertical
+gaps in the denominators increase. The loss beyond $a$ is
+$\int_{y_i(a)}^{y_o(a)} F(x(y))\dd y$, where the right-hand arc is a
+single graph over $y$. On the enclosing arc the interval of integration
+is larger and $x(y)$ is strictly larger on the common interval.
+As $F$ is strictly increasing there, the loss is larger. Two nested
+cycles cannot both balance their gain and loss. This proves
+$\LieM(2)\le1$, including $p>0$.
+
+For attainment with a hyperbolic cycle take $F(x)=\delta(x^3-x)$.
+On a compact annulus about radius $R_*=2/\sqrt3$, the return after one
+clockwise revolution is smooth in $R$ and $\delta$. Along the unperturbed
+circle $x=R\cos t$, integration gives
+\[
+ V_{\rm return}-V_{\rm initial}
+  =\delta\!\int_0^{2\pi}(R^2\cos^2t-R^4\cos^4t)\dd t+O(\delta^2)
+  =\pi\delta R^2(1-3R^2/4)+O(\delta^2)
+\]
+in $C^1$ on that annulus. Divide by $\delta$ and apply the implicit
+function theorem at the simple positive zero $R_*$. For all sufficiently
+small $\delta>0$ the resulting orbit is hyperbolic, proving $H(2)=1$.
+\end{proof}

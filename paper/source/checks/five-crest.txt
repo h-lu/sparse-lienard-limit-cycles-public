@@ -1,0 +1,18 @@
+$ python3 -B code/crest.py --new-odd 1
+Rational block with 1 added odd powers: 1 simple action roots; final primitive root has 1 < r^2 < 4.
+Five-term support 5, 9, 10, 11, 20000000.
+a=1/2: U/f in (37/1000000, 39/1000000), B_R/f in (9/250000, 37/1000000)
+a=3/4: U/f in (-23/10000, -11/5000), B_R/f in (-23/10000, -11/5000)
+a=4/5: U/f in (-57/10000, -7/1250), B_R/f in (-57/10000, -7/1250)
+depth 0: descending action in (-26, -25)
+depth 1/2: descending action in (-39, -38)
+depth 1: descending action in (-53, -52)
+Five-term support 5, 9, 10, 29, 16384.
+a=5/6: U/f in (1/125, 9/1000), B_R/f in (1/500, 3/1000)
+a=19/20: U/f in (-23/250, -91/1000), B_R/f in (-97/1000, -12/125)
+a=39/40: U/f in (-113/500, -9/40), B_R/f in (-231/1000, -23/100)
+depth 0: descending action in (-110, -109)
+depth 1/2: descending action in (-176, -175)
+depth 1: descending action in (-247, -246)
+
+Exit status 0

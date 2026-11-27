@@ -1,0 +1,7 @@
+$ python3 -B code/seed_table.py
+PASS degree-ten factorization, isolating cell, peak, curvature and primitive identities.
+PASS h=20: outer radius cells 1320472481,2085892924 at 1e-9; -89 < action gap < -88.
+PASS h=100: outer radius cells 1497737756,2206941520 at 1e-9; 1293 < action gap < 1295.
+PASS h=200: outer radius cells 1594050028,2279074632 at 1e-9; 6884 < action gap < 6886.
+
+Exit status 0

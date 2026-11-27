@@ -1,0 +1,30 @@
+$ python3 -B verification/check_mechanism.py
+python-flint 0.9.0 Arb precision 512
+
+Three-equation fold, finite algebra (no finite Miranda root computed)
+d=10: det=[0.0249678405 +/- 6.19e-12], rho=[6.901267387 +/- 1.51e-10]
+d=14: det=[0.0126540165 +/- 5.27e-12], rho=[8.926189131 +/- 2.68e-11]
+d=18: det=[0.00730474253 +/- 1.01e-12], rho=[10.92970288 +/- 9.85e-10]
+d=67080: det=[3.44089537e-13 +/- 2.07e-22], rho=[33004.48835 +/- 2.54e-6]
+
+Actual outgoing legs on a piecewise affine crest
+eps=1/16: log(A(3/2)/A(5/4))+1/(4 eps)=[-0.00523332789 +/- 4.67e-12]
+eps=1/32: log(A(3/2)/A(5/4))+1/(4 eps)=[-9.17896589e-5 +/- 4.31e-14]
+eps=1/64: log(A(3/2)/A(5/4))+1/(4 eps)=[-3.08985583e-8 +/- 1.01e-17]
+eps=1/128: log(A(3/2)/A(5/4))+1/(4 eps)=[-3.48542086e-15 +/- 2.15e-24]
+
+Stride-four family, d=10, eta=2^-20, q=2^-10
+Vo [2.646540e-16 +/- 9.06e-24] [-1.482739e-7 +/- 2.84e-14] [4.119342e+9 +/- 3.17e+2]
+Vi [2.646540e-16 +/- 9.06e-24] [-1.482448e-7 +/- 3.17e-14] [4.119342e+9 +/- 3.17e+2]
+H=[9.0949470e-13 +/- 1.78e-21]: J lower [6.952498108e+9 +/- 0.441], upper [7.019780605e+9 +/- 0.316] in (6900000000, 7100000000)
+H=[9.5367432e-7 +/- 3.60e-15]: J lower [-127112.2439 +/- 1.84e-5], upper [-110195.8507 +/- 6.80e-7] in (-140000, -100000)
+H=1.0000000: J lower [0.04421702767 +/- 3.58e-12], upper [0.04432871570 +/- 3.88e-12] in (0.044, 0.045)
+65536 whole-cell enclosures on [0,2], absolute tail <= [2.154182e-5 +/- 1.48e-13]
+H=eta, q=eta: J enclosure [2.7e+4 +/- 1.02e+2]
+H=eta, one additional r^11: J enclosure [2e+5 +/- 3.57e+4]
+R=2, even valley value at r=1 after adding the wall: -36851/13631488
+R=8, even valley value at r=1 after adding the wall: 199/218103808
+
+PASS independent finite checks
+
+Exit status 0

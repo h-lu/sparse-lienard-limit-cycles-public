@@ -1,0 +1,189 @@
+\subsection{Counting the cycles and specializing to ten terms}\label{subsec:ten-power}\label{sec:finite-inputs}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Choose the spatial scales as in Lemma~\ref{lem:inductive-valleys}. Next
+take $A$ sufficiently large for all the ordinary and incoming tests
+of Lemma~\ref{lem:valley-rates} and for the two compact brackets and
+two compact incoming tests of Lemma~\ref{lem:compact-seed}. Use
+$P_{A,\lambda_A}$ at exact tail balance to choose the incoming heights.
+Keep a small closed interval about $\lambda_A$ on which all $2+6L+j$
+ordinary brackets persist. The tail difference is strictly monotone
+there by Lemma~\ref{lem:tail-inward}(iii), so its endpoint signs are
+opposite. Write $\omega=(-1)^j$.
+If $\omega=-1$, the change $(\widetilde x,\widetilde y,\widetilde t)
+=(-x,y,-t)$ replaces $P(x)$ by $P(-x)$. It exchanges the two
+half-profiles and preserves the axis ordinates. This multiplies each difference of intercepts by
+$\omega$ and makes the highest odd coefficient positive.
+A common positive scaling of $x$ and $y$ makes the even leading
+coefficient one. It scales every axis intercept by the same factor.
+
+Read the incoming tests in decreasing physical height. Before
+normalization the positive-height list runs from $\omega$ to $+1$.
+Multiplying by $\omega$ gives endpoints $\omega^2=+1$ and $\omega$,
+with $6L+j$ changes. Under the same normalization the two compact
+negative seed heights have signs $-\omega,\omega$. The negative-height
+valley list, read in increasing depth $H>0$, originally runs from $+1$
+to $\omega$. Multiplying these endpoints by $\omega$ gives
+$(\omega,\omega^2)=(\omega,+1)$ at the two ends, with $4L+j$ changes. Write $h_{\min}>0$ for the smallest
+scaled positive incoming test height and $H_{\min}>0$ for the smallest
+scaled valley depth. These tests and the compact seed ordinates were
+fixed before choosing $A$. Hence for large $A$ the physical ordinates
+before the common positive normalization satisfy
+\[
+ -A^{d_0}H_{\min}<h_{\mathrm{seed},2}<h_{\mathrm{seed},1}<0<A^{d_0}h_{\min}.
+\]
+
+Choose $s>0$ so small that every test retains its sign when
+$G_+(h)-G_-(h)$ is replaced by $G_+(h)-G_-(h+s)$. Choose a physical height
+$h=h_{\rm deep}$ below every preceding test so that $|G_+(h)-h|<s/4$
+and $|G_-(h+s)-(h+s)|<s/4$. Such a height exists by
+Lemma~\ref{lem:tail-inward}(iv), and its shifted comparison is less than $-s/2$. Proposition~\ref{prop:fold-closure}
+transfers this entire ordered list to ordinary upper-axis launches in
+one polynomial vector field. In increasing order of upper launch,
+the four groups have endpoint signs
+\[
+ \underbrace{(+1,\ldots,\omega)}_{\text{positive heights}},\quad
+ \underbrace{(-\omega,\omega)}_{\text{compact seed}},\quad
+ \underbrace{(\omega,\ldots,+1)}_{\text{negative valley heights}},\quad
+ \underbrace{(-1,+1)}_{\text{deep and exterior}} .
+\]
+At the seed the sequence $\omega,-\omega,\omega$ gives two changes
+for either parity of $j$. Its last sign is the first valley sign.
+At the far end $+1,-1,+1$ gives the other two changes. In total the
+incoming list gives
+\[
+ (6L+j)+2+(4L+j)+2=10L+2j+4
+\]
+brackets. The ordinary tests give two compact brackets and $6L+j$
+additional brackets. The fold itself contributes one bracket on each
+side of the crest and two simple matched orbits. All lie in disjoint
+launch intervals, after slightly separating any shared strict endpoints.
+Lemma~\ref{lem:hyperbolicity} gives the simultaneous count
+\[
+ (2+6L+j)+(10L+2j+4)+4=16L+10+3j .
+\]
+
+There are three seed exponents, $j$ prefix exponents, four per valley,
+and three from the terminal fold. The even exponents increase from $d_0$
+through $d_\nu+2D,d_\nu+3D$ to $d_L+8$. Among the odd exponents, the
+last prefix power is at most $d_0+5$, the first valley power is
+$d_0+2j+D-1$, and each valley ends one below its new leading even power.
+The final odd exponents are $d_L+1,d_L+3$. Thus all $4L+6+j$ coefficients
+occupy distinct powers. Each is nonzero by construction, and the final
+regularization varies an existing coefficient in its nonzero interval.
+Hyperbolicity gives an open coefficient set on this support.
+Substituting $k=4L+6+j$ proves the bound and the lower limit
+in \eqref{eq:main-bound}. In particular, taking $L=1$ and $j=0$ in this
+analytic construction gives at least 26 cycles on ten terms for every
+sufficiently large odd $n_0$.
+\end{proof}
+
+\begin{corollary}[A fixed ten-term support in degree $67088$]\label{cor:ten-support}
+There exists a nonempty open set $V\subset(\mathbb R\setminus\{0\})^{10}$
+such that every coefficient vector in $V$ gives at least $26$ simultaneous
+hyperbolic limit cycles on the support
+\begin{equation}\label{eq:ten-support}
+ \{33153,66305,66306,66563,66822,67079,67080,67081,67083,67088\}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Take $L=1$, $j=0$ and $n_0=257$. Then $m_0=33153$, $d_0=66306$
+and $d_L=67080$. The role of this choice is to fix the ten exponents
+in \eqref{eq:ten-support}. For a general number of blocks,
+Theorem~\ref{thm:main} obtains the required local inequalities by taking
+$n_0$ sufficiently large. Here we check them at $257$.
+The interval computations below enclose the seed quantities, the
+positive-height variations and the five negative-height integrals,
+using $768$-bit real balls in Arb \cite{Johansson2017}.
+These are inputs to Lemmas~\ref{lem:compact-seed}
+and~\ref{lem:inductive-valleys}.
+
+At the seed, bisection in $T=r^{m_0}$ isolates the minimum, the inner
+crest and both upper-level inverses in Lemma~\ref{lem:compact-seed}.
+Evaluating the squared-slope antiderivatives in $768$-bit Arb balls gives
+\[
+ 0.81<\frac{H_b}{d_0}<0.82,\qquad 4<\frac{S_+(d_0)}{m_0^3}<5,\qquad
+ 16<\frac{S_-(d_0)}{m_0^3}<17,\qquad \frac{q_-''(v)}{v^2q_+''(1)}>10^5 .
+\]
+At the valley, take $\eta=(2/3)^{257}$ and $q=(3/4)^{128}$. By Descartes'
+rule of signs, the cubic factor $257-259(3-\eta)z^2+520z^3$ of $E'(r)$
+has at most two positive roots; bisection encloses the crest $z_p$, the
+minimum $z_c$, and the critical heights $m=E(c)$ and $M=E(p)$ within
+\[
+ \begin{aligned}
+  z_p &\in (0.99229,\,0.99230), & 1-z_c &\in (2.39,\,2.40)\cdot 10^{-44}, \\
+  m &\in (5.55,\,5.56)\cdot 10^{-46}, & M &\in (2.42,\,2.43)\cdot 10^{-5}.
+ \end{aligned}
+\]
+Because $7/8<z_p$, the profile $E$ increases strictly on $[1/2,7/8]$;
+bisection of $z^{257}C_\eta(z)=m$ on that interval encloses the unique
+pre-crest inverse $z_a\in(0.67022,\,0.67023)$. At the six outer nodes
+$z\in\{2^{-13},1/8,1/2,3/2,16,2^{13}\}$ of Lemma~\ref{lem:valley-local}
+and at the post-valley node $z_v=z_c+2^{-200}$ (where $m<E(z_v^{1/D})<M$),
+$768$-bit ball evaluation of the exact polynomial expressions for $V_o$
+and $V_i$ gives the following enclosures (at $z_v$, both $V_o=P_1$ and
+$V_i=P_1+U(z_v^{1/D})-U(c)$ lie in the listed negative interval):
+\[
+\begin{array}{@{}ccc@{}}
+\toprule
+ z & \text{Certified enclosure} & \text{Sign}\\
+\midrule
+ 2^{-13} & (1.76,1.77)\cdot 10^{-2012} & +\\
+ 1/8 & (-5.11,-5.10)\cdot 10^{-464} & -\\
+ 1/2 & (2.07,2.08)\cdot 10^{-154} & +\\
+ z_c+2^{-200} & (-3.71,-3.70)\cdot 10^{-57} & -\\
+ 3/2 & (5.71,5.72)\cdot 10^{92} & +\\
+ 16 & (-1.22,-1.21)\cdot 10^{626} & -\\
+ 2^{13} & (9.84,9.85)\cdot 10^{2033} & +\\
+\bottomrule
+\end{array}
+\]
+This certifies both seven-sign positive lists. For the five depths $H=w^{257}$ we enclose the normalized integral
+$nHDJ(H)$ of \eqref{eq:J-in-z}, with $\nu=1/D$. Write its odd factor as
+$B_q=(1-z)(8-z-z^2)/8-qz$. On $0<z\le1/8$,
+$0<1-(9/8+q)z\le B_q<2$, $z^\nu\le1$, and the denominator is at least
+$H^2$. The absolute normalized integrand is bounded by $2nz^{n-1}/H$.
+On $z\ge8$, $C_\eta=1-(3-\eta)z^2+2z^3\ge(2-3/8)z^3>z^3$.
+Since $z^3/8\ge8z$ and $q<1$, $0<B_q=1-(9/8+q)z+z^3/8\le z^3$.
+Here the absolute integrand is at most $nHz^{-n+\nu-4}\le nHz^{-n-1}$.
+Integration bounds the sum of the two absolute tails by $8^{-n}(2/H+H)$.
+
+On each of $[1/8,1/4]$, $[1/4,1/2]$, $[3/2,2]$, $[2,4]$ and $[4,8]$
+use $1024$ equal cells. On each side of $1$, subdivide the distances
+$[2^{-l-1},2^{-l}]$ into $512$ equal cells for $1\le l\le99$ and
+use one last cell from distance $2^{-100}$ to zero. On each of the
+$106498$ cells the endpoint values enclose $(1-z)^2$ by monotonicity.
+Use $C_\eta=(1-z)^2(1+2z)+\eta z^2$ and the factored $B_q$
+above. Multiply the interval range of the normalized integrand by
+the exact dyadic width, sum with outward rounding at $768$ bits in Arb,
+and enlarge by the two-sided tail bound. Table~\ref{tab:main-depth-cert}
+gives the resulting local enclosures. The strict enclosures allow us to choose the inner
+dilation and balance the two limiting returns. For a sufficiently large
+outer radius, Proposition~\ref{prop:fold-closure} then supplies the three
+matching parameters. Lemma~\ref{lem:hyperbolicity} gives a regular value
+of an existing odd coefficient. These existence arguments produce the
+open coefficient set on \eqref{eq:ten-support} without specifying a
+numerical vector of final coefficients. Table~\ref{tab:ordered-returns}
+counts the $24$ sign brackets and two simple matched orbits. The
+ten-term examples in Corollary~\ref{cor:short-lists} use the same
+analytic closure with a degree-ten seed and the small-$\eta$ signs from
+Proposition~\ref{prop:threshold}.
+\end{proof}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Rational enclosures of $nHDJ(H)$ from \eqref{eq:J-in-z},
+  with $n=257$, $D=258$ and $H=w^{257}$. Each enclosure incorporates analytic bounds
+  for the tails $(0,1/8]$ and $[8,\infty)$ in the integration variable $z$.}\label{tab:main-depth-cert}
+  \begin{tabular}{@{}ccc@{}}
+    \toprule
+    $w$ & Enclosure & Sign\\
+    \midrule
+    $1/2$ & $(7/10,\,6/5)$ & $+$\\
+    $2/3$ & $(-4\cdot10^8,\,-3\cdot10^8)$ & $-$\\
+    $7/8$ & $(12/5,\,3)$ & $+$\\
+    $3/2$ & $(-29/100,\,-23/100)$ & $-$\\
+    $4$ & $(1/25,\,7/100)$ & $+$\\
+    \bottomrule
+  \end{tabular}
+\end{table}

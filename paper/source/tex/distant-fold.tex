@@ -1,0 +1,347 @@
+An incoming graph has its upper endpoint at infinite radius. We now
+put a maximum beyond the inner polynomial and return those graphs to a
+finite upper section. A common launch must pair the physical turning
+heights $h$ and $h+s+o(1)$, with the same $s$ at every prescribed test.
+Write $d$ for the inner degree and $R$ for the crest radius scale. The
+scaled height is the physical height divided by $R^d$, and
+$\tilde\eps=R^{2-2d}$. On the regular descent the slope of the
+action with respect to scaled height is bounded away from zero.
+Thus the usual $O(\sqrt{\tilde\eps})$ error for one leg allows a
+physical height error of order $R^d\sqrt{\tilde\eps}=R$. To resolve a
+fixed shift, Lemma~\ref{lem:deficit-ratio} subtracts the logarithms of
+two deficits measured from the same actual reference leg. The common
+part of the action then cancels.
+
+\input{tex/crest-estimate.tex}
+\input{tex/deficit-ratio.tex}
+
+\begin{proposition}[Closing a finite incoming list with three additional powers]\label{prop:fold-closure}
+Let $P_\lambda(x)=P_*(x)+\lambda x^{m_0}$, with fixed $P_*$ having zero coefficient at $m_0$, be a
+monic polynomial of even degree $d_{\mathrm{top}}\ge 10$ with next term $b_1 x^{d_{\mathrm{top}}-1}$
+($b_1>0$), an adjustable odd term $\lambda x^{m_0}$ ($3\le m_0\le d_{\mathrm{top}}-3$ odd), and all
+remaining powers in $\{3,\dots,d_{\mathrm{top}}-2\}$. Suppose $\lambda\in I_\lambda$ varies on a
+compact interval avoiding $0$ such that:
+\begin{itemize}
+  \item $\Delta(P_\lambda)=\ell_+(P_\lambda)-\ell_-(P_\lambda)$ has opposite strict signs at $\partial
+  I_\lambda$ and a unique zero $\lambda_0\in\operatorname{int}(I_\lambda)$;
+  \item $N_{\mathrm{ord}}$ pairwise disjoint compact ordinary sign brackets of $P_\lambda$ persist throughout $I_\lambda$;
+  \item at $\lambda=\lambda_0$ and a fixed physical shift $s\in\mathbb{R}$, $h_1>h_2>\dots>h_M$ is a
+  finite decreasing list of real numbers at which $G_+(h_r)-G_-(h_r+s)$ has nonzero signs
+  $\sigma_r\in\{+1,-1\}$.
+\end{itemize}
+Then adjoining $\{d_{\mathrm{top}}+1,d_{\mathrm{top}}+3,d_{\mathrm{top}}+8\}$ produces, for all
+sufficiently large outer dilations $R>1$, a polynomial $F_R(x)$ with
+$\supp(F_R)=\supp(P_{\lambda_0})\cup\{d_{\mathrm{top}}+1,d_{\mathrm{top}}+3,d_{\mathrm{top}}+8\}$
+whose half-return difference $\oscD_{F_R}(\beta)=b_+(\beta)-b_-(\beta)$ on $\{x=0,y>0\}$
+simultaneously realizes, in strictly increasing order of $\beta$:
+\begin{enumerate}
+  \item the $N_{\mathrm{ord}}$ bounded ordinary sign brackets;
+  \item an ascending fold sign bracket (signs $-,+$), a hyperbolic marked orbit on the fold ascent,
+  and a descending fold sign bracket (signs $-,+$ ending at $\oscD_{F_R}(\beta_{\mathrm{refl}})>0$);
+  \item points $\beta_{\mathrm{refl}}<\beta_1<\beta_2<\dots<\beta_M<\beta_{\mathrm{ext}}$ with
+  $\sgn\oscD_{F_R}(\beta_r)=\sigma_r$ ($1\le r\le M$) and $\oscD_{F_R}(\beta_{\mathrm{ext}})>0$;
+  \item a hyperbolic marked orbit whose launch is beyond $\beta_{\mathrm{ext}}$
+  and which encloses all the orbits selected in the preceding items.
+\end{enumerate}
+After separating any shared strict endpoints, a small perturbation of the
+$x^{m_0}$ coefficient gives a hyperbolic cycle in every sign bracket.
+The two marked orbits continue within disjoint neighborhoods of their
+original launches on the same support (Lemma~\ref{lem:hyperbolicity}).
+\end{proposition}
+
+The order of these launches is shown in Figure~\ref{fig:outer-fold}.
+
+\begin{proof}
+Shrink $I_\lambda$ around $\lambda_0$ if needed so the $M$ strict signs of
+$G_{+,P_\lambda}(h_r)-G_{-,P_\lambda}(h_r+s)$ hold uniformly for $\lambda\in I_\lambda$. Put
+$e=d_{\mathrm{top}}-2\ge 8$ and define on $r\ge 0$:
+\begin{align*}
+  E_{\mathrm{f}}(r) &= r^{d_{\mathrm{top}}} -
+  \frac{d_{\mathrm{top}}}{d_{\mathrm{top}}+8}r^{d_{\mathrm{top}}+8}, & f_{\mathrm{f}}(r) &=
+  \frac{E_{\mathrm{f}}'(r)}{r} = d_{\mathrm{top}} r^e(1-r^8), \\
+  Q_{\mathrm{f}}(r) &= r^{d_{\mathrm{top}}-1}(1-r^2)(1-\rho r^2), & U_{\mathrm{f}}(a) &= \int_0^a
+  (f_{\mathrm{f}}Q_{\mathrm{f}}' - f_{\mathrm{f}}'Q_{\mathrm{f}})\dd r, \quad \Tr_{\mathrm{f}}(t) =
+  U_{\mathrm{f}}(t)-U_{\mathrm{f}}(1).
+\end{align*}
+\smallskip\noindent\emph{The two fold tests.} Let $z(y)>1$ denote the descending inverse of
+$E_{\mathrm{f}}(z)=y<E_{\mathrm{f}}(1)=\frac{8}{d_{\mathrm{top}}+8}$, and set
+$g=z(0)=(1+8/d_{\mathrm{top}})^{1/8}>1$. On $(1,\infty)$,
+$Q_{\mathrm{f}}(r)/f_{\mathrm{f}}(r)=\frac{1}{d_{\mathrm{top}}}(A_0(r)-\rho B_0(r))$ where
+$B_0(r)=(r^{-3}+r^{-1}+r+r^3)^{-1}$ satisfies $B_0'(r)<0$ (as $-3r^{-4}-r^{-2}+1+3r^2>0$ on
+$(1,\infty)$) and $A_0(r)=B_0(r)/r^2$ satisfies $A_0'(r)<0$. Hence
+$\rho\mapsto\Tr_{\mathrm{f}}(g)=\int_1^g f_{\mathrm{f}}(r)^2(Q_{\mathrm{f}}/f_{\mathrm{f}})'(r)\dd r$
+is strictly increasing and affine with negative value at $\rho=0$, determining a unique $\rho>0$ with
+$\Tr_{\mathrm{f}}(g)=0$. Writing $Q_{\mathrm{f}}(r)=(r^{e+1}-r^{e+3})-\rho(r^{e+3}-r^{e+5})$, direct
+integration on $[0,1]$ gives
+$\frac{1}{d_{\mathrm{top}}}\int_0^1[f_{\mathrm{f}}(r^p-r^{p+2})'-f_{\mathrm{f}}'(r^p-r^{p+2})]\dd r =
+-4\bigl(\frac{e}{(e+p)(e+p+2)}-\frac{e+8}{(e+8+p)(e+10+p)}\bigr)$, whose sign is
+$-\sgn(e(e+8)-p(p+2))$; this is negative at $p=e+1$ ($4e-3>0$) and positive at $p=e+3$ ($-15<0$), so
+$U_{\mathrm{f}}(1)<0$ since $\rho>0$. Because $f_{\mathrm{f}}$ has negative leading coefficient at
+$e+8$ and $Q_{\mathrm{f}}$ has positive leading coefficient $+\rho$ at $e+5$, $\Tr_{\mathrm{f}}(t)\sim
+\frac{3d_{\mathrm{top}}\rho}{2e+13}t^{2e+13}\to+\infty$ as $t\to+\infty$.
+
+On $(0,1)$, write $B_L(a)=U_{\mathrm{f}}(a)$ and
+$B_R(a)=U_{\mathrm{f}}(a)-f_{\mathrm{f}}(a)\Tr_{\mathrm{f}}(z(E_{\mathrm{f}}(a)))/f_{\mathrm{f}}(z(E_{\mathrm{f}}(a)))$.
+Since $\Tr_{\mathrm{f}}(g)=0$ and $z(y)$ is smooth near $y=0$,
+$\Tr_{\mathrm{f}}(z(E_{\mathrm{f}}(a)))=O(a^{d_{\mathrm{top}}})$ as $a\downarrow 0$, whereas
+$U_{\mathrm{f}}(a)/f_{\mathrm{f}}(a)\sim a^{d_{\mathrm{top}}-1}/(2e+1)>0$; as $a\uparrow 1$,
+$U_{\mathrm{f}}(1)<0$ and $\Tr_{\mathrm{f}}(z)/f_{\mathrm{f}}(z)\to 0$ as $z\downarrow 1$. Fix
+$0<a_0<a_1<a_*<1$ such that $(B_L,B_R)$ are both strictly positive at $a_0$ and both strictly negative
+at $a_1$ and $a_*$, and fix $0<s_0<S_*$ large enough that $\Tr_{\mathrm{f}}(z(-s_0))>0$ and
+$\Tr_{\mathrm{f}}(z(-S_*))>0$.
+
+Writing $z_i=z(E_{\rm f}(a_i))$, the limiting order of the test radii is
+\[
+  a_0<a_1<a_*<1<z_1<z_0<g<z(-s_0)<z(-S_*).
+\]
+The descent near $g$ is thus available for turns at bounded physical
+heights, between the reflected tests and the exterior one.
+
+\smallskip\noindent\emph{Three finite matches.} In
+$\operatorname{span}\{r^{d_{\mathrm{top}}+1},r^{d_{\mathrm{top}}+3}\}$, the linear map
+$V\mapsto\bigl(V(1),\int_1^g(f_{\mathrm{f}}V'-f_{\mathrm{f}}'V)\dd r\bigr)$ is invertible because the
+kernel of evaluation at $1$ is spanned by $r^{d_{\mathrm{top}}+1}(1-r^2)$, on which the second
+functional is the negative of the nonzero $\rho$-slope of $\Tr_{\mathrm{f}}(g)$. Let
+$V_1,V_2\in\operatorname{span}\{r^{d_{\mathrm{top}}+1},r^{d_{\mathrm{top}}+3}\}$ be the dual basis.
+With $\xi=x/R$, define the physical primitive
+\begin{align*}
+  F_{R,\lambda,\theta_1,\theta_2}(x)
+    ={}& P_\lambda(x) - \frac{d_{\mathrm{top}}}{d_{\mathrm{top}}+8} R^{-8}x^{d_{\mathrm{top}}+8} \\
+       & + b_1 R^{d_{\mathrm{top}}-1}\bigl[Q_{\mathrm{f}}(\xi)-\xi^{d_{\mathrm{top}}-1}+\theta_1 V_1(\xi)+\theta_2 V_2(\xi)\bigr].
+\end{align*}
+Since $Q_{\mathrm{f}}(r)-r^{d_{\mathrm{top}}-1}=-(1+\rho)r^{d_{\mathrm{top}}+1}+\rho
+r^{d_{\mathrm{top}}+3}$ has both coefficients strictly nonzero, for $|\theta_1|,|\theta_2|\le\delta$
+sufficiently small all three outer powers
+$\{d_{\mathrm{top}}+1,d_{\mathrm{top}}+3,d_{\mathrm{top}}+8\}$ retain nonzero coefficients. In scaled
+coordinates $r=|x|/R$, $u=r^2/2$, $w=y/R^{d_{\mathrm{top}}}$, $\tilde{\tau}=R^{-1}$, and
+$\tilde{\eps}=R^{2-2d_{\mathrm{top}}}$, the half-profiles take the form
+$\phi_\sigma(u)=E_{\mathrm{f}}(r)+\sigma b_1\tilde{\tau}[Q_{\mathrm{f}}(r)+\theta_1 V_1(r)+\theta_2
+V_2(r)]+o(\tilde{\tau})$.
+
+For the estimates put $d=d_{\rm top}$ and fix $T_{\max}>z(-S_*)^2/2$.
+On $\mathcal I=[0,T_{\max}]$ the omitted terms are bounded multiples of
+$R^{m-d}(2u)^{m/2}$, $3\le m\le d-2$. Their sum is $O(R^{-2})$ in
+$C^1(\mathcal I)$ uniformly on the parameter box. Each monomial slope is
+monotone, so the slopes of the full profiles have uniformly bounded
+variation on $\mathcal I$. On every $[\alpha,T_{\max}]$, $0<\alpha<T_{\max}$,
+the profiles converge in $C^2$ to $E_{\rm f}(\sqrt{2u})$.
+This preserves its simple crest and the signs of its slopes on compact
+regular branches.
+
+For each scaled lower axis depth $v\in[s_0,S_*]$, let $\widehat T_\sigma(v)$ be the unique turn
+satisfying $Y_\sigma(\widehat T_\sigma(v))=v^2/2$ (uniqueness and existence follow from $Y_\sigma'>0$
+and bracketing via \eqref{eq:envelope-bounds} on either side of $z(-v)$). Uniformly on $[s_0,S_*]$,
+$\sqrt{2\widehat T_\sigma(v)}\to z(-v)$ and $\phi_\sigma(\widehat
+T_\sigma(v))=-v+O(\sqrt{\tilde\eps})$, because the terminal ordinate is the suffix minimum back to the
+axis. Let $\beta_a=\beta(Ra_*)$ be the upper launch of the plus turn
+at physical radius $Ra_*$ on the ascent. At the common scaled lower
+intercept $-S_*$ let $X_{\sigma,*}=X_\sigma(\widehat T_\sigma(S_*))$
+be half the square of each scaled upper intercept. At bounded physical
+height $h$ let $T_\sigma(h)$ near $\bar g=g^2/2$ be the descending
+solution of $\phi_\sigma(T_\sigma(h))=h/R^d$. Its upper deficit from
+that half's own deep reference is
+$\mathfrak d_\sigma(h)=X_{\sigma,*}-X_\sigma(T_\sigma(h))>0$.
+On $I_\lambda\times[-\delta,\delta]^2$ the equations and their
+leading controls are
+\begin{center}\small
+\begin{tabular}{@{}ll ll@{}}
+\toprule
+Match & Control & Finite equality & Geometric effect\\
+\midrule
+(M1) & $\lambda$   & $b_+(\beta_a)=b_-(\beta_a)$
+                 & Close the ascending orbit\\
+(M2) & $\theta_1$ & $X_{+,*}=X_{-,*}$
+                 & Close the deep reference orbit\\
+(M3) & $\theta_2$ & $\log[\mathfrak d_+(0)/\mathfrak d_-(s)]=0$
+                 & Anchor the shift on the descent\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here $\lambda$ is the existing coefficient of $x^{m_0}$. The parameters
+$\theta_1,\theta_2$ are independent combinations of the coefficients of
+$x^{d+1},x^{d+3}$. The normalization of $V_1$ varies the crest value,
+and that of $V_2$ varies the descending action at fixed level zero.
+The table identifies the parameter controlling each pair of faces of
+the box. We solve the three equalities simultaneously.
+
+For (M1) choose fixed $0<t_1<a_*<t_0<1$. For each sign the upper
+hits at turns $Rt_1,Ra_*,Rt_0$, divided by $R^{d_{\rm top}}$, tend
+uniformly to the three strictly ordered positive values of $E_{\rm f}$
+there, by \eqref{eq:envelope-bounds}. All these finite turns meet both
+axes by Lemma~\ref{lem:tail-inward}(i). Monotonicity of $X_-$ thus
+places the minus turn for the common launch between $Rt_1$ and $Rt_0$,
+and the common physical launch tends to infinity.
+For $0<r\le t_0$ the ratio $E_{\rm f}(r)/r^{d_{\rm top}}$ is at least
+$1-d_{\rm top}t_0^8/(d_{\rm top}+8)>0$. On the physical interval
+$K_0\le x\le Rt_0$ the odd terms and lower powers contribute
+$O(x^{d_{\rm top}-1})$ uniformly. Hence
+$F(\pm x)\ge c x^{d_{\rm top}}$ up to both turns.
+Along any subsequence of parameters converging in the box to
+$(\lambda',\theta_1',\theta_2')$ the folded primitives converge on
+compacts in $C^1$ to $P_{\lambda'}$. The finite-turn assertion of
+Lemma~\ref{lem:tail-inward}(ii) now gives both limiting intercepts
+$\ell_\pm(P_{\lambda'})$. Continuity of the inner tail gap and compactness
+give the uniform (M1) limit in \eqref{eq:miranda-box}.
+For (M2) the upper hits at depth $S_*$ are within $O(\sqrt{\tilde\eps})$
+of the perturbed maxima, uniformly on the same box. The maxima have
+$r=1+O(\tilde\tau)$ and values
+$E_{\mathrm f}(1)\pm b_1\tilde\tau\theta_1+O(\tilde\tau^2)$.
+Dividing their upper-hit difference by $2b_1\tilde\tau$ gives
+$\theta_1+o(1)$.
+
+For (M3) the deficit is the integral of $X'_\sigma$ from
+$T_\sigma(h)$ to that half's own reference turn $\widehat T_\sigma(S_*)$.
+The order of these two turns makes the deficit positive throughout the
+parameter box, including away from (M2). Since the reference tends to
+$z(-S_*)^2/2<T_{\max}$, Lemma~\ref{lem:common-crest}\textup{(i)}
+applies uniformly there and gives
+\[
+ -\tilde\eps\log \mathfrak d_\sigma(h)
+ =\int_{r_{\rm crest,\sigma}}^{\sqrt{2T_\sigma(h)}}
+       (\partial_r\phi_\sigma)^2\,\frac{\dd r}{r}
+       +O(\sqrt{\tilde\eps}+\tilde\eps|\log\tilde\eps|),
+\]
+where $\partial_r$ differentiates $\phi_\sigma(r^2/2)$.
+The descent through zero is regular. Changing the scaled terminal height
+by $s/R^{d_{\rm top}}$ costs $O(R^{-d_{\rm top}})$ in the action.
+At level zero its first variation in direction $V$ is
+$\int_1^g(f_{\mathrm f}V'-f_{\mathrm f}'V)\dd r$.
+It vanishes on $Q_{\mathrm f},V_1$ and equals one on $V_2$.
+Together with the first two estimates this gives the following uniform
+expansion on the box:
+\begin{equation}\label{eq:miranda-box}
+ \left(\oscD(\beta(Ra_*)), \frac{\sqrt{2X_{+,*}}-\sqrt{2X_{-,*}}}{2b_1\tilde\tau}, -\frac{\tilde\eps}{2b_1\tilde\tau}\log\frac{\mathfrak d_+(0)}{\mathfrak d_-(s)}\right)
+ =\bigl(\Delta(P_\lambda),\theta_1,\theta_2\bigr)+o(1).
+\end{equation}
+Each continuous component therefore has opposite signs on its two faces
+for all values of the other coordinates. Poincar\'e--Miranda gives
+one common zero for every sufficiently large $R$. Every selection of
+such zeros tends to $(\lambda_0,0,0)$ by compactness and uniqueness of
+the limiting zero.
+
+\smallskip\noindent\emph{The regular turns and the two matched orbits.} At
+$(\lambda_R,\theta_{1,R},\theta_{2,R})$, the $N_{\mathrm{ord}}$ bounded ordinary brackets persist by
+compact $C^1$ convergence to $P_{\lambda_0}$. Apply Lemma~\ref{lem:common-crest}\textup{(ii)} with
+$E=E_{\mathrm f}$, $Q=Q_{\mathrm f}$, $\delta=b_1/R$ and the later
+turns from (M2). Here $\theta_{i,R}\to0$ absorbs the two controls into
+$o(\delta)$ in $C^1(\mathcal I)$, and $\sqrt{\tilde\eps}/\delta=R^{2-d}/b_1\to0$.
+On the early ascent $K_0/R\le r\le t_0<1$, division of the radial
+derivative by $r^{d-1}$ bounds each old lower power by a constant times
+$(Rr)^{m-d}$. Choosing $K_0$ large preserves the rising slope there.
+On $r\le K_0/R$ put $x=Rr$. The physical slope
+$\partial_x F(\sigma x)/x$ is bounded since all powers are at least
+three, so $\phi_\sigma'=O(R^{2-d})$ on an interval of $u$-length
+$K_0^2/(2R^2)$. Its squared-slope integral is $O(R^{2-2d})=o(\delta)$.
+Thus (M1) gives an ascending $-,+$ pair at $a_0,a_1$, the simple
+orbit at $a_*$, and a descending $-,+$ pair at
+$z(E_{\mathrm f}(a_1)),z(E_{\mathrm f}(a_0))$, ending at
+$\beta_{\rm refl}$.
+
+\smallskip\noindent\emph{The exterior test at a common lower hit.}
+Set $v_0=s_0$, $V=S_*$, $\eps=\tilde\eps$ and $\alpha=b_1/R$.
+In this calculation write $E,Q,f,\Tr$ for the outer fold data with
+subscript $\mathrm f$. At the simultaneous match the profiles
+$p_\pm(r)=\phi_\pm(r^2/2)$ have expansion $E\pm\alpha Q+o(\alpha)$
+in $C^1$ from the crest through the depth-$S_*$ turns, as verified above.
+\input{tex/outer-depth-comparison.tex}
+Here $\Tr_{\mathrm f}(z(-s_0))>0$, so the exterior launch
+$\beta_{\mathrm{ext}}=\beta_+(s_0)$ has $\oscD_{F_R}(\beta_{\mathrm{ext}})>0$.
+The mark at $\beta_+(S_*)>\beta_{\mathrm{ext}}$ therefore encloses the
+selected cycles at smaller launches.
+
+\smallskip\noindent\emph{Bounded incoming heights.} We now compare turns near the physical radius
+$Rg$. Lemma~\ref{lem:deficit-ratio} applies near $\bar g$ on a closed
+strip of the strict descent terminating at the depth-$S_*$ turn.
+Indeed $\widehat T_\sigma(S_*)\to z(-S_*)^2/2>\bar g$. We can take
+a fixed compact test interval about $\bar g$ with a common buffer to
+these reference turns, all below $T_{\max}$. The slope and its
+derivative have the required bounds on the descent by $C^2$
+convergence there. The upper hits tend to $E_{\mathrm f}(1)>0$.
+Change variables from $u$ to $\kappa=\phi_\sigma(u)$ in
+\eqref{eq:deficit-ratio}. For $h,h_0$ in any fixed compact set this gives
+\begin{equation}\label{eq:physical-deficit}
+ \tilde\eps R^{d_{\rm top}}\log\frac{\mathfrak d_\sigma(h)}{\mathfrak d_\sigma(h_0)}
+ =-f_{\mathrm f}(g)(h-h_0)
+     +O(R^{-1}+R^{2-d_{\rm top}}).
+\end{equation}
+Indeed $\kappa=h/R^{d_{\rm top}}$ at the upper limit,
+$\phi_\sigma'(T_\sigma(h))=f_{\mathrm f}(g)+O(R^{-1})$, and
+$\tilde\eps R^{d_{\rm top}}=R^{2-d_{\rm top}}$. The error here tends to zero on the physical height scale. By \textup{(M2)} the two marked upper hits agree, and by
+\textup{(M3)} $\mathfrak d_+(0)=\mathfrak d_-(s)$. For every fixed $\eta>0$, the last
+estimate brackets $\mathfrak d_+(h_r)$ between $\mathfrak d_-(h_r+s-\eta)$ and
+$\mathfrak d_-(h_r+s+\eta)$. Write $B(h)=\beta(R\sqrt{2T_+(h)})$
+for the actual launch height on the positive $y$-axis of the plus
+trajectory that turns at physical ordinate $h$ on the far descent.
+At $\beta_r=B(h_r)$ the minus turning ordinate is $h_r+s+o(1)$.
+Write $a_R$ for either actual turning ordinate, with limit $a=h_r$
+or $a=h_r+s$ on the corresponding half. All these ordinates belong
+to a fixed compact height interval. Choose $1<\gamma_0<g$ close to
+$g$. From the turn $x_T=R\sqrt{2T_\sigma(a_R)}$ down to $\gamma_0R$,
+regular descent gives
+$F_R(\sigma x)-a_R\ge cR^{d-1}(x_T-x)$. On the terminal layer
+$x_T-x\le R^{-d}$ the graph equation gives
+$0\le a_R-y_R(x)\le\sqrt{2x_T(x_T-x)}$. On the remaining part the
+drop is bounded by integrating $CR^{2-d}/(x_T-x)$. Thus
+$y_R(\gamma_0R)=a_R+O(R^{(1-d)/2}+R^{2-d}\log R)$ uniformly.
+
+For $x/R\le\gamma_0$, $E_{\rm f}(x/R)/(x/R)^d\ge
+1-(\gamma_0/g)^8>0$. The odd and lower powers contribute at most
+$C x^{d-1}$ for $1\le x\le\gamma_0R$, uniformly in the matching box.
+Hence for some $K_*$ and $c'>0$ we have $F_R(\sigma x)\ge c'x^d$
+on $[K_*,\gamma_0R]$, and $P_{\lambda_0}(\sigma x)\ge c'x^d$ on
+$[K_*,\infty)$. Let $H_*$ bound the absolute values of all turning ordinates under
+consideration. Enlarge $K_*$ so that $c'x^d-H_*\ge c'x^d/2$
+for $x\ge K_*$. Fix $K_1\ge K_*$. The further drop of $y_R$ down to $K_1$
+and the tail loss of the limiting incoming graph $y_{\sigma,a}$ from
+infinity to $K_1$ are each bounded by $C K_1^{2-d}$, with $C$
+independent of $K_1,R$ whenever $\gamma_0R>K_1$.
+
+On $[0,K_1]$ the continuous gap
+$P_{\lambda_0}(\sigma x)-y_{\sigma,a}(x)$ has a positive minimum
+over the two halves and the finite list of limiting heights.
+Solve the folded graph equation backwards from the exact limiting
+value $y_{\sigma,a}(K_1)$ and call the solution $Y_R$. For this fixed
+$K_1$, compact convergence of $F_R$ and continuous dependence give
+$Y_R\to y_{\sigma,a}$ uniformly, with $F_R(\sigma x)-Y_R(x)$ bounded
+below by half the limiting minimum for large $R$. The two graphs $y_R,Y_R$ in the
+same folded field contract their difference on backward integration.
+Consequently
+\[
+ \limsup_{R\to\infty}|y_R(0)-y_{\sigma,a}(0)|\le 2C K_1^{2-d}.
+\]
+For any prescribed accuracy first choose $K_1$ to make this tail
+bound small and then $R$ for that fixed interval. This proves
+$b_+(\beta_r)\to G_{+,P_{\lambda_0}}(h_r)$ and
+$b_-(\beta_r)\to G_{-,P_{\lambda_0}}(h_r+s)$, so the prescribed
+strict signs persist.
+
+Finally, write $x_{+,R}(h)=R\sqrt{2T_+(h)}$. For large $R$ the
+actual plus turning radii satisfy
+\[
+ Rz_1<Rz_0<x_{+,R}(h_1)<\cdots<x_{+,R}(h_M)
+ <R\sqrt{2\widehat T_+(s_0)}<R\sqrt{2\widehat T_+(S_*)}.
+\]
+At the ends this follows from $z_0<g<z(-s_0)<z(-S_*)$ and convergence
+after division by $R$. All the middle radii divided by $R$ tend to
+$g$. Their strict order follows from $h_1>\cdots>h_M$ and strict
+descent of the actual plus profile. Strict increase of $X_+$ with
+the turn gives the claimed order of upper launches.
+\end{proof}
+
+\begin{corollary}[Cost of transferring an ordered incoming list]\label{cor:sign-cost}
+Under the hypotheses of Proposition~\ref{prop:fold-closure}, let
+$\operatorname{var}(s_0,\ldots,s_n)$ count adjacent unequal signs.
+For a finite incoming list with signs $\sigma_1,\ldots,\sigma_M$, the
+same three new powers suffice for at least
+\[
+ N_{\rm ord}+4+\operatorname{var}(+,\sigma_1,\ldots,\sigma_M,+)
+\]
+simultaneous hyperbolic cycles on the enlarged support.
+\end{corollary}
+\begin{proof}
+The two regular fold brackets and the two simple marked orbits are
+disjoint from the incoming brackets. The positive return at each end
+of the incoming list accounts for the two exterior signs in the formula.
+Shrink adjacent brackets at a shared strict sign and apply
+Lemma~\ref{lem:hyperbolicity} to the existing coefficient of $x^{m_0}$.
+\end{proof}
